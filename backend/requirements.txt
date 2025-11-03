@@ -20,3 +20,4 @@ tzdata==2024.1
 Werkzeug==3.0.3
 cryptography==41.0.3
 requests==2.31.0
+gunicorn==23.0.0
