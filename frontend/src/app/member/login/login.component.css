@@ -1,0 +1,89 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#login {
+  background-color: #d6e9ff;
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 46px;
+}
+
+#login .login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login .image-icon  {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  align-items: center;
+  height: 320px;
+}
+
+#login .image-icon img {
+  height: 100%;
+}
+
+#login .button-submit button {
+  font-size: 1.2rem;
+  color: white; 
+  background-color: #004AAD;
+  padding: 24px 100px;
+  width: 100%; 
+  max-width: 400px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 530;
+}
+
+#login .erro {
+  margin-bottom: 20px;
+}
+
+.text-field {
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.text-field mat-form-field {
+  width: 100%;
+}
+
+#login .erro mat-card {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: rgb(243, 180, 180);
+  padding: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+#login .criar-conta {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 10px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#login .criar-conta .criar-conta-content {
+  color:#000000;
+  margin: 0px;
+}
+
+#login .criar-conta .criar-conta-link {
+  color: #004AAD;
+}

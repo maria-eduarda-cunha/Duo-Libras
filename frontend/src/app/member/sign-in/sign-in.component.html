@@ -1,0 +1,58 @@
+<section id="sign-in">
+
+    <div class="arrow">
+        <mat-icon [routerLink]="['/login']">arrow_back</mat-icon>
+    </div>
+
+    <div class="image-icon">
+        <img src="assets/img-login.png" alt="image">
+    </div>
+
+    <div class="sign-in">
+
+        <p class="sign-in-content">Para realizar o cadastro, preencha os campos abaixo:</p>
+
+        <form [formGroup]="signInForm" (ngSubmit)="submitSignIn()">
+
+            <div class="text-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput type="text" placeholder="Fulano Silva" formControlName="nome" required>
+                    <mat-error *ngIf="signInForm.get('nome')?.hasError('pattern')">Apenas um nome e um sobrenome</mat-error>
+                </mat-form-field>
+
+                <br>
+            </div>
+            
+            <div class="text-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput type="email" placeholder="exemplo@email.com" formControlName="email" required>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input matInput type="password" formControlName="password" required>
+                    <mat-error *ngIf="signInForm.get('password')?.hasError('minlength')">A senha deve ter no mínimo 6 caracteres</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirme a senha</mat-label>
+                    <input matInput type="password" formControlName="passwordCheck" required>
+                    <mat-error *ngIf="signInForm.hasError('passwordsMismatch')">As senhas não coincidem</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="button-create">
+                <button mat-raised-button type="submit">Criar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>

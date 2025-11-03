@@ -1,0 +1,75 @@
+#level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  background-color: #222;
+  height: 100vh;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.gif-container img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  width: 80%;
+}
+
+.options button {
+  background: #3f51b5;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.options button:hover {
+  background: #5c6bc0;
+}
+
+.feedback {
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+.feedback .correto {
+  color: #4caf50;
+}
+
+.feedback .errado {
+  color: #f44336;
+}

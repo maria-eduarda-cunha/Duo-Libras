@@ -1,0 +1,44 @@
+<section id="login">
+
+    <div class="image-icon">
+        <img src="assets/img-login.png" alt="image">
+    </div>
+
+    <div class="login">
+
+        <div class="erro" [hidden]="!getError()">
+            <mat-card>Login ou senha inválidos!</mat-card>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+
+            <div class="text-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput type="email" placeholder="exemplo@email.com" formControlName="email" required>
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input matInput type="password" formControlName="password" required>
+                    <mat-error>Campo obrigatório</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="button-submit">
+                <button mat-raised-button type="submit">Entrar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="criar-conta">
+        <p class="criar-conta-content">Ainda não possui uma conta?</p>
+        <a [routerLink]="['/criar-conta']" class="criar-conta-link">Realizar cadastro</a>
+    </div>
+
+</section>

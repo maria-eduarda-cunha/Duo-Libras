@@ -1,0 +1,128 @@
+#home {
+    min-height: 100vh;
+    background-color: #d6e9ff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+}
+
+#home header {
+    background-color: #004AAD;
+    font-family: 'Lato', sans-serif;
+    height: 13vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 180px 32px 32px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-status {
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+}
+
+#home header .logo .logo-icon {
+    height: 70px;
+}
+
+#home header .streak .streak-icon,
+#home header .coins .coins-icon,
+#home header .lifes .lifes-icon {
+    height: 55px;
+}
+
+#home header .profile .profile-icon {
+    height: 65px;
+}
+
+#home header .streak,
+#home header .lifes {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 550;
+    font-family: 'Lato', sans-serif;
+    align-items: center;
+}
+
+#home main .modules-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 96px;
+    padding-bottom: 0px;
+    padding-top: 64px;
+    box-sizing: border-box;
+}
+
+#home main .modules-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#home main .module-background {
+    background-color: white;
+    border-radius: 40px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 100px;
+}
+
+.module-icon{
+    color:#004AAD; 
+    font-size: 60px; 
+    width: 60px; 
+    height: 60px
+}
+
+#home main .module img {
+    height: 136px;
+}
+
+#home main .module-title {
+    font-size: 1.3rem;
+    font-weight: 570;
+    margin-bottom: 4px;
+    margin-top: 16px;
+}
+
+#home main .module-levels {
+    color: #2F43B9;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+    margin-top: 4px;
+}
+
+#home main .module {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+#home main .module:hover {
+    transform: scale(1.05);
+}
+
+#home main .module .module-background,
+#home main .module .module-title,
+#home main .module .module-levels {
+    pointer-events: none;
+}
