@@ -1,4 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/duo-libras"
+  "buildCommand": "ng build",
+  "outputDirectory": "dist/reserva"
 }
