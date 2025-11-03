@@ -1,0 +1,79 @@
+<section id="home">
+    <header>
+        <div class="logo">
+            <img class="logo-icon" src="assets/logo.png" alt="image">
+        </div>
+        <div class="user-status">
+            <div class="streak">
+                <mat-icon style="color:white; font-size: 35px; width: 35px; height: 35px;" fontIcon="local_fire_department"></mat-icon>
+                <p class="quantity">25</p>
+            </div>
+            <div class="lifes">
+                <mat-icon style="color:white; font-size: 35px; width: 35px; height: 35px;" fontIcon="favorite"></mat-icon>
+                <p class="quantity">5</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="modules-content">
+            <!-- Primeira fileira de módulos -->
+            <div class="modules-row">
+                <div class="module" routerLink="/modulos/alfabeto">
+                    <div class="module-background">
+                        <mat-icon class="module-icon" fontIcon="sort_by_alpha"></mat-icon>
+                        <!-- <img src="assets/icon-alphabet.png" alt="Alfabeto"> -->
+                    </div>
+                    <p class="module-title">Alfabeto</p>
+                    <p class="module-levels">x/10</p>
+                </div>
+
+                <div class="module" routerLink="/modulos/saudacoes">
+                    <div class="module-background">
+                        <mat-icon class="module-icon" fontIcon="waving_hand"></mat-icon>
+                    </div>
+                    <p class="module-title">Saudações</p>
+                    <p class="module-levels">x/10</p>
+                </div>
+
+                <div class="module" routerLink="/modulos/tempo">
+                    <div class="module-background">
+                        <mat-icon class="module-icon" fontIcon="access_time"></mat-icon>
+                    </div>
+                    <p class="module-title">Tempo</p>
+                    <p class="module-levels">x/10</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda fileira de módulos -->
+        <div class="modules-row">
+            <div class="module" routerLink="/modulos/lugares">
+                <div class="module-background">
+                    <mat-icon class="module-icon" fontIcon="location_pin"></mat-icon>
+                </div>
+                <p class="module-title">Lugares</p>
+                <p class="module-levels">x/10</p>
+            </div>
+
+            <div class="module" routerLink="/modulos/partes-do-corpo">
+                <div class="module-background">
+                    <mat-icon class="module-icon" fontIcon="accessibility_new"></mat-icon>
+                </div>
+                <p class="module-title">Partes do corpo</p>
+                <p class="module-levels">x/10</p>
+            </div>
+
+            <div class="module" routerLink="/modulos/familia">
+                <div class="module-background">
+                    <mat-icon class="module-icon" fontIcon="diversity_3"></mat-icon>
+                    <!-- <img src="assets/icon-family.png" alt="Família"> -->
+                </div>
+                <p class="module-title">Família</p>
+                <p class="module-levels">x/10</p>
+            </div>
+        </div>
+
+    </main>
+
+</section>

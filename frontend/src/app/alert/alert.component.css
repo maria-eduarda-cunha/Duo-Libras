@@ -1,0 +1,32 @@
+mat-dialog-container {
+  background-color: white !important;
+}
+.alert {
+  color: rgb(143, 168, 120);
+  font-weight: bolder;
+}
+
+.alert h1 mat-dialog-title {
+  font-size: 1rem;
+  color: rgb(143, 168, 120);
+  font-weight: bolder;
+}
+
+.alert .botoes-alerta {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert button {
+  font-size: 18px;
+  background-color: white;
+  color: #75029c;
+  margin-bottom: 5px;
+}
+
+.alert button:hover {
+  background-color: #75029c;
+  color: white;
+}

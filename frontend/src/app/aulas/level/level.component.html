@@ -1,0 +1,29 @@
+<section id="level">
+  <header>
+    <button class="back-button" routerLink="/modulos">
+      <!-- <mat-icon fontIcon="arrow_back_ios" ></mat-icon> -->
+      <span>Voltar</span>
+    </button>
+    <!-- <h2>Nível {{ nivelId }}</h2> -->
+  </header>
+
+  <main>
+    <!-- GIF do nível -->
+    <div class="gif-container">
+      <!-- <img [src]="'assets/gifs/gif-' + nivelId + '.gif'" alt="Animação do nível" /> -->
+    </div>
+
+    <!-- Botões de resposta -->
+    <div class="options">
+      <button *ngFor="let opcao of opcoes" (click)="verificarResposta(opcao)">
+        {{ opcao.texto }}
+      </button>
+    </div>
+  </main>
+
+  <div class="feedback" *ngIf="respostaCorreta !== null">
+    <p [class.correto]="respostaCorreta" [class.errado]="!respostaCorreta">
+      {{ respostaCorreta ? '✅ Resposta correta!' : '❌ Resposta errada!' }}
+    </p>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+<section id="modulos">
+
+  <header>
+    <div class="logo">
+      <img class="logo-icon" src="assets/logo.png" alt="image">
+    </div>
+    <div class="user-status">
+      <div class="streak">
+        <mat-icon style="color:white; font-size: 35px; width: 35px; height: 35px;"
+          fontIcon="local_fire_department"></mat-icon>
+        <p class="quantity">25</p>
+      </div>
+      <div class="lifes">
+        <mat-icon style="color:white; font-size: 35px; width: 35px; height: 35px;" fontIcon="favorite"></mat-icon>
+        <p class="quantity">5</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <button class="back-button" routerLink="/home">
+      <mat-icon fontIcon="arrow_back_ios" ></mat-icon>
+    </button>
+
+    <div class="content">
+
+      <p class="module-title">{{ moduloSelecionado }}</p>
+
+      <div class="cards-container">
+        <!-- Aulas -->
+        <div 
+          *ngFor="let aula of aulas"
+          class="card"
+          [ngClass]="aula.status"
+          [routerLink]="(aula.status !== 'bloqueado') ? ['/aula', aula.id] : null"
+          [class.clickable]="aula.status !== 'bloqueado'">
+
+          <div class="titulo-aula">
+            <mat-icon class="module-icon" fontIcon="school"></mat-icon>
+            <p class="lesson-title">{{ aula.titulo }}</p>
+          </div>
+        </div>
+
+        <!-- Quiz -->
+        <div 
+          class="card quiz-card"
+          [ngClass]="quiz.status"
+          [routerLink]="(quiz.status !== 'bloqueado') ? ['/quiz', quiz.id] : null"
+          [class.clickable]="quiz.status !== 'bloqueado'">
+
+          <div class="titulo-aula">
+            <mat-icon class="module-icon" fontIcon="quiz"></mat-icon>
+            <p class="lesson-title">Quiz</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</section>

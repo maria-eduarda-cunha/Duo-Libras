@@ -1,0 +1,160 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #d6e9ff;
+}
+
+#modulos {
+    min-height: 100vh;
+    background-color: #d6e9ff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+}
+
+#modulos header {
+    background-color: #004AAD;
+    font-family: 'Lato', sans-serif;
+    height: 13vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 180px 32px 32px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.titulo-aula {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#004AAD;
+    font-weight: bold;
+}
+
+.module-icon{
+    color:#004AAD; 
+    font-size: 60px; 
+    width: 60px; 
+    height: 60px
+}
+
+.user-status {
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+}
+
+#modulos header .logo .logo-icon {
+    height: 70px;
+}
+
+#modulos header .streak .streak-icon,
+#modulos header .coins .coins-icon,
+#modulos header .lifes .lifes-icon {
+    height: 55px;
+}
+
+#modulos header .profile .profile-icon {
+    height: 65px;
+}
+
+#modulos header .streak,
+#modulos header .lifes {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 550;
+    font-family: 'Lato', sans-serif;
+    align-items: center;
+}
+
+#modulos .content {
+    background-color: white;
+    border-radius: 24px;
+    padding: 40px;
+    margin-inline: 56px;
+    margin-block: 0px;
+}
+
+#modulos .back-button {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border-color: transparent;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    margin-inline: 56px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+#modulos .module-title {
+    font-size: 2.5rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+}
+
+.card {
+    width: 140px;
+    height: 140px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.card.bloqueado {
+    background-color: #E2E4E1;
+    border-color: #6B6B6B;
+}
+
+.card.completo {
+    background-color: #B2FD83;
+    border-color: #3E8E0B;
+}
+
+.card.atual {
+    background-color: #d6e9ff;
+    border-color: #3043B8;
+}
+
+.card img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+}
+
+.card.clickable {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card.clickable:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 1024px) {
+    .cards-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
