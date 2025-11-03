@@ -4,7 +4,6 @@ import { QuizService } from '../../services/quiz.service';
 
 @Component({
   selector: 'app-level',
-  imports: [],
   templateUrl: './level.component.html',
   styleUrl: './level.component.css'
 })
