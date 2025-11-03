@@ -1,4 +1,9 @@
-# 1. Criar novo Routing Module
+# 1. Instalar o Angular
+
+`npm install -g @angular/cli`
+`npm install`
+
+# 2. Criar novo Routing Module
 
 Entrar no diretório correto:
 
@@ -9,7 +14,7 @@ Rodar o comando para criar o diretório com routing module:
 `ng g m novo-diretorio --routing`
 
 
-# 2. Criar novo componente
+# 3. Criar novo componente
 Entrar no diretório correto:
 
 `cd frontend/scr/app/novo-diretorio`
@@ -21,12 +26,12 @@ Rodar o comando:
 `ng g c menu-novo-diretorio`
 
 
-# 3. Rodar o frontend
+# 4. Rodar o frontend
 
 `cd frontend`
 
 `ng serve --open`
 
-# 4. Regex
+# 5. Regex
 
 https://regex101.com/
