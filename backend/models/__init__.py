@@ -9,12 +9,12 @@ def init_app(app):
         conn = connect(
             db=config.col_member,
             host=config.db_mongo,
-            alias="default"
+            tls=True
         )
     except Exception as e:
         print(e)
 
-    populate_db()
+    #populate_db()
 
 def populate_db():
     if checkRoot() == False:
