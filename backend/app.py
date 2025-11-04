@@ -9,7 +9,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app, resources={r"/*":{"origins":"*"}}) # DESCOMENTAR QUANDO RODAR FORA DO CODESPACE
 
-# models.__init__(app) # descomentar depois de arrumar o __init__.py
+models.__init__(app) # descomentar depois de arrumar o __init__.py
 
 from controllers.member import member_bp
 
