@@ -11,8 +11,9 @@ def create_app():
     # Conexão MongoDB Atlas
     try:
         connect(
-            host=config.db_mongo,    # sua URI do Atlas
-            alias="default",         # alias padrao exigido
+            host=config.db_mongo,
+            db=config.col_member,
+            alias="default",
             tls=True
         )
         print("✅ MongoDB conectado com sucesso")

@@ -17,6 +17,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 try:
     connect(
         host=config.db_mongo,
+        db=config.col_member,
         alias="default",
         tls=True
     )

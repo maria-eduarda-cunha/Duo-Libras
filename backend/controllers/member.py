@@ -26,6 +26,8 @@ def create_member():
         return jsonify({"success": True, "msg": "Usuário criado com sucesso!"}), 201
 
     except Exception as err:
+        print("❌ ERRO NO BACKEND:")
+        traceback.print_exc()
         return jsonify({"success": False, "error": str(err)}), 500
 
 
@@ -41,6 +43,8 @@ def login_member():
         return jsonify({"success": False, "msg": "Login ou senha incorretos"}), 401
 
     except Exception as err:
+        print("❌ ERRO NO BACKEND:")
+        traceback.print_exc()
         return jsonify({"success": False, "error": str(err)}), 500
 
 
@@ -58,4 +62,6 @@ def get_member_by_id(id):
         }), 200
     
     except Exception as err:
+        print("❌ ERRO NO BACKEND:")
+        traceback.print_exc()
         return jsonify({"success": False, "error": str(err)}), 500
