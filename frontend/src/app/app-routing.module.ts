@@ -11,7 +11,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'home', component: HomeComponent },
     { path: 'criar-conta', component: SignInComponent },
-    { path: 'modulos/:modulo', component: ModulosComponent },
+    { path: 'modulos/:moduloSelecionado', component: ModulosComponent },
     { path: 'pergunta/:id', component: LevelComponent },
 ];
 
