@@ -1,5 +1,4 @@
-// frontend/src/app/aulas/level/level.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AulaService } from '../services/aula.service';
 
@@ -8,7 +7,7 @@ import { AulaService } from '../services/aula.service';
   templateUrl: './level.component.html',
   styleUrls: ['./level.component.css']
 })
-export class LevelComponent {
+export class LevelComponent implements OnInit {
   modulo!: string;
   aulaIndex!: number;
   perguntaTexto = '';
@@ -25,31 +24,31 @@ export class LevelComponent {
   ngOnInit(): void {
     this.modulo = this.route.snapshot.queryParamMap.get('modulo') || 'alfabeto';
     this.aulaIndex = Number(this.route.snapshot.paramMap.get('id')) || 1;
-    this.getAulasByModulo();
+
+    this.getAulaAtual();
   }
 
-  getAulasByModulo(): void {
-    this.aulaService.getAulas().subscribe({
-      next: (data: any[]) => {
-        const aula = data.find(
-          (a) => a.modulo === this.modulo && a.aula === this.aulaIndex
-        );
-
+  getAulaAtual(): void {
+    this.aulaService.getAula(this.modulo, this.aulaIndex).subscribe({
+      next: (aula: any) => {
         if (!aula) {
           console.error('Aula não encontrada!');
           this.carregando = false;
           return;
         }
 
-        this.gif = aula.gif;
-        this.perguntaTexto = aula.pergunta1;
+        const perguntaKey = `pergunta${this.aulaIndex}`;
+        const respostasKey = `respostas${this.aulaIndex}`;
+        const gifKey = `gif${this.aulaIndex}`;
 
-        const respostasObj = aula.respostas1 || {};
+        this.perguntaTexto = aula[perguntaKey] || '';
+        const respostasObj = aula[respostasKey] || {};
         this.respostas = Object.entries(respostasObj).map(([texto, correta]) => ({
           texto,
           correta: Boolean(correta)
         }));
 
+        this.gif = aula[gifKey] || '';
         this.carregando = false;
       },
       error: (err: any) => {

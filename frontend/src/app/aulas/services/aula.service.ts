@@ -8,9 +8,10 @@ import { Observable } from 'rxjs';
 export class AulaService {
   private apiUrl = 'http://localhost:5000/aulas';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getAulas(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getAula(modulo: string, numero: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${modulo}/${numero}`);
   }
+
 }
