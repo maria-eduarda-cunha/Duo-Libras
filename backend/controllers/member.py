@@ -1,4 +1,4 @@
-from flask import Blueprint, request, Response
+from flask import Blueprint, request, jsonify
 from models.member import Member
 from utils.crypto import encrypt, decrypt
 
@@ -9,40 +9,53 @@ member_bp = Blueprint('member_bp', __name__)
 def create_member():
     try:
         dados = request.json
-        if(Member.verify_email(dados['email'])):
-            return {"msg": "Email já cadastrado"}, 302
-        else:
-            member = Member.validate_create(dados)
-            member = Member(email=encrypt(member['email']),
+        
+        if Member.verify_email(dados['email']):
+            return jsonify({"success": False, "msg": "Email já cadastrado"}), 409  # CONFLICT
+        
+        member = Member.validate_create(dados)
+
+        novo_member = Member(
+            email=encrypt(member['email']),
             first_name=encrypt(member['name'].split()[0]),
             last_name=encrypt(member['name'].split()[1]),
-            password=member['password'])
-            member.save()
-            return {"msg": "Usuário criado com sucesso!"}, 200
-    except Exception as err:
-        raise
+            password=member['password']
+        )
+        novo_member.save()
 
-# Verifica login
+        return jsonify({"success": True, "msg": "Usuário criado com sucesso!"}), 201
+
+    except Exception as err:
+        return jsonify({"success": False, "error": str(err)}), 500
+
+
+# Login
 @member_bp.route('/login/auth', methods=['POST'])
 def login_member():
     try:
         dados = request.json
-        if(Member.verify_email_password(dados['email'],dados['password'])):
-            return {"msg": "Login correto"}, 200
-        else:
-            return {"msg": "Login ou senha incorretos"}, 400
-    except Exception as err:
-        raise
 
+        if Member.verify_email_password(dados['email'], dados['password']):
+            return jsonify({"success": True, "msg": "Login correto"}), 200
+        
+        return jsonify({"success": False, "msg": "Login ou senha incorretos"}), 401
+
+    except Exception as err:
+        return jsonify({"success": False, "error": str(err)}), 500
+
+
+# Buscar por ID
 @member_bp.route('/<id>', methods=['GET'])
 def get_member_by_id(id):
     try:
         member = Member.get_member_by_id(id)
-        return {
-            "id":  str(member['id']),
+        
+        return jsonify({
+            "id": str(member['id']),
             "email": decrypt(member['email']),
-            "nome":  decrypt(member['first_name']),
-            "sobrenome":  decrypt(member['last_name'])
-        }, 200
+            "nome": decrypt(member['first_name']),
+            "sobrenome": decrypt(member['last_name'])
+        }), 200
+    
     except Exception as err:
-        raise
+        return jsonify({"success": False, "error": str(err)}), 500
