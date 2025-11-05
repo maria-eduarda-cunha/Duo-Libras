@@ -12,7 +12,7 @@ def create_app():
     try:
         connect(
             host=config.db_mongo,
-            db=config.col_member,
+            db=config.col_mongo,
             alias="default",
             tls=True
         )

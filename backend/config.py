@@ -2,7 +2,7 @@ import os
 
 # DB INFO
 db_mongo = os.getenv('DB_MONGO')
-col_member = os.getenv('COL_MEMBER')
+col_mongo = os.getenv('COL_MONGO')
 
 #CRYPTO
 fernet_key = os.getenv('FERNET_KEY')
