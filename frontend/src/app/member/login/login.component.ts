@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
-// import { EncryptService } from '../_helpers/encrypt.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +14,6 @@ export class LoginComponent {
     private fb: FormBuilder,
     private router: Router,
     private auth: AuthenticationService,
-    // private encryptService: EncryptService
   ) {}
 
   public errorAuth: boolean = false;
@@ -44,6 +42,7 @@ export class LoginComponent {
 
           if(user) {
             localStorage.setItem('user', user);
+            this.router.navigate(['/home']);
           }
         }
       });
