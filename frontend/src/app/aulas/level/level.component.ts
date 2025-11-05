@@ -29,9 +29,11 @@ export class LevelComponent {
   }
 
   getAulasByModulo(): void {
-    this.aulaService.getAulasByModulo(this.modulo).subscribe({
-      next: (data) => {
-        const aula = data.find((a: any) => a.aula === this.aulaIndex);
+    this.aulaService.getAulas().subscribe({
+      next: (data: any[]) => {
+        const aula = data.find(
+          (a) => a.modulo === this.modulo && a.aula === this.aulaIndex
+        );
 
         if (!aula) {
           console.error('Aula não encontrada!');
@@ -48,15 +50,15 @@ export class LevelComponent {
           correta: Boolean(correta)
         }));
 
-
         this.carregando = false;
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Erro ao carregar módulo:', err);
         this.carregando = false;
       }
     });
   }
+
 
   verificarResposta(resposta: { texto: string; correta: boolean }): void {
     this.respostaCorreta = resposta.correta;
