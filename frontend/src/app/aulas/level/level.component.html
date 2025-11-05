@@ -11,17 +11,17 @@
   </header>
 
   <main>
-    <!-- GIF do nível -->
-    <div class="gif-container">
-      <!-- <img [src]="'assets/gifs/gif-' + nivelId + '.gif'" alt="Animação do nível" /> -->
-    </div>
+<div class="gif-container">
+  <img [src]="gif" alt="GIF da aula">
+</div>
 
-    <!-- Botões de resposta -->
-    <div class="options">
-      <button *ngFor="let opcao of opcoes" (click)="verificarResposta(opcao)">
-        {{ opcao.texto }}
-      </button>
-    </div>
+<p>{{ perguntaTexto }}</p>
+
+<div class="options">
+  <button *ngFor="let opcao of opcoes" (click)="verificarResposta(opcao)">
+    {{ opcao.texto }}
+  </button>
+</div>
   </main>
 
   <div class="feedback" *ngIf="respostaCorreta !== null">

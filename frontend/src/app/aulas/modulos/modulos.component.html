@@ -22,7 +22,7 @@
           *ngFor="let aula of aulas"
           class="card"
           [ngClass]="aula.status"
-          [routerLink]="(aula.status !== 'bloqueado') ? ['/aula', aula.id] : null"
+          [routerLink]="(aula.status !== 'bloqueado') ? ['/aulas/level', aula.id] : null"
           [class.clickable]="aula.status !== 'bloqueado'">
 
           <div class="titulo-aula">
@@ -35,7 +35,7 @@
         <div 
           class="card quiz-card"
           [ngClass]="quiz.status"
-          [routerLink]="(quiz.status !== 'bloqueado') ? ['/quiz', quiz.id] : null"
+          [routerLink]="(quiz.status !== 'bloqueado') ? ['/aulas/quiz', quiz.id] : null"
           [class.clickable]="quiz.status !== 'bloqueado'">
 
           <div class="titulo-aula">
