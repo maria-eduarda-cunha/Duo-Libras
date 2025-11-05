@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { AlertComponent } from '../../alert/alert.component';
 import { AuthenticationService } from '../../services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,7 +15,8 @@ export class SignInComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private auth: AuthenticationService
+    private auth: AuthenticationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -64,6 +66,8 @@ export class SignInComponent implements OnInit {
               localStorage.setItem('user', user);
 
               alert('Cadastro realizado com sucesso!');
+
+              this.router.navigate(['/home']);
             }
           }
         });
