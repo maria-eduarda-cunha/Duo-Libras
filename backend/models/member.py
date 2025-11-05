@@ -30,7 +30,7 @@ class Member(Document):
     def verify_email_password(email, pwd):
         for member in Member.objects():
             if decrypt(member.email) == email:
-                if bcrypt.compare(member.password, pwd):
+                if bcrypt.checkpw(pwd.encode('utf-8'), member.password.encode('utf-8')):
                     return True
         return False
     
