@@ -41,7 +41,6 @@ def create_root_user():
             password=Member.hash_string(config.root_password),
             first_name=encrypt(config.root_name),
             last_name=encrypt(config.root_last_name),
-            enabled=True
         )
         root.save()
         print("✅ Usuário root criado com sucesso")
