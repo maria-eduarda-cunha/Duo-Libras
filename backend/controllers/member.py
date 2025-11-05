@@ -18,13 +18,13 @@ def create_member():
 
         novo_member = Member(
             email=encrypt(member['email']),
-            first_name=encrypt(member['name'].split()[0]),
-            last_name=encrypt(member['name'].split()[1]),
+            first_name=encrypt(member['nome'].split()[0]),
+            last_name=encrypt(member['nome'].split()[1]),
             password=member['password']
         )
         novo_member.save()
 
-        return jsonify({"success": True, "msg": "Usuário criado com sucesso!"}), 201
+        return jsonify({"success": True, "msg": "Usuário criado com sucesso!"}), 200
 
     except Exception as err:
         print("❌ ERRO NO BACKEND:")
