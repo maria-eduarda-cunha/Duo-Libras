@@ -13,7 +13,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-# ✅ conectar ao MongoDB Atlas
+# Conectar ao MongoDB Atlas
 try:
     connect(
         host=config.db_mongo,
@@ -26,7 +26,7 @@ except Exception as e:
     print(f"❌ ERRO ao conectar no MongoDB: {e}")
 
 
-# ✅ criar root user se não existir
+# Criar root user se não existir
 def create_root_user():
     from models.member import Member
 
@@ -52,9 +52,12 @@ def create_root_user():
 create_root_user()
 
 
-# ✅ importar blueprints depois da conexão
+# Importar blueprints depois da conexão
 from controllers.member import member_bp
+from controllers.aula import aula_bp
+
 app.register_blueprint(member_bp, url_prefix="/member")
+app.register_blueprint(aula_bp, url_prefix="/aulas")
 
 
 @app.route("/")
