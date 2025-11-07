@@ -6,7 +6,6 @@ import { UserComponent } from './user/user/user.component';
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'login', component: LoginComponent },
     { path: 'user', component: UserComponent, loadChildren: () => import('./user/user.module').then(m => m.UserModule)},
 ];
 

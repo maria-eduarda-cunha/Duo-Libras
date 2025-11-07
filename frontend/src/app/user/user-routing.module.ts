@@ -7,7 +7,7 @@ import { UserComponent } from './user/user.component';
 import { AulasComponent } from './aulas/aulas/aulas.component';
 
 const routes: Routes = [{
-  path: '', component: UserComponent,
+  path: '',
   children: [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
