@@ -1,0 +1,30 @@
+#user {
+    min-height: 100vh;
+    background-color: #d6e9ff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    background-color: #004AAD;
+    font-family: 'Lato', sans-serif;
+    height: 13vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 180px 32px 32px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo .logo-icon {
+    height: 70px;
+}
+
+.user-status {
+    display: flex;
+    flex-direction: row;
+    gap: 160px;
+}

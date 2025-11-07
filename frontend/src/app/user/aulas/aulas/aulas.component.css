@@ -1,4 +1,4 @@
-#level {
+#aulas {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,24 +6,6 @@
   background-color: #222;
   height: 100vh;
   padding: 20px;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
-}
-
-.back-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
 }
 
 .gif-container {

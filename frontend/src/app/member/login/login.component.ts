@@ -42,7 +42,7 @@ export class LoginComponent {
 
           if(user) {
             localStorage.setItem('user', user);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/user/home']);
           }
         }
       });

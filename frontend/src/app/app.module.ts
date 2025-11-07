@@ -17,9 +17,10 @@ import { CustomHttpInterceptor } from '../_helpers/http.interceptor';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './member/login/login.component';
 import { SignInComponent } from './member/sign-in/sign-in.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './user/home/home.component';
 import { CommonModule } from '@angular/common';
-import { ModulosComponent } from './aulas/modulos/modulos.component';
+import { ModulosComponent } from './user/aulas/modulos/modulos.component';
+import { UserComponent } from './user/user/user.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ModulosComponent } from './aulas/modulos/modulos.component';
     SignInComponent,
     HomeComponent,
     ModulosComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +45,7 @@ import { ModulosComponent } from './aulas/modulos/modulos.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatIconModule,
-    BrowserModule,
-    AppRoutingModule,
-    CommonModule
+    MatIconModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
