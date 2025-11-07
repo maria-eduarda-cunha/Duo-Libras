@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class UserComponent {
 
+  logOut() {
+    localStorage.removeItem('user');
+  }
 }

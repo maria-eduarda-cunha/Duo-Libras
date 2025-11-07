@@ -14,7 +14,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 32px 180px 32px 32px;
+    padding: 32px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -23,8 +23,18 @@ header {
     height: 70px;
 }
 
-.user-status {
+.user-status button {
     display: flex;
     flex-direction: row;
     gap: 160px;
+    cursor: pointer;
+    border-style: none;
+    background-color: #ffffff00;
+}
+
+.module-icon{
+    color:#d6e9ff; 
+    font-size: 60px; 
+    width: 60px; 
+    height: 60px
 }

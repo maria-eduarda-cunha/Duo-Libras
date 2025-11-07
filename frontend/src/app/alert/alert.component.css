@@ -22,11 +22,11 @@ mat-dialog-container {
 .alert button {
   font-size: 18px;
   background-color: white;
-  color: #75029c;
+  color: #3043B8;
   margin-bottom: 5px;
 }
 
 .alert button:hover {
-  background-color: #75029c;
+  background-color: #3043B8;
   color: white;
 }
