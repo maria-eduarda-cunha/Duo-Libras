@@ -1,5 +1,8 @@
 <section id="level">
   <header>
+    <div class="logo">
+      <img class="logo-icon" src="assets/logo.png" alt="image">
+    </div>
     <button class="back-button" routerLink="/modulos">
       <!-- <mat-icon fontIcon="arrow_back_ios" ></mat-icon> -->
       <span>Voltar</span>
@@ -8,17 +11,17 @@
   </header>
 
   <main>
-    <!-- GIF do nível -->
-    <div class="gif-container">
-      <!-- <img [src]="'assets/gifs/gif-' + nivelId + '.gif'" alt="Animação do nível" /> -->
-    </div>
+<div class="gif-container">
+  <img [src]="gif" alt="GIF da aula">
+</div>
 
-    <!-- Botões de resposta -->
-    <div class="options">
-      <button *ngFor="let opcao of opcoes" (click)="verificarResposta(opcao)">
-        {{ opcao.texto }}
-      </button>
-    </div>
+<p>{{ perguntaTexto }}</p>
+
+<div class="options">
+  <button *ngFor="let opcao of opcoes" (click)="verificarResposta(opcao)">
+    {{ opcao.texto }}
+  </button>
+</div>
   </main>
 
   <div class="feedback" *ngIf="respostaCorreta !== null">

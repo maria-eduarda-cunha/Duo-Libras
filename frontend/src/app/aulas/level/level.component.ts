@@ -1,58 +1,63 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { QuizService } from '../../services/quiz.service';
+import { AulaService } from '../services/aula.service';
 
 @Component({
   selector: 'app-level',
   templateUrl: './level.component.html',
-  styleUrl: './level.component.css'
+  styleUrls: ['./level.component.css']
 })
-
-export class LevelComponent {
-  constructor(
-    private route: ActivatedRoute,
-    private quiz: QuizService
-  ) {}
-
-modulo!: string;          // Ex: "lugares"
-  perguntaIndex!: number;   // Ex: 1, 2, ...
+export class LevelComponent implements OnInit {
+  modulo!: string;
+  aulaIndex!: number;
   perguntaTexto = '';
   respostas: { texto: string; correta: boolean }[] = [];
   respostaCorreta: boolean | null = null;
   carregando = true;
+  gif = '';
+
+  constructor(
+    private route: ActivatedRoute,
+    private aulaService: AulaService
+  ) { }
 
   ngOnInit(): void {
-    this.modulo = this.route.snapshot.queryParamMap.get('modulo') || 'lugares';
-    this.perguntaIndex = Number(this.route.snapshot.paramMap.get('id')) || 1;
-    this.getQuizByModulo();
+    this.modulo = this.route.snapshot.queryParamMap.get('modulo') || 'alfabeto';
+    this.aulaIndex = Number(this.route.snapshot.paramMap.get('id')) || 1;
+
+    this.getAulaAtual();
   }
 
-  getQuizByModulo(): void {
-    
+  getAulaAtual(): void {
+    this.aulaService.getAula(this.modulo, this.aulaIndex).subscribe({
+      next: (aula: any) => {
+        if (!aula) {
+          console.error('Aula não encontrada!');
+          this.carregando = false;
+          return;
+        }
 
-    // this.quiz.getQuiz(this.modulo).subscribe({
-    //   next: (data) => {
-    //     const perguntaKey = `pergunta${this.perguntaIndex}`;
-    //     const respostasKey = `respostas${this.perguntaIndex}`;
+        const perguntaKey = `pergunta${this.aulaIndex}`;
+        const respostasKey = `respostas${this.aulaIndex}`;
+        const gifKey = `gif${this.aulaIndex}`;
 
-    //     this.perguntaTexto = data[perguntaKey];
-    //     const respostasObj = data[respostasKey];
+        this.perguntaTexto = aula[perguntaKey] || '';
+        const respostasObj = aula[respostasKey] || {};
+        this.respostas = Object.entries(respostasObj).map(([texto, correta]) => ({
+          texto,
+          correta: Boolean(correta)
+        }));
 
-    //     if (respostasObj) {
-    //       this.respostas = Object.entries(respostasObj).map(([texto, correta]) => ({
-    //         texto,
-    //         correta
-    //       }));
-    //     }
-
-    //     this.carregando = false;
-    //   },
-    //   error: (err) => {
-    //     console.error('Erro ao carregar módulo:', err);
-    //     this.carregando = false;
-    //   }
-    // });
+        this.gif = aula[gifKey] || '';
+        this.carregando = false;
+      },
+      error: (err: any) => {
+        console.error('Erro ao carregar módulo:', err);
+        this.carregando = false;
+      }
+    });
   }
+
 
   verificarResposta(resposta: { texto: string; correta: boolean }): void {
     this.respostaCorreta = resposta.correta;

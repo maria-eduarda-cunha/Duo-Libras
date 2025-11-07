@@ -4,17 +4,6 @@
     <div class="logo">
       <img class="logo-icon" src="assets/logo.png" alt="image">
     </div>
-    <div class="user-status">
-      <div class="streak">
-        <mat-icon style="color:white; font-size: 35px; width: 35px; height: 35px;"
-          fontIcon="local_fire_department"></mat-icon>
-        <p class="quantity">25</p>
-      </div>
-      <div class="lifes">
-        <mat-icon style="color:white; font-size: 35px; width: 35px; height: 35px;" fontIcon="favorite"></mat-icon>
-        <p class="quantity">5</p>
-      </div>
-    </div>
   </header>
 
   <main>
@@ -33,7 +22,7 @@
           *ngFor="let aula of aulas"
           class="card"
           [ngClass]="aula.status"
-          [routerLink]="(aula.status !== 'bloqueado') ? ['/aula', aula.id] : null"
+          [routerLink]="(aula.status !== 'bloqueado') ? ['/aulas/level', aula.id] : null"
           [class.clickable]="aula.status !== 'bloqueado'">
 
           <div class="titulo-aula">
@@ -46,7 +35,7 @@
         <div 
           class="card quiz-card"
           [ngClass]="quiz.status"
-          [routerLink]="(quiz.status !== 'bloqueado') ? ['/quiz', quiz.id] : null"
+          [routerLink]="(quiz.status !== 'bloqueado') ? ['/aulas/quiz', quiz.id] : null"
           [class.clickable]="quiz.status !== 'bloqueado'">
 
           <div class="titulo-aula">

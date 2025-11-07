@@ -18,18 +18,15 @@ interface Quiz {
   styleUrls: ['./modulos.component.css']
 })
 export class ModulosComponent implements OnInit {
-  moduloSelecionado: string = '';
-
+  moduloSelecionado = '';
   aulas: Aula[] = [];
   quiz: Quiz = { id: 'quiz', status: 'bloqueado' };
-
-  aulaAtual = 2; // Exemplo: usuário está na Aula 2
+  aulaAtual = 1;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     const rawModulo = this.route.snapshot.paramMap.get('moduloSelecionado') || '';
-    console.log('Raw Modulo:', rawModulo);
 
     const modulosComAcento: Record<string, string> = {
       'saudacoes': 'Saudações',
@@ -39,7 +36,8 @@ export class ModulosComponent implements OnInit {
 
     this.moduloSelecionado = modulosComAcento[rawModulo] || this.capitalize(rawModulo.replace(/-/g, ' '));
 
-    console.log('Modulo Selecionado:', this.moduloSelecionado);
+    // 🔹 Carregar progresso salvo
+    this.carregarProgresso();
     this.gerarAulas();
   }
 
@@ -52,9 +50,32 @@ export class ModulosComponent implements OnInit {
       return { id, titulo: `Aula ${id}`, status };
     });
 
-    // Quiz desbloqueia quando todas as aulas estiverem completas
     const todasCompletas = this.aulas.every(a => a.status === 'completo');
     this.quiz.status = todasCompletas ? 'atual' : 'bloqueado';
+  }
+
+  completarAula(id: number): void {
+    if (id === this.aulaAtual) {
+      this.aulas[id - 1].status = 'completo';
+      if (id < this.aulas.length) {
+        this.aulaAtual++;
+        this.aulas[id].status = 'atual';
+      } else {
+        this.quiz.status = 'atual';
+      }
+
+      // 🔹 Salvar progresso ao completar aula
+      this.salvarProgresso();
+    }
+  }
+
+  private salvarProgresso(): void {
+    localStorage.setItem(`progresso_${this.moduloSelecionado}`, this.aulaAtual.toString());
+  }
+
+  private carregarProgresso(): void {
+    const salvo = localStorage.getItem(`progresso_${this.moduloSelecionado}`);
+    this.aulaAtual = salvo ? parseInt(salvo, 10) : 1;
   }
 
   private capitalize(str: string): string {

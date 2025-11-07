@@ -7,13 +7,17 @@ import { ModulosComponent } from './aulas/modulos/modulos.component';
 import { LevelComponent } from './aulas/level/level.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
-    { path: 'login', component: LoginComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'criar-conta', component: SignInComponent },
-    { path: 'modulos/:modulo', component: ModulosComponent },
-    { path: 'pergunta/:id', component: LevelComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'criar-conta', component: SignInComponent },
+  {
+    path: 'aulas',
+    loadChildren: () =>
+      import('./aulas/aulas.module').then(m => m.AulasModule),
+  },
 ];
+
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
