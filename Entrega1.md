@@ -27,9 +27,9 @@ Dessa forma, percebe-se que a Libras ainda não faz parte do cotidiano dos brasi
 ### Casos de uso
 Ator: Aluno
 
-- UC1: Editar perfil
+- UC1: Assistir aula
 - UC2: Cadastrar usuário
-- UC3: Iniciar e Completar uma Lição
+- UC3: Iniciar e Completar um Quiz
 - UC4: Realizar Login
 
 ## Diagrama de caso de uso UML
@@ -40,15 +40,15 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 ### Caso de uso mais importante do sistema
 - UC3: Iniciar e Completar uma Lição
 
-## Especificação do Caso de Uso 1: Editar perfil
+## Especificação do Caso de Uso 1: Assistir aula
 
 | **Identificador** | UC1           |
 |-------------------|----------------|
-| **Nome**          | Editar perfil  |
+| **Nome**          | Assistir aula  |
 | **Atores**        | Aluno        |
-| **Sumário**        | Aluno acessa a página de edição de perfil. Nessa página, o aluno pode customizar o seu perfil, adicionando ícones de suas conquistas e visualizando suas medalhas.       |
-| **Pré-condição**        | O aluno deve estar logado.     |
-| **Pós-condição**        | O perfil é editado conforme a vontade do aluno, e deve exibir tudo o que foi adicionado / modificado.        |
+| **Sumário**        | Aluno acessa o módulo desejado e assiste uma das aulas disponíveis.       |
+| **Pré-condição**        | O aluno deve estar logado. |
+| **Pós-condição**        | O aluno adquire o conhecimento da aula. |
 | **Pontos de Inclusão**        |    Realizar Login (UC4)     |
 | **Pontos de Extensão**        |         |
 
@@ -56,26 +56,20 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 
 |**Ações do Ator** | **Ações do Sistema** |
 |------------------|----------------------|
-|1. Aluno acessa a página de edição de perfil. | |
-|                  |2. Sistema apresenta tela de edição de perfil e exibe as personalizações que podem ser feitas, como exibir ícones de conquistas e visualizar medalhas. |
-|3. Aluno aperta o botão "Adicionar Ícones de Conquistas". | |
-|                  |4. Sistema busca quais Ícones de Conquistas o Aluno já possui, mostra cada um deles numa tela, e permite que ele exiba até 3 deles em seu perfil. |
-|5. Aluno seleciona 3 Ícones de sua escolha para exibir em seu perfil. | |
-|                  |6. Sistema exibe os Ícones escolhidos no perfil do Aluno. |
-|7. Aluno aperta o botão "Visualizar Medalhas. | |
-|                  |8. Sistema busca e exibe uma tela mostrando as medalhas já obtidas pelo Aluno ao longo de seus estudos. Fim do caso de uso. |
+|1. Aluno acessa a página do módulo desejado. ||
+|| 2. Sistema apresenta tela do módulo e exibe as aulas disponíveis e, por fim, o quiz. |
+|3. Aluno seleciona o card da aula que deseja assistir. ||
+||4. Sistema exibe a tela da aula com o vídeo. |
+|5. Aluno assiste o vídeo. | |
+|6. Após assistir o vídeo, aluno aperta o botão "Voltar" para sair da tela da aula. | |
+|| 7. Sistema apresenta tela do módulo e exibe as aulas disponíveis e, por fim, o quiz. |
 
 ## Fluxos Alternativos
 
 |**Ações do Ator** | **Ações do Sistema** |
 |------------------|----------------------|
-|5.1.1 Aluno tenta adicionar um ícone que ainda não obteve. | |
-|                  |5.1.2. Sistema apresenta uma mensagem dizendo que este ícone ainda não foi obtido, e permite que ele selecione outro. |
-
-|**Ações do Ator** | **Ações do Sistema** |
-|------------------|----------------------|
-|5.2.1 Aluno tenta selecionar mais de três ícones. | |
-|                  |5.2.2. Sistema apresenta uma mensagem dizendo que ele já selecionou 3 ícones e mantém a seleção anterior. |
+|5.1.1 Aluno clica em "Voltar" antes de concluir a aula. | |
+|                  |5.1.2. Sistema apresenta tela do módulo e exibe as aulas disponíveis e, por fim, o quiz. |
 
 ## **Especificação de Caso de Uso 2: Cadastrar Usuário**
 
@@ -85,7 +79,7 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 | **Identificador** | UC2 |
 | **Nome** | Cadastrar Usuário |
 | **Atores** | Aluno |
-| **Sumário** | Aluno realiza o cadastro com e-mail e senha para poder acessar as lições e salvar seu progresso ao longo dos módulos |
+| **Sumário** | Aluno realiza o cadastro com e-mail, nome e senha para poder acessar as lições e salvar seu progresso ao longo dos módulos. |
 | **Pré-condição** | Instalar aplicativo, possuir um e-mail válido |
 | **Pós-condição** |  |
 | **Pontos de Inclusão** | |
