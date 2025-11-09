@@ -3,14 +3,11 @@
         <div class="logo">
             <img class="logo-icon" src="assets/logo.png" alt="image">
         </div>
-        <mat-icon class="module-icon">account_circle</mat-icon>
-        <!-- <mat-icon class="module-icon" [matMenuTriggerFor]="menu">account_circle</mat-icon> -->
-        <!-- <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="logOut()">
-                <mat-icon>logout</mat-icon>
-                <span>Sair</span>
-            </button>
-        </mat-menu> -->
+        
+        <mat-icon class="module-icon" (click)="toggleMenu()">account_circle</mat-icon>
+        <div class="menu" *ngIf="menuOpen">
+            <button (click)="logOut()">Sair</button>
+        </div>
     </header>
 
     <router-outlet></router-outlet>

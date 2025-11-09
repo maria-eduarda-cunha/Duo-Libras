@@ -8,7 +8,11 @@ import { Router } from '@angular/router';
 export class UserComponent {
 
   constructor(private router: Router) {}
+  menuOpen = false;
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
   logOut(): void {
     localStorage.clear(); // limpa dados do usuário
     this.router.navigate(['/']); // redireciona para tela inicial/login
