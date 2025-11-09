@@ -15,6 +15,5 @@ export class AulasComponent implements OnInit {
   ngOnInit(): void {
     this.moduloSelecionado = this.route.snapshot.paramMap.get('moduloSelecionado') || '';
     this.videoSrc = `/assets/aula-${this.moduloSelecionado}.mp4`;
-    console.log(this.videoSrc)
   }
 }
