@@ -1,28 +1,71 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
 })
-export class QuizComponent implements OnInit{
-  moduloSelecionado = '';
-  gifSrc = '';
+export class QuizComponent implements OnInit {
+  moduloSelecionado: string = '';
+  perguntas: any[] = [];
+  carregando = true;
+  perguntaAtual = 0;
+  opcaoSelecionada: string | null = null;
+  respostaCorreta: boolean | null = null;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private quizService: QuizService
+  ) {}
 
   ngOnInit(): void {
-    this.moduloSelecionado = this.route.snapshot.paramMap.get('moduloSelecionado') || '';
-    this.gifSrc = `/assets/aula-${this.moduloSelecionado}.mp4`;
-    console.log(this.gifSrc)
+    this.moduloSelecionado = this.route.snapshot.paramMap.get('modulo')?.toLowerCase() || '';
+    this.carregarQuiz();
   }
 
-  selecionarOpcao(opcao: any){
-
+  carregarQuiz(): void {
+    this.quizService.getQuizByModulo(this.moduloSelecionado).subscribe({
+      next: (data) => {
+        this.perguntas = this.formatarPerguntas(data);
+        this.carregando = false;
+      },
+      error: (err) => {
+        console.error('Erro ao carregar quiz:', err);
+        this.carregando = false;
+      }
+    });
   }
 
-   verificarResposta(){
+  formatarPerguntas(data: any): any[] {
+    const perguntas: any[] = [];
+    let index = 1;
 
+    while (data[`pergunta${index}`]) {
+      perguntas.push({
+        texto: data[`pergunta${index}`],
+        gif: data[`gif${index}`],
+        respostas: Object.entries(data[`respostas${index}`] || {}).map(
+          ([texto, correta]) => ({ texto, correta: Boolean(correta) })
+        )
+      });
+      index++;
+    }
+
+    return perguntas;
+  }
+
+  selecionarOpcao(resposta: any) {
+    this.opcaoSelecionada = resposta.texto;
+    this.respostaCorreta = resposta.correta;
+  }
+
+  proximaPergunta() {
+    if (this.perguntaAtual < this.perguntas.length - 1) {
+      this.perguntaAtual++;
+      this.respostaCorreta = null;
+      this.opcaoSelecionada = null;
+    }
   }
 }

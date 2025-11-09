@@ -9,12 +9,12 @@ import { environment } from 'src/environments/environment.development';
 
 export class QuizService {
 
-  // urlQuiz: string = environment.apiQuiz;
+  urlQuiz: string = environment.apiQuiz;
 
   constructor(private http: HttpClient) { }
 
-  getQuiz(modulo: string) {
-    // return this.http.get(this.urlQuiz + modulo).pipe(take(1));
+  getQuizByModulo(modulo: string) {
+    return this.http.get(this.urlQuiz + modulo).pipe(take(1));
   }
   
 }

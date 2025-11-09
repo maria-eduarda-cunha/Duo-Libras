@@ -9,41 +9,30 @@
   <div class="content">
     <p class="section-title">Quiz</p>
 
-    <div class="quiz-container">
-      <!-- Imagem e instrução -->
+    <div class="quiz-container" *ngIf="perguntas[perguntaAtual] as atual">
       <div class="question-area">
-        <img src="assets/gif-avo.gif" alt="símbolo" class="question-image">
-
-        <h2 class="question-title">
-          Selecione a palavra correta de acordo com o símbolo acima:
-        </h2>
+        <img [src]="atual.gif" alt="símbolo" class="question-image">
+        <h2 class="question-title">{{ atual.texto }}</h2>
       </div>
 
-      <!-- Opções -->
       <div class="options">
-        <div class="row">
-          <button class="option" (click)="selecionarOpcao(1)">
-            <strong>Opção 1</strong>
-          </button>
-          <button class="option" (click)="selecionarOpcao(2)">
-            <strong>Opção 2</strong>
-          </button>
-        </div>
-
-        <div class="row">
-          <button class="option" (click)="selecionarOpcao(3)">
-            <strong>Opção 3</strong>
-          </button>
-          <button class="option" (click)="selecionarOpcao(4)">
-            <strong>Opção 4</strong>
-          </button>
-        </div>
+        <button
+          *ngFor="let resp of atual.respostas"
+          class="option"
+          (click)="selecionarOpcao(resp)"
+          [class.correct]="respostaCorreta && resp.correta"
+          [class.wrong]="respostaCorreta === false && opcaoSelecionada === resp.texto"
+        >
+          <strong>{{ resp.texto }}</strong>
+        </button>
       </div>
 
-      <!-- Botão verificar -->
-      <button class="verify-button" (click)="verificarResposta()">
-        <mat-icon fontIcon="check_circle"></mat-icon>
-        <strong>Verificar</strong>
+      <button
+        class="verify-button"
+        (click)="proximaPergunta()"
+        *ngIf="respostaCorreta !== null"
+      >
+        Próxima
       </button>
     </div>
   </div>
