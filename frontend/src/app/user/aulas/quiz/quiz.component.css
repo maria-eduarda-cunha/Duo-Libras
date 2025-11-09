@@ -1,0 +1,122 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #d6e9ff;
+}
+
+#quiz {
+  min-height: 100vh;
+  background-color: #d6e9ff;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+}
+
+#quiz .back-button {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border-color: transparent;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  margin-inline: 56px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+#quiz .content {
+  background-color: white;
+  border-radius: 24px;
+  padding: 40px;
+  margin-inline: 56px;
+  margin-block: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.module-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+  color: #004AAD;
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.question-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-image {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+.question-title {
+  font-size: 1.5rem;
+  color: #004AAD;
+  margin-top: 16px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.option {
+  background-color: #F7F8F7;
+  color: #004AAD;
+  padding: 1.2rem 4rem;
+  font-size: medium;
+  border-radius: 1rem;
+  border: 2px solid #3043B8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option:hover {
+  background-color: #004AAD;
+  color: white;
+}
+
+.verify-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #004AAD;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.verify-button:hover {
+  transform: scale(1.05);
+  background-color: #003680;
+}

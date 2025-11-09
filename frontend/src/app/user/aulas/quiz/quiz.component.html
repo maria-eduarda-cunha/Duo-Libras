@@ -1,0 +1,49 @@
+<section id="quiz">
+  <!-- Botão de voltar -->
+  <button class="back-button" routerLink="/user/modulos">
+    <mat-icon fontIcon="arrow_back_ios"></mat-icon>
+  </button>
+
+  <div class="content">
+    <!-- Título -->
+    <p class="module-title">Quiz</p>
+
+    <div class="quiz-container">
+      <!-- Imagem e instrução -->
+      <div class="question-area">
+        <img src="assets/exemplo1.png" alt="símbolo" class="question-image">
+
+        <h2 class="question-title">
+          Selecione a palavra correta de acordo com o símbolo acima:
+        </h2>
+      </div>
+
+      <!-- Opções -->
+      <div class="options">
+        <div class="row">
+          <button class="option" (click)="selecionarOpcao(1)">
+            <strong>Opção 1</strong>
+          </button>
+          <button class="option" (click)="selecionarOpcao(2)">
+            <strong>Opção 2</strong>
+          </button>
+        </div>
+
+        <div class="row">
+          <button class="option" (click)="selecionarOpcao(3)">
+            <strong>Opção 3</strong>
+          </button>
+          <button class="option" (click)="selecionarOpcao(4)">
+            <strong>Opção 4</strong>
+          </button>
+        </div>
+      </div>
+
+      <!-- Botão verificar -->
+      <button class="verify-button" (click)="verificarResposta()">
+        <mat-icon fontIcon="check_circle"></mat-icon>
+        <strong>Verificar</strong>
+      </button>
+    </div>
+  </div>
+</section>
