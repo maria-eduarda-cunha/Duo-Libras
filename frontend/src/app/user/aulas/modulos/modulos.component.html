@@ -1,37 +1,27 @@
 <section id="modulos">
   <button class="back-button" routerLink="/user/home">
-    <mat-icon fontIcon="arrow_back_ios" ></mat-icon>
+    <mat-icon fontIcon="arrow_back_ios"></mat-icon>
   </button>
 
   <div class="content">
-
     <p class="module-title">{{ moduloSelecionado }}</p>
 
     <div class="cards-container">
-      <!-- Aulas -->
-      <div 
-        *ngFor="let aula of aulas"
-        class="card"
-        routerLink="../pergunta/{{ aula.id }}">
-
+      <!-- Aula -->
+      <div class="card" [routerLink]="['/user/modulos', moduloSelecionado.toLowerCase(), 'aula']">
         <div class="titulo-aula">
           <mat-icon class="module-icon" fontIcon="school"></mat-icon>
-          <p class="lesson-title">{{ aula.titulo }}</p>
+          <p class="lesson-title">Aula</p>
         </div>
       </div>
 
       <!-- Quiz -->
-      <div 
-        class="card quiz-card"
-        class="card"
-        routerLink="../quiz">
-
+      <div class="card quiz-card" [routerLink]="['/user/modulos', moduloSelecionado.toLowerCase(), 'quiz']">
         <div class="titulo-aula">
           <mat-icon class="module-icon" fontIcon="quiz"></mat-icon>
           <p class="lesson-title">Quiz</p>
         </div>
       </div>
     </div>
-
   </div>
 </section>

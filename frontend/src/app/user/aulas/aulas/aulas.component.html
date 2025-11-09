@@ -1,16 +1,16 @@
 <section id="aulas">
-  <!-- Botão de voltar -->
   <button class="back-button" routerLink="../">
     <mat-icon fontIcon="arrow_back_ios"></mat-icon>
   </button>
 
-  <!-- Corpo principal da aula -->
-  <section class="corpo">
-    <h2 class="titulo">{{ aulaSelecionada?.titulo }}</h2>
+  <div class="content">
+    <p class="module-title">{{ moduloSelecionado | titlecase }}</p>
 
-    <img 
-      [src]="aulaSelecionada?.imagem" 
-      alt="{{ aulaSelecionada?.titulo }}" 
-    />
-  </section>
+    <video class="video-aula"
+      *ngIf="videoSrc"
+      [src]="videoSrc"
+      controls
+      autoplay>
+    </video>
+  </div>
 </section>

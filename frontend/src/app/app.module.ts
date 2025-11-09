@@ -21,6 +21,8 @@ import { HomeComponent } from './user/home/home.component';
 import { CommonModule } from '@angular/common';
 import { ModulosComponent } from './user/aulas/modulos/modulos.component';
 import { UserComponent } from './user/user/user.component';
+import { AulasComponent } from './user/aulas/aulas/aulas.component';
+import { QuizComponent } from './user/aulas/quiz/quiz.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { UserComponent } from './user/user/user.component';
     SignInComponent,
     HomeComponent,
     ModulosComponent,
-    UserComponent
+    UserComponent,
+    AulasComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@ body {
 }
 
 #modulos {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: #d6e9ff;
     display: flex;
     flex-direction: column;
@@ -24,9 +24,9 @@ body {
 
 .module-icon{
     color:#004AAD; 
-    font-size: 60px; 
-    width: 60px; 
-    height: 60px
+    font-size: 100px;
+    width: 100px;
+    height: 100px;
 }
 
 .user-status {
@@ -67,14 +67,14 @@ body {
 .cards-container {
     display: flex;
     gap: 40px;
-    justify-content: space-between;
+    justify-content: space-around;;
     width: 100%;
     max-width: 100%;
 }
 
 .card {
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
     border-radius: 16px;
     display: flex;
     justify-content: center;
@@ -100,10 +100,4 @@ body {
 
 .card.clickable:hover {
   transform: scale(1.05);
-}
-
-@media (min-width: 1024px) {
-    .cards-container {
-        grid-template-columns: repeat(5, 1fr);
-    }
 }

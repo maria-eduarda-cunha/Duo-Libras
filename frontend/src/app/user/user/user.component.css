@@ -23,18 +23,10 @@ header {
     height: 70px;
 }
 
-.user-status button {
-    display: flex;
-    flex-direction: row;
-    gap: 160px;
-    cursor: pointer;
-    border-style: none;
-    background-color: #ffffff00;
-}
-
 .module-icon{
     color:#d6e9ff; 
     font-size: 60px; 
     width: 60px; 
-    height: 60px
+    height: 60px;
+    cursor: pointer;
 }
