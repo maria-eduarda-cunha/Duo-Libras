@@ -61,23 +61,16 @@ export class SignInComponent implements OnInit {
               const pwd = this.signInForm.get('password')?.value
               if (user && pwd) {
 
-                // localStorage.setItem('token', res.token);
-                // localStorage.setItem('id', res.id);
                 localStorage.setItem('user', user);
 
                 alert('Cadastro realizado com sucesso!');
 
-                this.router.navigate(['/home']);
+                this.router.navigate(['/user/home']);
               }
             }
           });
         }
       })
     };
-  }
-
-  // Método auxiliar para exibir erros em tempo real (opcional)
-  getControl(controlName: string) {
-    return this.signInForm.get(controlName);
   }
 }
