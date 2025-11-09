@@ -1,57 +1,71 @@
-#aulas {
+* {
+  background-color: #d6e9ff;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#aula {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff;
-  background-color: #222;
-  height: 100vh;
-  padding: 20px;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
 }
 
-.gif-container {
+/* Botão de voltar */
+.back-button {
   display: flex;
-  justify-content: center;
-  margin-top: 40px;
+  flex-direction: row;
+   background-color: transparent;
+   border-color: transparent;
+   gap: 8px;
+   align-items: center;
+   cursor: pointer;
+   margin-inline: 56px;
+   margin-top: 32px;
+   margin-bottom: 24px;
 }
 
-.gif-container img {
+/* Bloco principal da aula */
+.corpo {
+  background-color: white;
+  text-align: center;
+  width: 75rem;
   max-width: 90%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.options {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 30px;
+  align-items: center;
+  border: 2rem solid white;
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+  background-color: white;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #002B7F;
+}
+
+/* Imagem (GIF da aula) */
+img {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
   width: 80%;
+  max-width: 400px;
+  height: auto;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-.options button {
-  background: #3f51b5;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  padding: 15px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
 
-.options button:hover {
-  background: #5c6bc0;
-}
-
-.feedback {
-  margin-top: 30px;
-  font-size: 22px;
-}
-
-.feedback .correto {
-  color: #4caf50;
-}
-
-.feedback .errado {
-  color: #f44336;
+section {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
 }
