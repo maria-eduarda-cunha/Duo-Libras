@@ -35,7 +35,8 @@ Ator: Aluno
 ## Diagrama de caso de uso UML
 https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 
-<img width="677" height="273" alt="image" src="https://github.com/user-attachments/assets/d953c138-feef-48a7-b4fa-9e529e0be940" />
+<img width="554" height="232" alt="image" src="https://github.com/user-attachments/assets/baa9574a-ddff-4da7-b969-25ef413079e8" />
+
 
 ### Caso de uso mais importante do sistema
 - UC3: Realizar Quiz
@@ -182,22 +183,26 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 
 # **Diagramas de Sequência**
 
-## **UC1 - Editar Perfil**
+## **UC1 - Assistir Aula**
 
-<img width="651" height="871" alt="image" src="https://github.com/user-attachments/assets/ed5a359f-5116-4f5b-972c-75f20e6ba440" />
+<img width="778" height="969" alt="image" src="https://github.com/user-attachments/assets/838c9f16-ad52-4ad2-bdd3-e882c0e11374" />
 
 
-## **UC2 - Cadastrar usuário**
 
-<img width="709" height="771" alt="image" src="https://github.com/user-attachments/assets/f38d119b-49a7-4d4b-b84a-56c6c0872d6c" />
+## **UC2 - Cadastrar Usuário**
 
-## **UC3 - Iniciar e Completar uma Lição**
+<img width="1214" height="852" alt="image" src="https://github.com/user-attachments/assets/aaae7b8d-4f13-481c-af77-4804f27a4f57" />
 
-<img width="978" height="1544" alt="image" src="https://github.com/user-attachments/assets/f9e804d1-c47d-4868-972e-08d63a73960f" />
+
+## **UC3 - Realizar Quiz**
+
+<img width="960" height="1085" alt="image" src="https://github.com/user-attachments/assets/7e86698e-cb9c-426b-a7c0-162bd42270ca" />
+
 
 ## **UC4 - Realizar Login**
 
-<img width="822" height="867" alt="image" src="https://github.com/user-attachments/assets/f79a117b-b438-40ea-9355-adef32184aa2" />
+<img width="1169" height="646" alt="image" src="https://github.com/user-attachments/assets/d5c4f5af-0ebe-47cc-9314-39d90c2d6739" />
+
 
 # **Modelagem**
 
