@@ -14,11 +14,4 @@ class Quiz(Document):
     pergunta3 = StringField()
     respostas3 = DictField()
     gif3 = StringField()
-
-    pergunta4 = StringField()
-    respostas4 = DictField()
-    gif4 = StringField()
-
-    meta = {
-        'collection': 'quiz'  # nome da collection no MongoDB
-    }
+    
