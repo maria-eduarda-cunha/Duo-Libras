@@ -1,17 +1,18 @@
 <section id="quiz">
-  <!-- Botão de voltar -->
-  <button class="back-button" routerLink="../">
-    <mat-icon fontIcon="arrow_back_ios"></mat-icon>
-  </button>
+  <div class="header">
+    <button class="back-button" routerLink="../">
+      <mat-icon fontIcon="arrow_back_ios"></mat-icon>
+    </button>
+    <p class="module-title">{{ moduloSelecionado | titlecase }}</p>
+  </div>
 
   <div class="content">
-    <!-- Título -->
-    <p class="module-title">Quiz</p>
+    <p class="section-title">Quiz</p>
 
     <div class="quiz-container">
       <!-- Imagem e instrução -->
       <div class="question-area">
-        <img src="assets/exemplo1.png" alt="símbolo" class="question-image">
+        <img src="assets/gif-avo.gif" alt="símbolo" class="question-image">
 
         <h2 class="question-title">
           Selecione a palavra correta de acordo com o símbolo acima:

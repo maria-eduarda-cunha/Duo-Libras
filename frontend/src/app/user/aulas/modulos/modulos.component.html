@@ -1,10 +1,12 @@
 <section id="modulos">
-  <button class="back-button" routerLink="/user/home">
-    <mat-icon fontIcon="arrow_back_ios"></mat-icon>
-  </button>
+  <div class="header">
+    <button class="back-button" routerLink="/user/home">
+      <mat-icon fontIcon="arrow_back_ios"></mat-icon>
+    </button>
+    <p class="module-title">{{ moduloSelecionado }}</p>
+  </div>
 
   <div class="content">
-    <p class="module-title">{{ moduloSelecionado }}</p>
 
     <div class="cards-container">
       <!-- Aula -->

@@ -6,7 +6,7 @@ html, body {
 }
 
 #quiz {
-  height: 87vh;
+  min-height: 100vh;
   background-color: #d6e9ff;
   display: flex;
   flex-direction: column;
@@ -37,10 +37,22 @@ html, body {
   align-items: center;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+}
+
 .module-title {
   font-size: 2.5rem;
+  font-family: 'Lato', sans-serif;
   font-weight: bold;
-  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  margin: 10px;
   color: #004AAD;
 }
 
@@ -60,12 +72,11 @@ html, body {
 }
 
 .question-image {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 1rem;
-  width: 180px;
-  height: auto;
-  object-fit: contain;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
 }
 
 .question-title {
