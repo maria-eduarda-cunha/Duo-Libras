@@ -1,10 +1,13 @@
 <section id="aulas">
-  <button class="back-button" routerLink="../">
-    <mat-icon fontIcon="arrow_back_ios"></mat-icon>
-  </button>
+  <div class="header">
+    <button class="back-button" routerLink="../">
+      <mat-icon fontIcon="arrow_back_ios"></mat-icon>
+    </button>
+    <p class="module-title">{{ moduloSelecionado | titlecase }}</p>
+  </div>
 
   <div class="content">
-    <p class="module-title">{{ moduloSelecionado | titlecase }}</p>
+    <p class="section-title">Aula</p>
 
     <video class="video-aula"
       *ngIf="videoSrc"
