@@ -3,9 +3,9 @@ import bcrypt
 from utils.crypto import decrypt
 
 class Member(Document):
-    first_name = StringField(unique=True)
+    first_name = StringField()
     last_name = StringField()
-    email = StringField()
+    email = StringField(unique=True)
     password = StringField()
 
     # Criar Perfil
