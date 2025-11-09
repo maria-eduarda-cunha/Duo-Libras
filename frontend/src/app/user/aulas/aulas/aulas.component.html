@@ -1,21 +1,16 @@
 <section id="aulas">
-  <main>
-    <!-- GIF do nível -->
-    <div class="gif-container">
-      <!-- <img [src]="'assets/gifs/gif-' + nivelId + '.gif'" alt="Animação do nível" /> -->
-    </div>
+  <!-- Botão de voltar -->
+  <button class="back-button" routerLink="../">
+    <mat-icon fontIcon="arrow_back_ios"></mat-icon>
+  </button>
 
-    <!-- Botões de resposta -->
-    <div class="options">
-      <button *ngFor="let opcao of opcoes" (click)="verificarResposta(opcao)">
-        {{ opcao.texto }}
-      </button>
-    </div>
-  </main>
+  <!-- Corpo principal da aula -->
+  <section class="corpo">
+    <h2 class="titulo">{{ aulaSelecionada?.titulo }}</h2>
 
-  <div class="feedback" *ngIf="respostaCorreta !== null">
-    <p [class.correto]="respostaCorreta" [class.errado]="!respostaCorreta">
-      {{ respostaCorreta ? '✅ Resposta correta!' : '❌ Resposta errada!' }}
-    </p>
-  </div>
+    <img 
+      [src]="aulaSelecionada?.imagem" 
+      alt="{{ aulaSelecionada?.titulo }}" 
+    />
+  </section>
 </section>

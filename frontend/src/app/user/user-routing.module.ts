@@ -12,6 +12,7 @@ const routes: Routes = [{
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'modulos/:moduloSelecionado', component: ModulosComponent },{ path: 'aulas', loadChildren: () => import('./aulas/aulas.module').then(m => m.AulasModule) },
+    { path: ':aulaSelecionada', component: AulasComponent }
   ]
 }];
 
