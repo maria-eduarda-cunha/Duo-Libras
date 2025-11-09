@@ -43,6 +43,10 @@ body {
   margin-bottom: 32px;
 }
 
-.content .video-aula{
-  width: 55%;
+.video-aula{
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
 }
