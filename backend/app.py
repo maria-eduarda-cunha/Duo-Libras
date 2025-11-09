@@ -54,10 +54,10 @@ create_root_user()
 
 # Importar blueprints depois da conexão
 from controllers.member import member_bp
-from controllers.aula import aula_bp
+from controllers.quiz import quiz_bp
 
 app.register_blueprint(member_bp, url_prefix="/member")
-app.register_blueprint(aula_bp, url_prefix="/aulas")
+app.register_blueprint(quiz_bp, url_prefix="/quiz")
 
 
 @app.route("/")
