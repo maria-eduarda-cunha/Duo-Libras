@@ -242,35 +242,40 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 
 # Prototipo
 **Tela de login**
-<img width="2400" height="1884" alt="image" src="https://github.com/user-attachments/assets/450870a7-4b90-4cff-bfaf-330fc27ddf6b" />
+<img width="1867" height="964" alt="image" src="https://github.com/user-attachments/assets/ca0ffb97-c132-461b-a4c7-253f4221ab92" />
+
+**Tela de Cadastro**
+<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/b10da013-5fcd-4b33-955d-298946d8866a" />
 
 **Home**
-<img width="2400" height="1884" alt="image" src="https://github.com/user-attachments/assets/03b57fc3-264a-486d-8317-47afc11df7e0" />
+<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/c000f738-1087-4d54-9428-6878673da5c7" />
 
-**Tela dentro de um módulo**
-<img width="2400" height="2150" alt="image" src="https://github.com/user-attachments/assets/8b705e35-8aed-40de-a817-aa37de1de10e" />
+**Módulo Alfabeto**
+<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/8fe776f6-bc77-483d-ac43-2b5f5b6dcdca" />
 
-**Nível - símbolo para palavra**
-| Sem selecionar | Com opção selecionada |
-|--|--|
-| <img width="2400" height="1966" alt="image" src="https://github.com/user-attachments/assets/6f420d4c-e72a-4a0a-ad70-853ea19647d5" /> | <img width="2400" height="1966" alt="image" src="https://github.com/user-attachments/assets/2feb84d1-7a8c-44a0-8ac9-db0bd97f6d04" /> |
+**Aula Alfabeto**
+<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/99ca98bf-385e-4bb5-b7e5-bb34515c7871" />
 
-**Nível - palavra para símbolo**
-<img width="2400" height="2032" alt="image" src="https://github.com/user-attachments/assets/f84e4034-4788-4aeb-9526-2b2f069fbd00" />
+**Quiz Alfabeto**
 
-**Nível - frase para símbolo**
-<img width="2400" height="2032" alt="image" src="https://github.com/user-attachments/assets/63e439fb-4d80-42ad-9b7f-865b963bc0af" />
+**Módulo Saudações**
+<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/347fc26b-02c8-44bf-b20e-285b66e9791d" />
 
-**Nível - combinando pares**
-<img width="2400" height="2124" alt="image" src="https://github.com/user-attachments/assets/beeaa3ad-b33e-40a3-aacd-f53bc514313d" />
+**Aula Saudações**
+<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/65294913-de55-47e0-9339-c7e2f3b2bfcc" />
 
-**Conclusão - Sucesso**
-<img width="2400" height="1808" alt="image" src="https://github.com/user-attachments/assets/14cd87aa-b87d-4b32-a4b5-06ede66df175" />
+**Quiz Saudações**
 
+**Módulo Família**
+<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/4f3b0682-8926-4951-98ef-186fba43eb4b" />
 
-**Conclusão - Falha**
-<img width="2400" height="1808" alt="image" src="https://github.com/user-attachments/assets/ad61c3f8-33f3-4537-b4fd-030460c5f940" />
+**Aula Família**
+<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/7e46f607-3154-4f3b-b88c-0613f9ba5119" />
 
+**Quiz Família**
+
+**Opção de Sair**<br>
+<img width="126" height="144" alt="image" src="https://github.com/user-attachments/assets/68c3e9df-1a50-441c-8e70-4063a62aeac7" />
 
 
 # Fontes
