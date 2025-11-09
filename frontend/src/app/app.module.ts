@@ -12,13 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { JwtInterceptor } from '../_helpers/jwt.interceptor';
-import { CustomHttpInterceptor } from '../_helpers/http.interceptor';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './member/login/login.component';
 import { SignInComponent } from './member/sign-in/sign-in.component';
 import { HomeComponent } from './user/home/home.component';
-import { CommonModule } from '@angular/common';
 import { ModulosComponent } from './user/aulas/modulos/modulos.component';
 import { UserComponent } from './user/user/user.component';
 import { AulasComponent } from './user/aulas/aulas/aulas.component';
@@ -34,7 +31,7 @@ import { QuizComponent } from './user/aulas/quiz/quiz.component';
     ModulosComponent,
     UserComponent,
     AulasComponent,
-    QuizComponent
+    QuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,8 +50,6 @@ import { QuizComponent } from './user/aulas/quiz/quiz.component';
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass:  CustomHttpInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
