@@ -1,7 +1,11 @@
 from flask import Blueprint, jsonify, request
-from models.quiz import Quiz  # seu modelo no MongoDB
+from models.quiz import Quiz
 
 quiz_bp = Blueprint('quiz_bp', __name__)
+
+@app.route('/')
+def home():
+    return "API Duo Libras funcionando!"
 
 @quiz_bp.route('/quiz/<modulo>', methods=['GET'])
 def get_quiz_by_modulo(modulo):

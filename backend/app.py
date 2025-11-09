@@ -60,9 +60,9 @@ app.register_blueprint(member_bp, url_prefix="/member")
 app.register_blueprint(quiz_bp, url_prefix="/quiz")
 
 
-@app.route("/")
+@app.route('/')
 def home():
-    return {"status": "API funcionando!"}
+    return "API QUIZ funcionando!"
 
 
 if __name__ == "__main__":
