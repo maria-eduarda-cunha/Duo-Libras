@@ -38,7 +38,7 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="677" height="273" alt="image" src="https://github.com/user-attachments/assets/d953c138-feef-48a7-b4fa-9e529e0be940" />
 
 ### Caso de uso mais importante do sistema
-- UC3: Iniciar e Completar uma Lição
+- UC3: Realizar Quiz
 
 ## Especificação do Caso de Uso 1: Assistir aula
 
@@ -79,8 +79,8 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 | **Identificador** | UC2 |
 | **Nome** | Cadastrar Usuário |
 | **Atores** | Aluno |
-| **Sumário** | Aluno realiza o cadastro com e-mail, nome e senha para poder acessar as lições e salvar seu progresso ao longo dos módulos. |
-| **Pré-condição** | Instalar aplicativo, possuir um e-mail válido |
+| **Sumário** | Aluno realiza o cadastro com e-mail, nome e senha para poder acessar o aplicativo. |
+| **Pré-condição** | Ter acesso ao aplicativo, possuir um e-mail válido |
 | **Pós-condição** |  |
 | **Pontos de Inclusão** | |
 | **Pontos de Extensão** | |
@@ -91,41 +91,33 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 | --- | --- |
 | 1. Aluno abre o aplicativo |  |
 |  | 2.Sistema apresenta a tela de boas vindas com campos de login e opção de "Criar Conta" logo abaixo |
-| 3. Aluno toca em "Criar Conta" |  |
-|  | 4. Sistema apresenta a tela de cadastro, com campos "digite seu e-mail", "confirme seu e-mail", "digite sua senha" e "confirme sua senha"|
-| 5. Aluno insere o seu E-mail uma vez em cada campo ("digite seu e-mail" e "confirme seu e-mail") e cria sua senha, inserindo-a uma vez em cada campo ("digite sua senha" e "confirme sua senha") |  |
-|  | 6. Sistema verifica se campos de E-mail e Senha estão em formato correto e conferem entre si |
-|  | 7. Sistema adiciona no banco de dados o cadastro do aluno |
+| 3. Aluno clica em "Criar Conta" |  |
+|  | 4. Sistema apresenta a tela de cadastro, com campos de "Nome", "E-mail", "Senha" e "Confirme a senha" |
+| 5. Aluno preenche os campos |  |
+|  | 6. Sistema adiciona no banco de dados o cadastro do aluno |
 
 ### **Fluxos Alternativos**
 
-| Ações do Ator | Ações do Sistema |
-| --- | --- |
-| 5.1.1 Aluno insere e-mail em formato inválido |  |
-|  | 5.1.2 Sistema Informa que e-mail informado está em formato inválido e solicita reinserção |
-
 
 | Ações do Ator | Ações do Sistema |
 | --- | --- |
-| 5.2.1 Aluno insere e-mails diferentes em campos "digite seu e-mail" e "confirme seu e-mail" |  |
-|  | 5.2.2 Sistema verifica que "digite seu e-mail" e "confirme seu e-mail" não conferem |
-|  | 5.2.3 Sistema Informa que campos de e-mail não conferem e solicita reinserção |
+| 5.1.1 Aluno não insere o "Nome" com o padrão Nome e Sobrenome |  |
+|  | 5.1.2 Sistema verifica que está fora do padrão, informa o erro e solicita a correção |
 
 
 | Ações do Ator | Ações do Sistema |
 | --- | --- |
-| 5.3.1 Aluno insere e-mails diferentes em campos "digite sua senha" e "confirme sua senha" |  |
-|  | 5.2.2 Sistema verifica que "digite sua senha" e "confirme sua senha" não conferem |
-|  | 5.2.3 Sistema Informa que campos de senha não conferem e solicita reinserção |
+| 5.2.1 Aluno insere senhas diferentes em campos "Senha" e "Confirme a senha" |  |
+|  | 5.2.3 Sistema identifica o erro, informa que campos de senha não conferem e solicita a correção |
 
-## Especificação do Caso de Uso 3: Iniciar e Completar uma Lição
+## Especificação do Caso de Uso 3: Realizar Quiz
 
 | **Identificador** | UC3           |
 |-------------------|----------------|
-| **Nome**          | Iniciar e Completar uma Lição |
+| **Nome**          | Realizar Quiz |
 | **Atores**        | Aluno       |
-| **Sumário**        | Aluno acessa a página de módulos. Nessa página, o Aluno acessa os módulos disponíveis para serem estudados e pode escolher qual deseja aprender no momento. Ao escolher um módulo, ele deve selecionar a lição em que parou, ou, caso esteja iniciando um módulo, deve selecionar a lição inicial. Após iniciar a lição, ele terá 5 vidas, que serão perdidas a cada erro cometido. Para recarregá-las, o Aluno terá que pagar moedas. Ao chegar ao exercício final e completá-lo, a lição será finalizada e uma nova lição será desbloqueada. |
-| **Pré-condição**        | O Aluno deve estar logado.     |
+| **Sumário**        | Aluno acessa a página de módulos. Nessa página, o Aluno seleciona o quiz desse módulo, que é exibido após todas as aulas |
+| **Pré-condição**        | O Aluno deve estar logado. |
 | **Pós-condição**        |        |
 | **Pontos de Inclusão**        |   Realizar Login (UC4)  |
 | **Pontos de Extensão**        |         |
@@ -134,37 +126,24 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 
 |**Ações do Ator** | **Ações do Sistema** |
 |------------------|----------------------|
-|1. Aluno aperta o botão "Ver Módulos". | |
-|                  |2. Sistema apresenta a tela de Módulos. |
-|3. Aluno seleciona o módulo que deseja aprender. | |
-|                  |4. Sistema busca o progresso do Aluno para ver quais lições ele já pode acessar e apresenta o módulo para o Aluno. |
-|5. Aluno seleciona a lição que deseja aprender. | |
-|                  |6. Sistema apresenta a tela da lição, apresentando os exercícios a serem feitos.  |
-|7. Aluno completa a lição sem perder as vidas. | |
-|                  |8. Sistema registra o progresso do Aluno e desbloqueia novas lições. Fim do caso de uso. |
+|1. Aluno aperta o card do módulo desejado. | |
+|                  |2. Sistema apresenta a tela deste módulo. |
+|3. Aluno seleciona o quiz. | |
+|                  |4. Sistema exibe a tela com a pergunta e opções de resposta. |
+|5. Aluno analisa o gif e seleciona a resposta referente ao símbolo exibido. | |
+|                  |6. Sistema valida a resposta e exibe um feedback do acerto.  |
 
 ## Fluxos Alternativos
 
 | **Ações do Ator** | **Ações do Sistema** |
 |------------------|----------------------|
-|7.1.1 Aluno perde as vidas disponíveis. | |
-| | 7.1.2 Sistema pergunta se o Aluno deseja pagar moedas para recarregar as vidas. |
-|7.1.3 Aluno paga moedas. | |
-| | 7.1.4 Sistema recarrega as vidas do Aluno. |
-| 7.1.5 Aluno conclui a lição. | |
+| | 6.1.1 Sistema identifica que a reposta do usuário está incorreta. |
+| | 6.1.2 Sistema exibe feedback de erro e solicita que o Aluno responda novamente. |
 
 | **Ações do Ator** | **Ações do Sistema** |
 |------------------|----------------------|
-|7.2.1 Aluno perde as vidas disponíveis. | |
-| | 7.2.2 Sistema pergunta se o Aluno deseja pagar moedas para recarregar as vidas. |
-|7.2.3 Aluno opta por não pagar moedas. | |
-| | 7.2.4 Sistema informa que o Aluno deverá esperar por alguns minutos para que suas vidas sejam recarregadas e faz com que ele retorne para a Página de Módulos. |
-
-| **Ações do Ator** | **Ações do Sistema** |
-|------------------|----------------------|
-|7.3.1 Aluno sai da lição antes de completá-la. | |
-| | 7.3.2 Sistema pergunta se o Aluno deseja realmente sair. |
-|7.3.3 Aluno confirma e volta para a Página de Módulos. | |
+|5.1.1 Aluno sai do quiz antes de completá-la. | |
+| | 5.1.2 Sistema exibe a página do módulo do quiz. |
 
 ## **Especificação do Caso de Uso 4: Realizar Login**
 
@@ -193,14 +172,9 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 
 | Ações do Ator | Ações do Sistema |
 | --- | --- |
-| 3.1.1 Aluno digita e-mail não cadastrado |  |
-|  | 3.1.2 Sistema informa que e-mail não foi encontrado e pede reinserção, também sugere aluno cadastrar caso não esteja |
+| 3.1.1 Aluno tenta realizar login sem preencher um dos campos ou ambos |  |
+|  | 3.1.2 Sistema informa os campos obrigatórios |
 
-
-| Ações do Ator | Ações do Sistema |
-| --- | --- |
-| 3.2.1 Aluno digita e-mail cadastrado, mas Fernet de senha armazenado no banco e lido não conferem |  |
-|  | 3.2.2 Sistema informa que senha é inválida e pede reinserção |
 
 ### **Diagrama de classe de domínio**
 <img width="727" height="422" alt="image" src="https://github.com/user-attachments/assets/3b417d83-e11d-4610-8445-5f59e5c074c5" />
