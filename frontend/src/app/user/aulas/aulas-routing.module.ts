@@ -4,14 +4,12 @@ import { ModulosComponent } from './modulos/modulos.component';
 import { AulasComponent } from './aulas/aulas.component';
 import { QuizComponent } from './quiz/quiz.component';
 
-const routes: Routes = [{
-  path: 'modulos/:moduloSelecionado',
-    component: ModulosComponent,
-    children: [
-      { path: 'pergunta/:id', component: AulasComponent },
-      { path: 'quiz/:id', component: QuizComponent },
-  ]
-}];
+const routes: Routes = [
+  { path: ':moduloSelecionado', component: ModulosComponent },
+  { path: ':moduloSelecionado/aula', component: AulasComponent },
+  { path: ':moduloSelecionado/quiz', component: QuizComponent },
+];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

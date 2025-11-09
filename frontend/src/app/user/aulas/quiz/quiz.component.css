@@ -6,7 +6,7 @@ html, body {
 }
 
 #quiz {
-  min-height: 100vh;
+  height: 87vh;
   background-color: #d6e9ff;
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 #home {
-    min-height: 100vh;
+    height: 87vh;
     background-color: #d6e9ff;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@
     align-items: center;
     padding: 96px;
     padding-bottom: 0px;
-    padding-top: 64px;
+    padding-top: 25vh;
     box-sizing: border-box;
 }
 
@@ -38,15 +38,15 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 
 .module-icon{
     color:#004AAD; 
-    font-size: 60px; 
-    width: 60px; 
-    height: 60px
+    font-size: 100px; 
+    width: 100px; 
+    height: 100px
 }
 
 .module img {

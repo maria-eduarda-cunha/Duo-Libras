@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class QuizComponent {
   
+  selecionarOpcao(opcao: any){
+
+  }
+
+   verificarResposta(){
+
+  }
 }
