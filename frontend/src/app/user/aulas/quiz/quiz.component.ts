@@ -21,7 +21,7 @@ export class QuizComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.moduloSelecionado = this.route.snapshot.paramMap.get('modulo')?.toLowerCase() || '';
+    this.moduloSelecionado = this.route.snapshot.paramMap.get('moduloSelecionado') || '';
     this.carregarQuiz();
   }
 
