@@ -330,7 +330,6 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/7e46f607-3154-4f3b-b88c-0613f9ba5119" />
 
 **Quiz Família**
-<img width="1339" height="579" alt="image" src="https://github.com/user-attachments/assets/b0b7debf-fe46-4804-ad9b-37e9f80e4868" />
 
 **Primeira Pergunta**
 <img width="1337" height="581" alt="image" src="https://github.com/user-attachments/assets/b22f8676-4f41-40d6-b8c6-865a63d8cab7" />
