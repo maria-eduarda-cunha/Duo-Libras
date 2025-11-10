@@ -241,8 +241,11 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 **Tela de login**
 <img width="1867" height="964" alt="image" src="https://github.com/user-attachments/assets/ca0ffb97-c132-461b-a4c7-253f4221ab92" />
 
-**Tela de Cadastro**
+**Tela de Login**
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/b10da013-5fcd-4b33-955d-298946d8866a" />
+
+**Tela de Cadastro**
+<img width="1332" height="568" alt="image" src="https://github.com/user-attachments/assets/bb997f8b-dee9-4761-ab05-796829072991" />
 
 **Home**
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/c000f738-1087-4d54-9428-6878673da5c7" />
@@ -251,7 +254,7 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/8fe776f6-bc77-483d-ac43-2b5f5b6dcdca" />
 
 **Aula Alfabeto**
-<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/99ca98bf-385e-4bb5-b7e5-bb34515c7871" />
+<img width="1360" height="588" alt="image" src="https://github.com/user-attachments/assets/c2fb686d-72a4-473c-b0c8-c3377e772c6a" />
 
 **Quiz Alfabeto**
 
@@ -289,7 +292,7 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/347fc26b-02c8-44bf-b20e-285b66e9791d" />
 
 **Aula Saudações**
-<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/65294913-de55-47e0-9339-c7e2f3b2bfcc" />
+<img width="1347" height="589" alt="image" src="https://github.com/user-attachments/assets/3d56ff80-24bc-423a-8fe6-c18c533f5be7" />
 
 **Quiz Saudações**
 
@@ -327,7 +330,7 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/4f3b0682-8926-4951-98ef-186fba43eb4b" />
 
 **Aula Família**
-<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/7e46f607-3154-4f3b-b88c-0613f9ba5119" />
+<img width="1358" height="591" alt="image" src="https://github.com/user-attachments/assets/825a8dc7-cb9e-4f81-b073-550a3fad4470" />
 
 **Quiz Família**
 
