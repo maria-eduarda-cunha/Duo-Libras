@@ -27,6 +27,11 @@
         </button>
       </div>
 
+      <div class="feedback" *ngIf="respostaCorreta !== null">
+        <p *ngIf="respostaCorreta" class="correct-text">✅ Você acertou!</p>
+        <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
+      </div>
+
       <button
         class="verify-button"
         (click)="proximaPergunta()"
