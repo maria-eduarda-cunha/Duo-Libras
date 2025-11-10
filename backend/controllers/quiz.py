@@ -3,7 +3,7 @@ from models.quiz import Quiz
 
 quiz_bp = Blueprint('quiz_bp', __name__)
 
-@quiz_bp.route('/quiz/<modulo>', methods=['GET'])
+@quiz_bp.route('/<modulo>', methods=['GET'])
 def get_quiz_by_modulo(modulo):
     print(modulo)
     quiz = Quiz.objects(modulo=modulo).first()
