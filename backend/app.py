@@ -4,7 +4,7 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 from mongoengine import connect
 import config
-import models  # importa os modelos
+import models
 from utils.crypto import encrypt, decrypt
 
 load_dotenv()
