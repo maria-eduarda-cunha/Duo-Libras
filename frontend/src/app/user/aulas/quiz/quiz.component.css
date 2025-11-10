@@ -88,6 +88,8 @@ html, body {
 .options {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   align-items: center;
 }

@@ -1,5 +1,5 @@
 #home {
-    height: 87vh;
+    min-height: 87vh;
     background-color: #d6e9ff;
     display: flex;
     flex-direction: column;
@@ -15,12 +15,13 @@
 .modules-row {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    flex-wrap: wrap;
+    width: 100vw;
+    min-height: 86vh;
     justify-content: space-between;
     align-items: center;
-    padding: 96px;
+    padding: 9vh;
     padding-bottom: 0px;
-    padding-top: 25vh;
     box-sizing: border-box;
 }
 
@@ -76,6 +77,8 @@
     justify-content: center;
     text-align: center;
     transition: transform 0.2s ease;
+    flex-wrap: wrap;
+    padding: 3vw 0vw;
 }
 
 .module:hover {
