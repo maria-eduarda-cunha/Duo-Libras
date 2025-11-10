@@ -241,9 +241,6 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 **Tela de login**
 <img width="1867" height="964" alt="image" src="https://github.com/user-attachments/assets/ca0ffb97-c132-461b-a4c7-253f4221ab92" />
 
-**Tela de Login**
-<img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/b10da013-5fcd-4b33-955d-298946d8866a" />
-
 **Tela de Cadastro**
 <img width="1332" height="568" alt="image" src="https://github.com/user-attachments/assets/bb997f8b-dee9-4761-ab05-796829072991" />
 
