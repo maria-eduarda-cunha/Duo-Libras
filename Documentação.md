@@ -257,6 +257,7 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/99ca98bf-385e-4bb5-b7e5-bb34515c7871" />
 
 **Quiz Alfabeto**
+<img width="1349" height="595" alt="image" src="https://github.com/user-attachments/assets/3934ebae-8ae7-4b51-a293-208ca421b9e9" />
 
 **Módulo Saudações**
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/347fc26b-02c8-44bf-b20e-285b66e9791d" />
@@ -265,6 +266,8 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/65294913-de55-47e0-9339-c7e2f3b2bfcc" />
 
 **Quiz Saudações**
+<img width="1347" height="595" alt="image" src="https://github.com/user-attachments/assets/2cded34e-d0fb-4152-8a7c-38f839aa0b87" />
+
 
 **Módulo Família**
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/4f3b0682-8926-4951-98ef-186fba43eb4b" />
@@ -273,6 +276,7 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/7e46f607-3154-4f3b-b88c-0613f9ba5119" />
 
 **Quiz Família**
+<img width="1339" height="579" alt="image" src="https://github.com/user-attachments/assets/b0b7debf-fe46-4804-ad9b-37e9f80e4868" />
 
 **Opção de Sair**<br>
 <img width="126" height="144" alt="image" src="https://github.com/user-attachments/assets/68c3e9df-1a50-441c-8e70-4063a62aeac7" />
