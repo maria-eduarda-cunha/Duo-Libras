@@ -14,6 +14,9 @@ export class QuizComponent implements OnInit {
   perguntaAtual = 0;
   opcaoSelecionada: string | null = null;
   respostaCorreta: boolean | null = null;
+  textoBotao: string = 'Próxima';
+  fimQuiz: boolean = false;
+  pontuacao: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -59,6 +62,17 @@ export class QuizComponent implements OnInit {
   selecionarOpcao(resposta: any) {
     this.opcaoSelecionada = resposta.texto;
     this.respostaCorreta = resposta.correta;
+
+    if (this.respostaCorreta) {
+      this.pontuacao++;
+    }
+
+    // Atualiza texto do botão
+    if (this.perguntaAtual === this.perguntas.length - 1) {
+      this.textoBotao = 'Concluir';
+    } else {
+      this.textoBotao = 'Próxima';
+    }
   }
 
   proximaPergunta() {
@@ -67,13 +81,7 @@ export class QuizComponent implements OnInit {
       this.respostaCorreta = null;
       this.opcaoSelecionada = null;
     } else {
-      // Última pergunta -> fim do quiz
-      this.finalizarQuiz();
+      this.fimQuiz = true;
     }
-  }
-
-  finalizarQuiz() {
-    alert('🎉 Parabéns! Você completou o quiz!');
-    // this.router.navigate(['/user/modulos']);
   }
 }

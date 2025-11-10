@@ -6,7 +6,7 @@
     <p class="module-title">{{ moduloSelecionado | titlecase }}</p>
   </div>
 
-  <div class="content">
+  <div class="content" *ngIf="!fimQuiz">
     <p class="section-title">Quiz</p>
 
     <div class="quiz-container" *ngIf="perguntas[perguntaAtual] as atual">
@@ -32,12 +32,26 @@
         <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
       </div>
 
-      <button
-        class="verify-button"
+      <button class="verify-button"
         (click)="proximaPergunta()"
         *ngIf="respostaCorreta !== null"
       >
-        Próxima
+        {{ textoBotao }}
+      </button>
+    </div>
+  </div>
+
+  <div class="content" *ngIf="fimQuiz">
+    <p class="section-title">Quiz</p>
+
+    <div class="quiz-container" *ngIf="perguntas[perguntaAtual] as atual">
+      <div class="question-area">
+        <h2 class="question-title">🎉 Parabéns! 🎉</h2>
+        <h2 class="question-title">Você completou o quiz!</h2>
+      </div>
+
+      <button class="verify-button" routerLink="/user/home">
+        Voltar para tela inicial
       </button>
     </div>
   </div>

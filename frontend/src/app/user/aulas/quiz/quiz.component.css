@@ -134,7 +134,7 @@ html, body {
   padding: 10px 24px;
   border: none;
   border-radius: 8px;
-  background-color: #007bff;
+  background-color: #004AAD;
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -142,6 +142,6 @@ html, body {
 }
 
 .verify-button:hover {
-  background-color: #0056b3;
+  background-color: #004AAD;
 }
 
