@@ -11,4 +11,6 @@ Turma 06N
 
 - Rodrigo Nascimento Tomaz - 10418449
 
+Link da aplicação: https://duo-libras.vercel.app
+
 Repositório GitLab: https://gitlab.com/GuiRodrr/club-penguins
