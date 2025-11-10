@@ -41,6 +41,8 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 ### Caso de uso mais importante do sistema
 - UC3: Realizar Quiz
 
+<img width="272" height="139" alt="image" src="https://github.com/user-attachments/assets/3d4a8e37-1d21-41e4-808d-a6a0b39f62bd" />
+
 ## Especificação do Caso de Uso 1: Assistir aula
 
 | **Identificador** | UC1           |
@@ -185,24 +187,19 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 
 ## **UC1 - Assistir Aula**
 
-<img width="778" height="969" alt="image" src="https://github.com/user-attachments/assets/838c9f16-ad52-4ad2-bdd3-e882c0e11374" />
-
-
+<img width="778" height="969" alt="image" src="https://github.com/user-attachments/assets/74105173-a526-4ad9-98f6-1dc6d71f2b7c" />
 
 ## **UC2 - Cadastrar Usuário**
 
-<img width="1214" height="852" alt="image" src="https://github.com/user-attachments/assets/aaae7b8d-4f13-481c-af77-4804f27a4f57" />
-
+<img width="1214" height="852" alt="image" src="https://github.com/user-attachments/assets/bf6d4f65-0256-4e38-a2af-86aa98acf184" />
 
 ## **UC3 - Realizar Quiz**
 
-<img width="960" height="1085" alt="image" src="https://github.com/user-attachments/assets/7e86698e-cb9c-426b-a7c0-162bd42270ca" />
-
+<img width="960" height="1085" alt="image" src="https://github.com/user-attachments/assets/6f4ebdea-e28f-486d-8784-476b045cb423" />
 
 ## **UC4 - Realizar Login**
 
-<img width="1169" height="646" alt="image" src="https://github.com/user-attachments/assets/d5c4f5af-0ebe-47cc-9314-39d90c2d6739" />
-
+<img width="1169" height="646" alt="image" src="https://github.com/user-attachments/assets/4723bfbc-1129-48e3-97e1-0914e329a18c" />
 
 # **Modelagem**
 
@@ -257,7 +254,36 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/99ca98bf-385e-4bb5-b7e5-bb34515c7871" />
 
 **Quiz Alfabeto**
+
+**Primeira Pergunta**
 <img width="1349" height="595" alt="image" src="https://github.com/user-attachments/assets/3934ebae-8ae7-4b51-a293-208ca421b9e9" />
+
+**Resposta Correta**
+<img width="1341" height="587" alt="image" src="https://github.com/user-attachments/assets/f96e36a2-66df-4636-bd83-42b67067c9a6" />
+
+**Resposta Incorreta**
+<img width="1305" height="580" alt="image" src="https://github.com/user-attachments/assets/2a22772d-d7a5-4d10-acbd-58fc2dcb6f04" />
+
+**Segunda Pergunta**
+<img width="1340" height="586" alt="image" src="https://github.com/user-attachments/assets/1d305095-8f15-4b42-8156-754dd91dfc28" />
+
+**Resposta Correta**
+<img width="1341" height="584" alt="image" src="https://github.com/user-attachments/assets/0a4bf82c-3494-4189-86cd-ba62730b80f7" />
+
+**Resposta Incorreta**
+<img width="1335" height="588" alt="image" src="https://github.com/user-attachments/assets/083fe9d3-c8f2-4278-9ab4-b5d2f59bec7a" />
+
+**Terceira Pergunta**
+<img width="1323" height="587" alt="image" src="https://github.com/user-attachments/assets/0ce0cdb3-d6a1-41da-acd9-8d32df58488e" />
+
+**Resposta Correta**
+<img width="1337" height="591" alt="image" src="https://github.com/user-attachments/assets/c0cefb72-9bd2-45f9-965a-944442ecefa0" />
+
+**Resposta Incorreta**
+<img width="1322" height="596" alt="image" src="https://github.com/user-attachments/assets/35bf34a1-9a00-4611-b0c3-b6576d8811e5" />
+
+**Tela Conclusão**
+<img width="1346" height="589" alt="image" src="https://github.com/user-attachments/assets/aff5131b-4efc-4aaf-a74f-12849d970a75" />
 
 **Módulo Saudações**
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/347fc26b-02c8-44bf-b20e-285b66e9791d" />
@@ -266,8 +292,36 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/65294913-de55-47e0-9339-c7e2f3b2bfcc" />
 
 **Quiz Saudações**
-<img width="1347" height="595" alt="image" src="https://github.com/user-attachments/assets/2cded34e-d0fb-4152-8a7c-38f839aa0b87" />
 
+**Primeira Pergunta**
+<img width="1347" height="585" alt="image" src="https://github.com/user-attachments/assets/e4402501-4484-4ea3-88e8-bc7c21e7983e" />
+
+**Resposta Correta**
+<img width="1326" height="587" alt="image" src="https://github.com/user-attachments/assets/e7214a29-b082-41d2-8381-909cc151d9f7" />
+
+**Resposta Incorreta**
+<img width="1317" height="585" alt="image" src="https://github.com/user-attachments/assets/4520ec75-69ed-4864-a0f9-9eb8c94f311b" />
+
+**Segunda Pergunta**
+<img width="1344" height="590" alt="image" src="https://github.com/user-attachments/assets/30d1bb8e-946c-41c6-a778-8f437f0958f7" />
+
+**Resposta Correta**
+<img width="1334" height="592" alt="image" src="https://github.com/user-attachments/assets/1b1cdf95-ee35-489f-b85b-79b4c0731d14" />
+
+**Resposta Incorreta**
+<img width="1337" height="583" alt="image" src="https://github.com/user-attachments/assets/5d24fe86-2c13-48af-ad43-c5ff5d4a3c4f" />
+
+**Terceira Pergunta**
+<img width="1334" height="585" alt="image" src="https://github.com/user-attachments/assets/9ea69e40-cd81-4a8b-93e1-b74155a55d58" />
+
+**Resposta Correta**
+<img width="1337" height="584" alt="image" src="https://github.com/user-attachments/assets/b8a864b9-8c6e-48a8-b66f-a10e2ee1233f" />
+
+**Resposta Incorreta**
+<img width="1304" height="589" alt="image" src="https://github.com/user-attachments/assets/8e3ce6d4-3ab0-4e91-b8e3-9c690721e639" />
+
+**Tela de Conclusão**
+<img width="1338" height="593" alt="image" src="https://github.com/user-attachments/assets/8a4abad2-2699-41b4-9277-a771b46a955b" />
 
 **Módulo Família**
 <img width="1852" height="950" alt="image" src="https://github.com/user-attachments/assets/4f3b0682-8926-4951-98ef-186fba43eb4b" />
@@ -277,6 +331,36 @@ https://gitlab.com/GuiRodrr/club-penguins/-/blob/main/useCaseDiagram.md
 
 **Quiz Família**
 <img width="1339" height="579" alt="image" src="https://github.com/user-attachments/assets/b0b7debf-fe46-4804-ad9b-37e9f80e4868" />
+
+**Primeira Pergunta**
+<img width="1337" height="581" alt="image" src="https://github.com/user-attachments/assets/b22f8676-4f41-40d6-b8c6-865a63d8cab7" />
+
+**Resposta Correta**
+<img width="1336" height="582" alt="image" src="https://github.com/user-attachments/assets/a2e878a1-2c00-449b-b37b-0df0e82430e4" />
+
+**Resposta Incorreta**
+<img width="1336" height="581" alt="image" src="https://github.com/user-attachments/assets/2027732c-38ea-45e5-a99f-49b561bbfad6" />
+
+**Segunda Pergunta**
+<img width="1337" height="584" alt="image" src="https://github.com/user-attachments/assets/ec77f3bc-60ac-46c8-9043-b9ff2ef7a873" />
+
+**Resposta Correta**
+<img width="1333" height="587" alt="image" src="https://github.com/user-attachments/assets/81fe4d6b-71d6-41a1-bd84-5d09e7d946fa" />
+
+**Resposta Incorreta**
+<img width="1338" height="580" alt="image" src="https://github.com/user-attachments/assets/a91a0c3d-4ae4-4da5-aed6-bdd1077ba445" />
+
+**Terceira Pergunta**
+<img width="1336" height="591" alt="image" src="https://github.com/user-attachments/assets/49fd95e9-fb36-4045-aae9-c52517a7b5aa" />
+
+**Resposta Correta**
+<img width="1340" height="586" alt="image" src="https://github.com/user-attachments/assets/791273c9-b92e-41da-ac60-35e42cd59e12" />
+
+**Resposta Incorreta**
+<img width="1340" height="584" alt="image" src="https://github.com/user-attachments/assets/96944c35-d7ae-405d-8967-0656a52f90a3" />
+
+**Tela de Conclusão**
+<img width="1341" height="593" alt="image" src="https://github.com/user-attachments/assets/106c893b-c055-47d6-98f6-2c88ede53614" />
 
 **Opção de Sair**<br>
 <img width="126" height="144" alt="image" src="https://github.com/user-attachments/assets/68c3e9df-1a50-441c-8e70-4063a62aeac7" />
