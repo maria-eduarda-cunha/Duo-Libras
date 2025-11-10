@@ -66,6 +66,14 @@ export class QuizComponent implements OnInit {
       this.perguntaAtual++;
       this.respostaCorreta = null;
       this.opcaoSelecionada = null;
+    } else {
+      // Última pergunta -> fim do quiz
+      this.finalizarQuiz();
     }
+  }
+
+  finalizarQuiz() {
+    alert('🎉 Parabéns! Você completou o quiz!');
+    // this.router.navigate(['/user/modulos']);
   }
 }

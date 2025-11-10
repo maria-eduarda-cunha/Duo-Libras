@@ -108,26 +108,40 @@ html, body {
   transition: 0.3s;
 }
 
-.option:hover {
+.option:focus {
   background-color: #004AAD;
   color: white;
+}
+
+.feedback {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.correct-text {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.wrong-text {
+  color: #c62828;
+  font-weight: bold;
 }
 
 .verify-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #004AAD;
-  color: white;
-  padding: 1rem 3rem;
-  border-radius: 1rem;
+  display: block;
+  margin: 24px auto 0;
+  padding: 10px 24px;
   border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
-  font-size: 1rem;
+  transition: 0.2s;
 }
 
 .verify-button:hover {
-  transform: scale(1.05);
-  background-color: #003680;
+  background-color: #0056b3;
 }
+
