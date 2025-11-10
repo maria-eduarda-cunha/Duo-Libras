@@ -115,17 +115,18 @@ html, body {
 
 .feedback {
   text-align: center;
-  margin-top: 16px;
 }
 
 .correct-text {
   color: #2e7d32;
   font-weight: bold;
+  margin: 0px;
 }
 
 .wrong-text {
   color: #c62828;
   font-weight: bold;
+  margin: 0px;
 }
 
 .verify-button {

@@ -32,10 +32,7 @@
         <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
       </div>
 
-      <button class="verify-button"
-        (click)="proximaPergunta()"
-        *ngIf="respostaCorreta !== null"
-      >
+      <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
         {{ textoBotao }}
       </button>
     </div>
