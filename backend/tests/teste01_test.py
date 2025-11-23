@@ -17,7 +17,7 @@ def mongo_mock():
     yield
     disconnect()
 
-# Testes simples
+
 
 # verifica se a senha e criptografada
 def test_hash_string_returns_valid_hash():
