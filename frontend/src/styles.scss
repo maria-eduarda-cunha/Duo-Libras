@@ -1,24 +1,64 @@
+html,
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(#6aa7f7,#d6e9ff);
+    ;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Altera as cores do arterísco e a barra */
+html {
+    --mdc-outlined-text-field-caret-color: #004AAD;
+    ;
+    --mdc-outlined-text-field-focus-outline-color: #004AAD;
+    ;
+    --mdc-outlined-text-field-focus-label-text-color: #004AAD;
+    ;
+}
+
 // ------------------ TEXT BOX ------------------
 // Altera as caixas de texto
-.mat-mdc-form-field-infix--outlined,  
-.mdc-notched-outline__leading,  
-.mdc-notched-outline__notch,  
+.mat-mdc-form-field-infix--outlined,
+.mdc-notched-outline__leading,
+.mdc-notched-outline__notch,
 .mdc-notched-outline__trailing {
     border-color: #004AAD !important;
+}
+
+// Arredonda as bordas das caixas de texto
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+    border-radius: 0px 100px 100px 0px !important;
+}
+
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+    border-radius: 100px 0px 0px 100px !important;
+    width: 30px !important;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--outlined {
+    border-radius: 50px;
 }
 
 .mat-mdc-text-field-wrapper {
     background-color: white;
 }
 
-// Altera as labels
-mat-label{
+// Altera a cor das labels
+mat-label {
     color: #706D6D !important;
-    // background-color: white;
-    border-radius: 3px;
     font-weight: 550;
     font-size: 1.1rem;
 }
+
+// .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label{
+//     color: #004AAD;
+// }
+
+// .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
+//     caret-color: var(--mdc-outlined-text-field-caret-color,#004AAD);
+// }
 
 // Altera a cor do texto da caixa de texto
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
@@ -26,9 +66,9 @@ mat-label{
 }
 
 // Altera a cor do texto quando a caixa está em foco (selecionada)
-input.mat-input-element,  
-.mat-form-field,  
-.mat-focused,  
+input.mat-input-element,
+.mat-form-field,
+.mat-focused,
 .mat-form-field-label {
     color: black !important;
 }
@@ -41,14 +81,15 @@ input.mat-input-element,
 }
 
 // Altera a cor do texto quando selecionada a opção
-.mat-mdc-select-value{
+.mat-mdc-select-value {
     color: black !important;
 }
 
 // ------------------ LISTA SUSPENSA ------------------
 // Altera a cor do item na lista suspensa ao passar o mouse por cima
-.mat-primary .mat-mdc-option:hover:not(.mdc-list-item--disabled),  .mat-primary .mat-primary .mat-mdc-option:focus:not(.mdc-lista-item--disabled){
-    background-color: #23029c29 !important;
+.mat-primary .mat-mdc-option:hover:not(.mdc-list-item--disabled),
+.mat-primary .mat-primary .mat-mdc-option:focus:not(.mdc-lista-item--disabled) {
+    background-color: #022b9c29 !important;
 }
 
 // Altera a cor do fundo da lista suspensa
@@ -64,8 +105,11 @@ input.mat-input-element,
 }
 
 // Altera a cor da opção selecionada na lista suspensa
-.mat-mdc-option:hover:not(.mdc-list-item--disabled), .mat-mdc-option:focus:not(.mdc-list-item--disabled), .mat-mdc-option.mat-mdc-option-active, .mat-mdc-option.mdc-list-item--selected:not(.mat-mdc-option-multiple):not(.mdc-list-item--disabled) {
-    background: #23029c29 !important;
+.mat-mdc-option:hover:not(.mdc-list-item--disabled),
+.mat-mdc-option:focus:not(.mdc-list-item--disabled),
+.mat-mdc-option.mat-mdc-option-active,
+.mat-mdc-option.mdc-list-item--selected:not(.mat-mdc-option-multiple):not(.mdc-list-item--disabled) {
+    background: #022b9c29 !important;
 }
 
 
@@ -78,15 +122,17 @@ input.mat-input-element,
 // Altera a cor da borda das check box
 .mdc-checkbox__background {
     border-color: #004AAD !important;
-  }
-  
+}
+
 // Altera a cor ao redor das check box
-.mat-mdc-checkbox.mat-accent .mdc-checkbox--selected~.mdc-checkbox__ripple{
+.mat-mdc-checkbox.mat-accent .mdc-checkbox--selected~.mdc-checkbox__ripple {
     background-color: #004AAD !important;
 }
-  
+
 // Altera a cor das check box quando estiverem selecionadas
-.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background, .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background{
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background,
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background {
     border-color: #004AAD !important;
     background-color: #004AAD !important;
 }
@@ -109,7 +155,7 @@ input.mat-input-element,
 
 // ------------------ MAT-PAGINATOR ------------------
 // Altera a cor do mat-paginator
-.mat-mdc-paginator-outer-container .mat-mdc-select-value{
+.mat-mdc-paginator-outer-container .mat-mdc-select-value {
     color: white !important;
 }
 
@@ -121,7 +167,35 @@ mat-progress-spinner circle {
 
 // ------------------ MAT-SORT ARROW ------------------
 // Altera a cor da seta de ordenação da lista
-.mat-sort-header-arrow, [dir=rtl] .mat-sort-header-position-before .mat-sort-header-arrow {
+.mat-sort-header-arrow,
+[dir=rtl] .mat-sort-header-position-before .mat-sort-header-arrow {
     margin: 0 0 0 6px;
-    color: #e8a5ff;
+    color: #a5bdff;
+}
+
+// ------------------ CLASSES GLOBAIS ------------------
+.back-button {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border-color: transparent;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    margin-inline: 56px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    background: #004AAD;
+    padding: 8px 2px 8px 11px;
+    border-radius: 50%;
+}
+
+.back-button mat-icon {
+    color: white;
+}
+
+.module-title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #004AAD
 }

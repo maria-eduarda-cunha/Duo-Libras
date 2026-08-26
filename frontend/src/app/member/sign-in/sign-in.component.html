@@ -1,7 +1,7 @@
 <section id="sign-in">
 
     <div class="arrow">
-        <mat-icon [routerLink]="['/login']">arrow_back</mat-icon>
+        <mat-icon [routerLink]="['/login']">arrow_back_ios</mat-icon>
     </div>
 
     <div class="image-icon">
@@ -14,35 +14,38 @@
 
         <form [formGroup]="signInForm" (ngSubmit)="submitSignIn()">
 
-            <div class="text-field">
-                <mat-form-field appearance="outline">
+            <div class="form-box">
+                <mat-form-field class="text-field" appearance="outline">
                     <mat-label>Nome</mat-label>
                     <input matInput type="text" placeholder="Fulano Silva" formControlName="nome" required>
+                    <mat-error *ngIf="signInForm.get('nome')?.hasError('required')">Campo obrigatório</mat-error>
                     <mat-error *ngIf="signInForm.get('nome')?.hasError('pattern')">Apenas um nome e um sobrenome</mat-error>
                 </mat-form-field>
-
-                <br>
-            </div>
+            <!-- </div> -->
             
-            <div class="text-field">
-                <mat-form-field appearance="outline">
+            <!-- <div class="text-field"> -->
+                <mat-form-field class="text-field" appearance="outline">
                     <mat-label>E-mail</mat-label>
                     <input matInput type="email" placeholder="exemplo@email.com" formControlName="email" required>
+                    <mat-error *ngIf="signInForm.get('nome')?.hasError('required')">Campo obrigatório</mat-error>
                 </mat-form-field>
             </div>
 
-            <div class="text-field">
-                <mat-form-field appearance="outline">
+            <div class="form-box">
+            <!-- <div class="text-field"> -->
+                <mat-form-field class="text-field" appearance="outline">
                     <mat-label>Senha</mat-label>
                     <input matInput type="password" formControlName="password" required>
+                    <mat-error *ngIf="signInForm.get('nome')?.hasError('required')">Campo obrigatório</mat-error>
                     <mat-error *ngIf="signInForm.get('password')?.hasError('minlength')">A senha deve ter no mínimo 6 caracteres</mat-error>
                 </mat-form-field>
-            </div>
+            <!-- </div> -->
 
-            <div class="text-field">
-                <mat-form-field appearance="outline">
+            <!-- <div class="text-field"> -->
+                <mat-form-field class="text-field" appearance="outline">
                     <mat-label>Confirme a senha</mat-label>
                     <input matInput type="password" formControlName="passwordCheck" required>
+                    <mat-error *ngIf="signInForm.get('nome')?.hasError('required')">Campo obrigatório</mat-error>
                     <mat-error *ngIf="signInForm.hasError('passwordsMismatch')">As senhas não coincidem</mat-error>
                 </mat-form-field>
             </div>
