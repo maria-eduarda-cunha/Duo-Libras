@@ -1,9 +1,7 @@
 #home {
     min-height: 87vh;
-    background-color: #d6e9ff;
     display: flex;
     flex-direction: column;
-    font-family: 'Lato', sans-serif;
 }
 
 .user-status {
@@ -18,9 +16,9 @@
     flex-wrap: wrap;
     width: 100vw;
     min-height: 86vh;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 9vh;
+    padding: 20px;
     padding-bottom: 0px;
     box-sizing: border-box;
 }
@@ -33,21 +31,21 @@
 .module-background {
     background-color: white;
     border-radius: 40px;
-    padding: 16px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    height: 200px;
+    /* width: 30vw;
+    height: 30vw; */
 }
 
 .module-icon{
-    color:#004AAD; 
-    font-size: 100px; 
-    width: 100px; 
-    height: 100px
+    color: #004AAD;
+    font-size: 20vw;
+    width: 20vw;
+    height: 20vw;
 }
 
 .module img {
@@ -78,7 +76,7 @@
     text-align: center;
     transition: transform 0.2s ease;
     flex-wrap: wrap;
-    padding: 3vw 0vw;
+    padding: 3vw;
 }
 
 .module:hover {
