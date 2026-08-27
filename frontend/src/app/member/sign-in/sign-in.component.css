@@ -8,27 +8,21 @@
 
 mat-icon {
   color: white;
+  width: 10px;
 }
 
 .arrow {
-  /* margin-top: 24px;
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  margin-left: 24px;
-  position: fixed; */
   display: flex;
   align-items: center;
   margin-top: 24px;
   cursor: pointer;
-  /* display: flex; */
-  /* width: 100%; */
   margin-left: 24px;
   position: fixed;
   background: #004AAD;
-  padding: 8px 1px 2px 11px;
+  padding: 4px 10px;
   border-radius: 50%;
+  top: 0;
+  left: 0;
 }
 
 .sign-in {
