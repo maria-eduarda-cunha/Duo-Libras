@@ -1,7 +1,7 @@
 html,
 body {
     font-family: 'Montserrat', sans-serif;
-    background: radial-gradient(#6aa7f7,#d6e9ff);
+    background: radial-gradient(#6aa7f7, #d6e9ff);
     ;
     height: 100%;
     margin: 0;
@@ -11,11 +11,8 @@ body {
 /* Altera as cores do arterísco e a barra */
 html {
     --mdc-outlined-text-field-caret-color: #004AAD;
-    ;
     --mdc-outlined-text-field-focus-outline-color: #004AAD;
-    ;
     --mdc-outlined-text-field-focus-label-text-color: #004AAD;
-    ;
 }
 
 // ------------------ TEXT BOX ------------------
@@ -172,6 +169,7 @@ mat-progress-spinner circle {
     margin: 0 0 0 6px;
     color: #a5bdff;
 }
+
 
 // ------------------ CLASSES GLOBAIS ------------------
 .back-button {
