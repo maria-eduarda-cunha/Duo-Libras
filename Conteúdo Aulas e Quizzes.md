@@ -22,7 +22,7 @@ Título: Letra <letra_da_pagina><br>
 
 #### Questão 2
 - **Tipo:** Arraste para o Sinal Correto
-- **Textos:** D | A | B<br>
+- **Textos:** D | A | B
 - **GIFs:** Letra B | Letra D | Letra A
 
 #### Questão 3
@@ -37,7 +37,7 @@ Título: Letra <letra_da_pagina><br>
 
 #### Questão 5
 - **Tipo:** Arraste na Ordem
-- **GIF:** A - B - A<br>
+- **GIF:** A - B - A
 - **Opções:** B - C - D - A - A
 
 ## 1.2 Lição — E ao I
@@ -54,7 +54,37 @@ Título: Letra <letra_da_pagina><br>
 - Letra I - GIF apresentando a letra I
 
 ### 1.2.2 Quiz
+#### Questão 1
+- **Tipo:** Selecione o Correto (texto)
+- **GIF:** Letra F
+- **Opções:** G | F | I | D
 
+#### Questão 2
+- **Tipo:** Arraste para o Sinal Correto
+- **Textos:** H | I | G
+- **GIFs:** Letra H | Letra G | Letra I
+
+#### Questão 3
+- **Tipo:** Arraste na Ordem
+- **GIF:** C - H - E - F - E
+- **Opções:** E | C | E | H | F
+
+#### Questão 4
+- **Tipo:** Selecione o Correto (GIFS)
+- **Título:** Letra G
+- **GIFs:** Letra D | Letra G | Letra F
+
+#### Questão 5
+- **Tipo:** Selecione o Correto (texto)
+- **Título:** H pode ser sinalizado sem movimento?
+- **GIF:** Letra H
+- **Opções:** Sim | Não
+- **Resposta:** Sim
+
+#### Questão 6
+- **Tipo:** Arraste na Ordem
+- **GIF:** D - I - A
+- **Opções:** A - F - D - I - G
 
 
 ## 1.3 Lição — J ao M
