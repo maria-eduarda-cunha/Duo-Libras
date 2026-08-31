@@ -79,7 +79,7 @@ Título: Número <número_da_pagina>
 
 - Apresentar sinal de mil, milhão e bilhão, trilhão
 
-Apresentar conceito de posição (1º, 2º lugar)
+- Apresentar conceito de posição (1º, 2º lugar)
 
 ### 2.1.2 Números
 
