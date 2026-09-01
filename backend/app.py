@@ -24,6 +24,7 @@ try:
     print("✅ MongoDB conectado com sucesso")
 except Exception as e:
     print(f"❌ ERRO ao conectar no MongoDB: {e}")
+    raise
 
 
 # Criar root user se não existir
