@@ -15,6 +15,9 @@ class Quiz(Document):
     respostas3 = DictField()
     gif3 = StringField()
     
+    meta = {
+        'collection': 'quiz'
+    }
 
     @staticmethod
     def get_quiz_by_modulo(modulo):
