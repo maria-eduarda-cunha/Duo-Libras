@@ -18,5 +18,6 @@ class Quiz(Document):
 
     @staticmethod
     def get_quiz_by_modulo(modulo):
-        return Quiz.objects(modulo=modulo).first()
+        # return Quiz.objects(modulo=modulo).first()
+        return Quiz.objects()
     
