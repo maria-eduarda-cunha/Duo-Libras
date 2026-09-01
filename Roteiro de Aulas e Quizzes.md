@@ -66,6 +66,13 @@ Título: Letra <letra_da_pagina><br>
 - **GIF:** D - I - A
 - **Opções:** A | F | D | I | G
 
+#### Questão 12
+- **Tipo:** Selecione o Correto (texto)
+- **Título:** Como você sinaliza letras duplicadas?
+- **GIF:** Anna
+- **Opções:** Deslizando a mão para o lado | Movimentando a mão de cima para baixo | Fazendo a letra com as duas mãos
+- **Resposta:** Deslizando a mão para o lado
+
 # 2. Números
 
 ## 2.1 Lição - Números
@@ -97,12 +104,29 @@ Além de questões comuns, seguem questões importantes
 
 #### Ex Questão 3
 - **Tipo:** Selecione o Correto (texto)
+- **Título:** 8 e S são sinalizados da mesma forma?
 - **GIF:** 8
-- **Opções:** 8 | 9 | S<br>
-(é importante pois 8 tem movimento)
+- **Opções:** Sim | Não
+- **Resposta:** Sim
 
 # Módulo 3 - Saudações
 
+## 2.1 Lição
+
+Sinais que serão aprendidos:
+- Oi/Olá
+- Nome
+- Meu/Minha
+- Seu/Sua
+- Bem/Boa
+- Dia
+- Tarde
+- Noite
+- Tudo bem?
+- Idade
+- Pai
+- Mãe
+ 
 # Módulo 4 - Profisões
 
 # Módulo 5 - Situações de Perigo
