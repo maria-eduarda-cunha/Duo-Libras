@@ -15,3 +15,8 @@ class Quiz(Document):
     respostas3 = DictField()
     gif3 = StringField()
     
+
+    @staticmethod
+    def get_quiz_by_modulo(modulo):
+        return Quiz.objects(modulo=modulo).first()
+    

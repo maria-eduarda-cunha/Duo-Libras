@@ -6,7 +6,7 @@ quiz_bp = Blueprint('quiz_bp', __name__)
 @quiz_bp.route('/<modulo>', methods=['GET'])
 def get_quiz_by_modulo(modulo):
     try:
-        quiz = Quiz.objects(modulo=modulo).first()
+        quiz = Quiz.get_quiz_by_modulo(modulo)
         if not quiz:
             print('❌ Módulo não encontrado')
             return jsonify({'error': 'Módulo não encontrado'}), 404
