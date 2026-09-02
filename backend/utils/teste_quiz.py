@@ -17,12 +17,20 @@ def teste_quiz():
 
     dados = quizbkp.find()
     print("Resultado QBKP: ", dados)
+    quantidade = quizbkp.count_documents({})
+    print("Quantidade de documentos:", quantidade)
+        
 
     dados = member.find()
     print("Resultado Member: ", dados)
+    quantidade = member.count_documents({})
+    print("Quantidade de documentos:", quantidade)
     
     dados = quiz.find()
     print("Resultado Q: ", dados)
+    quantidade = quiz.count_documents({})
+    print("Quantidade de documentos:", quantidade)
+        
 
     print("Banco:", db.name)
     print("Coleção:", quiz.name)
