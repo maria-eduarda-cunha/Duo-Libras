@@ -14,7 +14,7 @@ def get_quiz_by_modulo(modulo):
 
         print(f'✅ Quiz encontrado: {quiz.id}')
 
-        quiz['_id'] = str(quiz.id)
+        quiz.id = str(quiz.id)
 
         print(quiz)
         print(jsonify(quiz))
