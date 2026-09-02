@@ -6,7 +6,7 @@ quiz_bp = Blueprint('quiz_bp', __name__)
 @quiz_bp.route('/<modulo>', methods=['GET'])
 def get_quiz_by_modulo(modulo):
     try:
-        quiz = quiz.get_quiz_by_modulo(modulo)
+        quiz = Quiz.get_quiz_by_modulo(modulo)
 
         if not quiz:
             print('❌ Módulo não encontrado')
@@ -14,7 +14,7 @@ def get_quiz_by_modulo(modulo):
 
         print(f'✅ Quiz encontrado: {quiz.id}')
 
-        quiz_dict = quiz.to_mongo().to_dict()
+        quiz_dict = Quiz.to_mongo().to_dict()
         quiz_dict['_id'] = str(quiz.id)
         return jsonify(quiz_dict)
     
