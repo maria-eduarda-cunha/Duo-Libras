@@ -16,6 +16,12 @@ def teste_quiz():
     dados = quiz.find()
     print("Resultado: ", dados)
 
+    print("Banco:", db.name)
+    print("Coleção:", quiz.name)
+
+    quantidade = quiz.count_documents({})
+    print("Quantidade de documentos:", quantidade)
+
     for item in dados:
         print('Item: ',item)
 
