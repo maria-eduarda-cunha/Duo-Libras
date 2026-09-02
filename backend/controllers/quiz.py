@@ -9,17 +9,17 @@ def get_quiz_by_modulo(modulo):
     # try:
         teste_quiz()
 
-        quiz = quiz.get_quiz_by_modulo(modulo)
-        print('Quiz tradicional:', quiz)
-        if not quiz:
-            print('❌ Módulo não encontrado')
-            return jsonify({'error': 'Módulo não encontrado'}), 404
+        # quiz = quiz.get_quiz_by_modulo(modulo)
+        # print('Quiz tradicional:', quiz)
+        # if not quiz:
+        #     print('❌ Módulo não encontrado')
+        #     return jsonify({'error': 'Módulo não encontrado'}), 404
 
-        print(f'✅ Quiz encontrado: {quiz.id}')
+        # print(f'✅ Quiz encontrado: {quiz.id}')
 
-        quiz_dict = quiz.to_mongo().to_dict()
-        quiz_dict['_id'] = str(quiz.id)
-        return jsonify(quiz_dict)
+        # quiz_dict = quiz.to_mongo().to_dict()
+        # quiz_dict['_id'] = str(quiz.id)
+        # return jsonify(quiz_dict)
     
     # except Exception as err: 
     #     print(f'❌ Erro ao buscar quiz: {err}') 
