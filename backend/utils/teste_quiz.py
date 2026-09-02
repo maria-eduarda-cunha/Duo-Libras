@@ -10,11 +10,19 @@ def teste_quiz():
 
     db = client[config.col_mongo]
     quiz = db['quiz']
+    quizbkp = db['quiz_backup']
+    member = db['member']
 
     print('Quiz, mongo: ',quiz)
 
+    dados = quizbkp.find()
+    print("Resultado QBKP: ", dados)
+
+    dados = member.find()
+    print("Resultado Member: ", dados)
+    
     dados = quiz.find()
-    print("Resultado: ", dados)
+    print("Resultado Q: ", dados)
 
     print("Banco:", db.name)
     print("Coleção:", quiz.name)
