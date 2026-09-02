@@ -1,3 +1,4 @@
+from backend.utils.teste_quiz import teste_quiz
 from flask import Blueprint, jsonify, request
 from models.quiz import Quiz
 
@@ -6,6 +7,8 @@ quiz_bp = Blueprint('quiz_bp', __name__)
 @quiz_bp.route('/<modulo>', methods=['GET'])
 def get_quiz_by_modulo(modulo):
     # try:
+        teste_quiz()
+
         quiz = Quiz.get_quiz_by_modulo(modulo)
         print(quiz)
         if not quiz:
