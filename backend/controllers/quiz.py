@@ -1,3 +1,4 @@
+from backend.utils.dto import dto_quiz
 from flask import Blueprint, jsonify, request
 from models.quiz import Quiz
 
@@ -17,10 +18,10 @@ def get_quiz_by_modulo(modulo):
         quiz.id = str(quiz.id)
 
         print(quiz)
-        print(jsonify(quiz))
+        print(dto_quiz(quiz))
         # quiz_dict = Quiz.to_mongo().to_dict()
         # quiz_dict['_id'] = str(quiz.id)
-        return jsonify(quiz)
+        return dto_quiz(quiz)
     
     # except Exception as err: 
     #     print(f'❌ Erro ao buscar quiz: {err}') 
