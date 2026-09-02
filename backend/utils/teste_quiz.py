@@ -17,4 +17,6 @@ def teste_quiz():
     print("Resultado: ", dados)
 
     for item in dados:
-        print(item)
+        print('Item: ',item)
+
+    print('fim')
