@@ -1,6 +1,6 @@
 from utils.teste_quiz import teste_quiz
 from flask import Blueprint, jsonify, request
-from models.quiz import Quiz
+from models.quiz import quiz
 
 quiz_bp = Blueprint('quiz_bp', __name__)
 
