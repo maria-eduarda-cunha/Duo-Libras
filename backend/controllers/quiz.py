@@ -1,4 +1,4 @@
-from backend.utils.teste_quiz import teste_quiz
+from utils.teste_quiz import teste_quiz
 from flask import Blueprint, jsonify, request
 from models.quiz import Quiz
 
