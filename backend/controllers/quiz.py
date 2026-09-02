@@ -9,8 +9,8 @@ def get_quiz_by_modulo(modulo):
     # try:
         teste_quiz()
 
-        quiz = Quiz.get_quiz_by_modulo(modulo)
-        print(quiz)
+        quiz = quiz.get_quiz_by_modulo(modulo)
+        print('Quiz tradicional:', quiz)
         if not quiz:
             print('❌ Módulo não encontrado')
             return jsonify({'error': 'Módulo não encontrado'}), 404
