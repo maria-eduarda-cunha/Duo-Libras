@@ -14,9 +14,11 @@ def get_quiz_by_modulo(modulo):
 
         print(f'✅ Quiz encontrado: {quiz.id}')
 
-        quiz_dict = Quiz.to_mongo().to_dict()
-        quiz_dict['_id'] = str(quiz.id)
-        return jsonify(quiz_dict)
+        print(quiz)
+        print(jsonify(quiz))
+        # quiz_dict = Quiz.to_mongo().to_dict()
+        # quiz_dict['_id'] = str(quiz.id)
+        return jsonify(quiz)
     
     # except Exception as err: 
     #     print(f'❌ Erro ao buscar quiz: {err}') 
