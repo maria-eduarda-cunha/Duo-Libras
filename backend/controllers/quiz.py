@@ -14,6 +14,8 @@ def get_quiz_by_modulo(modulo):
 
         print(f'✅ Quiz encontrado: {quiz.id}')
 
+        quiz['_id'] = str(quiz['_id'])
+        
         print(quiz)
         print(jsonify(quiz))
         # quiz_dict = Quiz.to_mongo().to_dict()
