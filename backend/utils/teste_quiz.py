@@ -1,15 +1,17 @@
 from pymongo import MongoClient
 import config
 
-client = MongoClient(config.db_mongo)
 
-db = client[config.col_mongo]
-quiz = db['quiz']
+def teste_quiz():
+    client = MongoClient(config.db_mongo)
 
-print('Quiz, mongo: ',quiz)
+    db = client[config.col_mongo]
+    quiz = db['quiz']
 
-dados = quiz.find()
-print("Resultado: ", dados)
+    print('Quiz, mongo: ',quiz)
 
-for item in dados:
-    print(item)
+    dados = quiz.find()
+    print("Resultado: ", dados)
+
+    for item in dados:
+        print(item)
