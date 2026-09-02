@@ -1,6 +1,6 @@
 from mongoengine import *
 
-class quiz(Document):
+class Quiz(Document):
     modulo = StringField(required=True, unique=True)
 
     pergunta1 = StringField()
@@ -21,6 +21,5 @@ class quiz(Document):
 
     @staticmethod
     def get_quiz_by_modulo(modulo):
-        # return Quiz.objects(modulo=modulo).first()
-        return quiz.objects()
+        return Quiz.objects(modulo=modulo).first()
     
