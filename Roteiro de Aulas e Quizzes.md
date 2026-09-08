@@ -77,7 +77,7 @@ Título: Letra <letra_da_pagina><br>
 
 ## 2.1 Lição - Números
 
-### 2.1.1 Números
+### 2.1.1 Aula
 Cada tela apresenta um gif com um número do alfabeto
 
 Título: Número <número_da_pagina>
@@ -88,7 +88,7 @@ Título: Número <número_da_pagina>
 
 - Apresentar conceito de posição (1º, 2º lugar)
 
-### 2.1.2 Números
+### 2.1.2 Quiz
 
 Além de questões comuns, seguem questões importantes
 
@@ -111,23 +111,194 @@ Além de questões comuns, seguem questões importantes
 
 # Módulo 3 - Saudações
 
-## 2.1 Lição
+## 3.1 Lição
 
-Sinais que serão aprendidos:
-- Oi/Olá
-- Nome
-- Meu/Minha
-- Seu/Sua
-- Bem/Boa
+### 3.1.1: Saudações Básicas
+- Oi / Olá
+- Bem / Boa
 - Dia
 - Tarde
 - Noite
 - Tudo bem?
+- Obrigado(a)
+- Por Favor
+- Desculpa
+- Calma / Acalme-se
+
+### 3.1.2: Abordagem e Contato
+- Nome (seu/meu serão abordados posteriormente)
 - Idade
-- Pai
-- Mãe
- 
+- Você
+- Eu
+- Meu / Minha
+- Seu / Sua
+- Ajuda?
+- Espere
+- Vamos
+- Entre
+- Sente-se
+
+### 3.1.3: Comunicação Inicial
+- Entender
+- Não entender
+- Repetir
+- Devagar
+- Escrever
+- Conversar
+- Ler
+- Falar
+- Surdo(a)
+- Libras
+  
 # Módulo 4 - Profisões
+
+## 4.1 Lição - Enfermeiros e Médicos
+
+### 4.1.1 Vocabulário - Identificação e Atendimento
+- Médico(a)
+- Enfermeiro(a)
+- Paciente
+- Hospital
+- Atendimento
+- Ajuda
+- Nome
+- Idade
+- Documento
+- Acompanhar
+- Esperar
+- Entrar
+- Sente-se
+- Levantar
+- Deitar
+
+### 4.1.2 Vocabulário - Comunicação com o Paciente
+- Você entende?
+- Entender
+- Não entender
+- Repetir
+- Devagar
+- Escrever
+- Ler
+- Falar
+- Libras
+- Intérprete
+- Perguntar
+- Responder
+- Sim
+- Não
+- Pode?
+- Precisa?
+
+### 4.1.3 Vocabulário - Orientações
+- Aguarde
+- Venha
+- Vá
+- Fique
+- Acompanhar
+- Esperar
+- Entrar
+- Sair
+- Sentar
+- Levantar
+- Deitar
+- Virar
+- Abrir
+- Fechar
+
+## 4.2 Lição - Bombeiros
+
+### 4.2.1 Vocabulário - Identificação e Atendimento
+- Bombeiro(a)
+- Equipe
+- Ajuda
+- Atendimento
+- Pessoa
+- Nome
+- Idade
+- Acompanhar
+- Esperar
+- Ficar
+- Sair
+- Entrar
+
+### 4.2.2 Vocabulário - Comunicação
+- Entender
+- Não entender
+- Repetir
+- Devagar
+- Escrever
+- Falar
+- Libras
+- Onde?
+- Quem?
+- Quantos?
+- Sim
+- Não
+- Aqui
+- Ali
+- Lá
+
+### 4.2.3 Vocabulário - Orientações
+- Venha
+- Vá
+- Espere
+- Pare
+- Fique
+- Siga
+- Acompanhe
+- Entre
+- Saia
+- Sente-se
+- Levante-se
+- Afaste-se
+
+## 4.3 Lição - Policiais
+
+### 4.3.1 Vocabulário - Identificação e Atendimento
+- Policial
+- Polícia
+- Equipe
+- Ajuda
+- Pessoa
+- Nome
+- Idade
+- Documento
+- Identificação
+- Acompanhar
+- Esperar
+
+### 4.3.2 Vocabulário - Comunicação
+- Entender
+- Não entender
+- Repetir
+- Devagar
+- Escrever
+- Falar
+- Libras
+- Intérprete
+- Onde?
+- Quem?
+- Quando?
+- Quantos?
+- Sim
+- Não
+- Aqui
+- Ali
+- Lá
+
+### 4.3.3 Vocabulário - Orientações
+- Venha
+- Vá
+- Espere
+- Pare
+- Fique
+- Siga
+- Acompanhe
+- Entre
+- Saia
+- Sente-se
+- Levante-se
+- Afaste-se
 
 # Módulo 5 - Situações de Perigo
 
