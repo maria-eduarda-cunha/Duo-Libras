@@ -1,4 +1,4 @@
-# Club-Penguins
+# Duo Libras
 
 - Bianca Conceição Baise - 10417489
 
