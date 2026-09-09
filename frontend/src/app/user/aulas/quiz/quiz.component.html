@@ -1,42 +1,158 @@
 <section id="quiz">
-  <div class="header">
+  <header>
     <button class="back-button" routerLink="../">
       <mat-icon fontIcon="arrow_back_ios"></mat-icon>
     </button>
     <p class="module-title">{{ moduloSelecionado | titlecase }}</p>
-  </div>
+  </header>
 
-  <div class="content" *ngIf="!fimQuiz">
+  <main class="content" *ngIf="!fimQuiz">
+
     <p class="section-title">Quiz</p>
 
-    <div class="quiz-container" *ngIf="perguntas[perguntaAtual] as atual">
-      <div class="question-area">
-        <img [src]="atual.gif" alt="símbolo" class="question-image">
-        <h2 class="question-title">{{ atual.texto }}</h2>
-      </div>
+    <section class="quiz-container" *ngIf="perguntas[perguntaAtual] as atual">
 
-      <div class="options">
-        <button
-          *ngFor="let resp of atual.respostas"
-          class="option"
+      <!-- TELA: ALTERNATIVA -->
+      <section *ngIf="atual.tipo === 'alternativa'">
+
+        <section class="question-area">
+          <img [src]="atual.gif" alt="símbolo" class="question-image">
+          <h2 class="question-title">{{ atual.texto }}</h2>
+        </section>
+
+        <section class="options">
+          <button *ngFor="let resp of atual.respostas" class="option" 
           (click)="selecionarOpcao(resp)"
-          [class.correct]="respostaCorreta && resp.correta"
-          [class.wrong]="respostaCorreta === false && opcaoSelecionada === resp.texto"
-        >
-          <strong>{{ resp.texto }}</strong>
+          [class.correct]="resp.value === true"
+          [class.wrong]="resp.value === false">
+            <strong>{{ resp.key }}</strong>
+          </button>
+        </section>
+
+        <br>
+
+        <section class="feedback" *ngIf="respostaCorreta !== null">
+          <p *ngIf="respostaCorreta" class="correct-text">✅ Você acertou!</p>
+          <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
+        </section>
+
+        <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
+          {{ textoBotao }}
         </button>
-      </div>
 
-      <div class="feedback" *ngIf="respostaCorreta !== null">
-        <p *ngIf="respostaCorreta" class="correct-text">✅ Você acertou!</p>
-        <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
-      </div>
+      </section>
 
-      <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
-        {{ textoBotao }}
-      </button>
-    </div>
-  </div>
+      <!-- TELA: SEQUÊNCIA -->
+      <section *ngIf="atual.tipo === 'sequencia'">
+
+        <section class="question-area">
+          <img [src]="atual.gif" alt="símbolo" class="question-image">
+          <h2 class="question-title">{{ atual.texto }}</h2>
+        </section>
+
+        <section class="sequencia">
+          <h3 *ngFor="let resp of sequenciaSelecionada">
+            <strong>{{ resp.key }}</strong>
+          </h3>
+        </section>
+
+        <br>
+
+        <section class="options">
+          <button *ngFor="let resp of atual.respostas" class="option" 
+          (click)="selecionarSequencia(resp)"
+          [class.correct]="resp.value === true"
+          [class.wrong]="resp.value === false">
+            <strong>{{ resp.key }}</strong>
+          </button>
+        </section>
+
+        <br>
+
+        <section class="feedback" *ngIf="respostaCorreta !== null">
+          <p *ngIf="respostaCorreta" class="correct-text">✅ Você acertou!</p>
+          <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
+        </section>
+
+        <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
+          {{ textoBotao }}
+        </button>
+
+      </section>
+
+      <!-- TELA: GIF -->
+      <section *ngIf="atual.tipo === 'gif'">
+
+        <section class="question-area">
+          <h2 class="question-title">{{ atual.texto }}</h2>
+        </section>
+
+        <section class="options">
+          <button *ngFor="let resp of atual.respostas" class="option" 
+          (click)="selecionarOpcao(resp)"
+          [class.correct]="resp.value === true"
+          [class.wrong]="resp.value === false">
+            <img [src]="resp.key" alt="símbolo" class="question-image">
+          </button>
+        </section>
+
+        <br>
+
+        <section class="feedback" *ngIf="respostaCorreta !== null">
+          <p *ngIf="respostaCorreta" class="correct-text">✅ Você acertou!</p>
+          <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
+        </section>
+
+        <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
+          {{ textoBotao }}
+        </button>
+
+      </section>
+
+      <!-- TELA: GIF -->
+      <section *ngIf="atual.tipo === 'conjunto'">
+
+        <section class="question-area">
+          <h2 class="question-title">{{ atual.texto }}</h2>
+        </section>
+
+        <section class="conjunto">
+
+          <section class="options">
+            <button *ngFor="let resp of atual.respostas" class="option" 
+            (click)="selecionarOpcao(resp)"
+            [class.correct]="resp.value === true"
+            [class.wrong]="resp.value === false">
+              <strong>{{resp.key}}</strong>
+            </button>
+          </section>
+
+          <section class="options">
+            <button *ngFor="let resp of atual.respostas" class="option" 
+            (click)="selecionarOpcao(resp)"
+            [class.correct]="resp.value === true"
+            [class.wrong]="resp.value === false">
+              <img [src]="resp.value" alt="símbolo" class="question-image">
+            </button>
+          </section>
+        </section>
+
+        <br>
+
+        <section class="feedback" *ngIf="respostaCorreta !== null">
+          <p *ngIf="respostaCorreta" class="correct-text">✅ Você acertou!</p>
+          <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
+        </section>
+
+        <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
+          {{ textoBotao }}
+        </button>
+
+      </section>
+
+    </section>
+
+  </main>
 
   <div class="content" *ngIf="fimQuiz">
     <p class="section-title">Quiz</p>

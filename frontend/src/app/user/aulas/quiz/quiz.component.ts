@@ -12,8 +12,6 @@ export class QuizComponent implements OnInit {
   perguntas: any[] = [];
   carregando = true;
   perguntaAtual = 0;
-  opcaoSelecionada: string | null = null;
-  respostaCorreta: boolean | null = null;
   textoBotao: string = 'Próxima';
   fimQuiz: boolean = false;
   pontuacao: number = 0;
@@ -21,17 +19,32 @@ export class QuizComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private quizService: QuizService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.moduloSelecionado = this.route.snapshot.paramMap.get('moduloSelecionado') || '';
+    const rawModulo = this.route.snapshot.paramMap.get('moduloSelecionado') || '';
+    console.log(rawModulo)
+    const modulosComAcento: Record<string, string> = {
+      'saudações': 'saudacoes',
+      'família': 'familia'
+    };
+
+    // formata o nome do módulo com acento
+    this.moduloSelecionado = modulosComAcento[rawModulo] || this.capitalize(rawModulo.replace(/-/g, ' '));
+    console.log(this.moduloSelecionado)
     this.carregarQuiz();
   }
 
+  private capitalize(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   carregarQuiz(): void {
-    this.quizService.getQuizByModulo(this.moduloSelecionado).subscribe({
+    this.quizService.getQuizByModulo(this.moduloSelecionado.toLowerCase()).subscribe({
       next: (data) => {
+        console.log(data)
         this.perguntas = this.formatarPerguntas(data);
+        console.log(this.perguntas)
         this.carregando = false;
       },
       error: (err) => {
@@ -42,29 +55,43 @@ export class QuizComponent implements OnInit {
   }
 
   formatarPerguntas(data: any): any[] {
-    const perguntas: any[] = [];
-    let index = 1;
-
-    while (data[`pergunta${index}`]) {
-      perguntas.push({
-        texto: data[`pergunta${index}`],
-        gif: data[`gif${index}`],
-        respostas: Object.entries(data[`respostas${index}`] || {}).map(
-          ([texto, correta]) => ({ texto, correta: Boolean(correta) })
-        )
-      });
-      index++;
-    }
-
-    return perguntas;
+    return (data.quiz || []).map((item: any) => ({
+      texto: item.pergunta,
+      gif: item.gif,
+      tipo: item.tipo,
+      respostas: Object.entries(item.respostas || {}).map(
+        ([key, value]) => ({
+          key,
+          value
+        })
+      )
+    }));
   }
 
-  selecionarOpcao(resposta: any) {
-    this.opcaoSelecionada = resposta.texto;
-    this.respostaCorreta = resposta.correta;
+  proximaPergunta() {
+    if (this.perguntaAtual < this.perguntas.length - 1) {
+      this.perguntaAtual++;
+      this.respostaCorreta = null;
+      this.opcaoSelecionada = null;
+      this.sequenciaSelecionada = [];
+    } else {
+      this.fimQuiz = true;
+    }
+  }
 
-    if (this.respostaCorreta) {
+  // ---------- TELA: ALTERNATIVA ----------
+  opcaoSelecionada: string | null = null;
+  respostaCorreta: boolean | null = null;
+
+  selecionarOpcao(resposta: any) {
+    this.opcaoSelecionada = resposta.key;
+
+    if (resposta.value == true) {
       this.pontuacao++;
+      this.respostaCorreta = true;
+    }
+    else {
+      this.respostaCorreta = false;
     }
 
     // Atualiza texto do botão
@@ -74,14 +101,32 @@ export class QuizComponent implements OnInit {
       this.textoBotao = 'Próxima';
     }
   }
+  // ---------------------------------------
 
-  proximaPergunta() {
-    if (this.perguntaAtual < this.perguntas.length - 1) {
-      this.perguntaAtual++;
-      this.respostaCorreta = null;
-      this.opcaoSelecionada = null;
-    } else {
-      this.fimQuiz = true;
+  // ----------- TELA: SEQUÊNCIA -----------
+  sequenciaSelecionada: any[] = [];
+
+  selecionarSequencia(resp: any) {
+    this.sequenciaSelecionada.push(resp);
+
+    // Verifica se todos os itens foram selecionados
+    this.respostaCorreta = null;
+
+    // Se selecionou todos os itens verifica a sequencia
+    if (this.sequenciaSelecionada.length === this.perguntas[this.perguntaAtual].respostas.length) {
+      this.verificarSequencia();
     }
   }
+
+  verificarSequencia() {
+    const ordemCorreta = [...this.perguntas[this.perguntaAtual].respostas].sort((a, b) => a.value - b.value);
+    this.respostaCorreta = this.sequenciaSelecionada.every(
+      (resp, index) => resp.value === ordemCorreta[index].value
+    );
+
+    if(!this.respostaCorreta) {
+      this.sequenciaSelecionada = [];
+    }
+  }
+  // ---------------------------------------
 }
