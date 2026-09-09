@@ -1,4 +1,4 @@
-from backend.utils.dto import dto_quiz
+from utils.dto import dto_quiz
 from flask import Blueprint, jsonify, request
 from models.quiz import Quiz
 
