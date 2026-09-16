@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 60vw;
+    width: 70vw;
     min-height: 86vh;
     justify-content: space-around;
     align-items: center;
@@ -42,9 +42,9 @@
 
 .module-icon{
     color: #004AAD;
-    font-size: 150px;
-    width: 150px;
-    height: 150px;
+    font-size: 120px;
+    width: 120px;
+    height: 120px;
 }
 
 .module img {
@@ -92,11 +92,11 @@
 @media (max-width: 768px) {
     /* Tamanho icones modulos */
     .modules-row[_ngcontent-ng-c3145473474] {
-        width: 90vw;
+        width: 100vw;
     }
     .module-icon {
-        font-size: 90px;
-        width: 90px;
-        height: 90px;
+        font-size: 70px;
+        width: 70px;
+        height: 70px;
     }
 }
