@@ -51,7 +51,7 @@
     height: 136px;
 }
 
-.module-title {
+.icon-module-title {
     font-size: 1.3rem;
     font-weight: 570;
     margin-bottom: 4px;
@@ -83,7 +83,7 @@
 }
 
 .module .module-background,
-.module .module-title,
+.module .icon-module-title,
 .module .module-levels {
     pointer-events: none;
 }
