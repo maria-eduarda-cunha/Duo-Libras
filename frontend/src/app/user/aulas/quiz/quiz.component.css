@@ -1,14 +1,14 @@
 #quiz {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  gap: 20px;
 }
 
 #quiz .content {
   background-color: white;
   border-radius: 24px;
   padding: 40px;
-  margin-inline: 56px;
-  margin-block: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,4 +129,12 @@ header {
 
 .verify-button:hover {
   background-color: #004AAD;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .option {
+    padding: 1rem;
+    min-width: 150px;
+  }
 }
