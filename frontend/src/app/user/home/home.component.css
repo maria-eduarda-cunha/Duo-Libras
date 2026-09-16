@@ -91,6 +91,9 @@
 /* Responsividade */
 @media (max-width: 768px) {
     /* Tamanho icones modulos */
+    .modules-row[_ngcontent-ng-c3145473474] {
+        width: 90vw;
+    }
     .module-icon {
         font-size: 90px;
         width: 90px;
