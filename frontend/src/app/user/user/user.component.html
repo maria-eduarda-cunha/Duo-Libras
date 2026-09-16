@@ -1,12 +1,17 @@
 <section id="user">
-    <header>
-        <div class="logo">
-            <img class="logo-icon" src="assets/logo.png" alt="image">
-        </div>
-        
+    <header>       
         <mat-icon class="module-icon" (click)="toggleMenu()">account_circle</mat-icon>
         <div class="menu" *ngIf="menuOpen">
             <button (click)="logOut()">Sair</button>
+        </div>
+
+        <div class="logo">
+            <img class="logo-icon" src="assets/logo.png" alt="image">
+        </div>
+
+        <div class="strike">
+            <mat-icon class="strike-icon">local_fire_department</mat-icon>
+            <p>0</p>
         </div>
     </header>
 
