@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 60vw;
     min-height: 86vh;
     justify-content: space-around;
     align-items: center;
@@ -26,26 +26,25 @@
 .modules-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .module-background {
     background-color: white;
     border-radius: 40px;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* width: 30vw;
-    height: 30vw; */
 }
 
 .module-icon{
     color: #004AAD;
-    font-size: 20vw;
-    width: 20vw;
-    height: 20vw;
+    font-size: 150px;
+    width: 150px;
+    height: 150px;
 }
 
 .module img {
@@ -87,4 +86,14 @@
 .module .module-title,
 .module .module-levels {
     pointer-events: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    /* Tamanho icones modulos */
+    .module-icon {
+        font-size: 90px;
+        width: 90px;
+        height: 90px;
+    }
 }
