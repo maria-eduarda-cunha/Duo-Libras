@@ -20,8 +20,12 @@ header {
 }
 
 .logo .logo-icon {
-  height: 70px;
-  width: 140px;
+    height: 70px;
+    width: 140px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .module-icon {
@@ -30,6 +34,19 @@ header {
   width: 60px;
   height: 60px;
   cursor: pointer;
+}
+
+.strike {
+    color: #d6e9ff;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+h3 {
+    color: #d6e9ff;
+    margin: 0px;
 }
 
 .menu {
