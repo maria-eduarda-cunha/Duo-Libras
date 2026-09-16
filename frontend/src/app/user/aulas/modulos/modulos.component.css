@@ -1,6 +1,7 @@
 #modulos {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 .titulo-aula {
@@ -28,8 +29,6 @@
     background-color: white;
     border-radius: 24px;
     padding: 40px;
-    margin-inline: 56px;
-    margin-block: 0px;
 }
 
 .header {
