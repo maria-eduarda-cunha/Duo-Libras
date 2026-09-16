@@ -36,7 +36,7 @@ header {
   cursor: pointer;
 }
 
-.strike {
+.strike-icon {
     color: #d6e9ff;
     font-size: 50px;
     width: 50px;
@@ -47,6 +47,7 @@ header {
 h3 {
     color: #d6e9ff;
     margin: 0px;
+    margin-top: 5px;
 }
 
 .menu {
