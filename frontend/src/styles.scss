@@ -183,9 +183,6 @@ mat-progress-spinner circle {
     gap: 8px;
     align-items: center;
     cursor: pointer;
-    margin-inline: 56px;
-    margin-top: 32px;
-    margin-bottom: 24px;
     background: #004AAD;
     padding: 8px 2px 8px 11px;
     border-radius: 50%;
@@ -196,7 +193,10 @@ mat-progress-spinner circle {
 }
 
 .module-title {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 2.5rem;
-    color: #004AAD
+    color: #004aad;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
