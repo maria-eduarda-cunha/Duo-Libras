@@ -91,7 +91,7 @@
 /* Responsividade */
 @media (max-width: 768px) {
     /* Tamanho icones modulos */
-    .modules-row[_ngcontent-ng-c3145473474] {
+    .modules-row {
         width: 100vw;
     }
     .module-icon {
