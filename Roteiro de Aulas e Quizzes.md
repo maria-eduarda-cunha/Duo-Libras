@@ -1,6 +1,7 @@
 # 1. Módulo - Alfabeto
 
 ## 1.1 Lição - Alfabeto Manual
+sinais coletados, se encontram em assets
 
 ### 1.1.1 Aula
 
@@ -74,6 +75,7 @@ Título: Letra <letra_da_pagina><br>
 - **Resposta:** Deslizando a mão para o lado
 
 # 2. Números
+sinais coletados, se encontram em assets
 
 ## 2.1 Lição - Números
 
@@ -110,45 +112,53 @@ Além de questões comuns, seguem questões importantes
 - **Resposta:** Sim
 
 # Módulo 3 - Saudações
+Sinais coletados, realizando edição
 
 ## 3.1 Lição
 
 ### 3.1.1: Saudações Básicas
-- Oi / Olá
-- Bem / Boa
-- Dia
-- Tarde
-- Noite
-- Tudo bem?
-- Obrigado(a)
-- Por Favor
-- Desculpa
-- Calma / Acalme-se
+- Oi / Olá - ok
+- Bom dia - ok
+- Boa tarde - ok
+- Boa noite - ok
+- Meu nome - ok
+- Qual o seu nome? - ok
+- Tudo bem? - ok
+- Com licença - ok
+- Desculpa - ok
+- Obrigado(a) - ok
+- De nada - ok
+- Por Favor - ok
+- Prazer em conhecer você - ok
+- Surdo - ok
+- Ouvinte - ok
+- Intérprete - ok
+- Tchau - ok
+- Meu sinal - ok
+- Libras - ok
 
 ### 3.1.2: Abordagem e Contato
-- Nome (seu/meu serão abordados posteriormente)
-- Idade
-- Você
-- Eu
+- Idade - ok
+- Você - ok
+- Eu - ok
 - Meu / Minha
-- Seu / Sua
-- Ajuda?
-- Espere
-- Vamos
-- Entre
-- Sente-se
+- Seu / Sua - ok
+- Ajuda? - ok
+- Espere - ok
+- Vamos - ok
+- Entre - ok
+- Sente-se - ok
+- Calma / Acalme-se - ok
 
 ### 3.1.3: Comunicação Inicial
-- Entender
-- Não entender
-- Repetir
-- Devagar
-- Escrever
-- Conversar
-- Ler
-- Falar
-- Surdo(a)
-- Libras
+- Entender - ok
+- Não entender - ok
+- Repetir - ok
+- Devagar - ok
+- Escrever - ok
+- Conversar - ok
+- Ler - ok
+- Falar - ok
   
 # Módulo 4 - Profisões
 
