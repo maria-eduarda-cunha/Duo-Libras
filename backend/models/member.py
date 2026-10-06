@@ -43,6 +43,10 @@ class Member(Document):
     @staticmethod
     def get_member_by_id(id):
         return Member.objects(id=id).exclude('password').first()
+
+    @staticmethod
+    def get_score_by_email(email):
+        return Member.objects(email=email).first()['score']
     
     @staticmethod
     def get_member_by_email(email):
