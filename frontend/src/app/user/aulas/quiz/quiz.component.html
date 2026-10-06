@@ -21,10 +21,10 @@
         </section>
 
         <section class="options">
-          <button *ngFor="let resp of atual.respostas" class="option" 
-          (click)="selecionarOpcao(resp)"
-          [class.correct]="resp.value === true"
-          [class.wrong]="resp.value === false">
+          <button *ngFor="let resp of atual.respostasValues" class="option" (click)="selecionarOpcao(resp)"
+            [class.correct]="respostaSelecionada === resp && respostaCorreta === true"
+            [class.wrong]="respostaSelecionada === resp && respostaCorreta === false"
+            [disabled]="respostaCorreta === true">
             <strong>{{ resp.key }}</strong>
           </button>
         </section>
@@ -36,7 +36,7 @@
           <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
         </section>
 
-        <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
+        <button class="verify-button" (click)="avancarQuiz()" *ngIf="respostaCorreta">
           {{ textoBotao }}
         </button>
 
@@ -59,10 +59,9 @@
         <br>
 
         <section class="options">
-          <button *ngFor="let resp of atual.respostas" class="option" 
-          (click)="selecionarSequencia(resp)"
-          [class.correct]="resp.value === true"
-          [class.wrong]="resp.value === false">
+          <button *ngFor="let resp of atual.respostasValues" class="option" (click)="selecionarSequencia(resp)"
+            [class.correct]="resp.value === true" [class.wrong]="resp.value === false"
+            [disabled]="respostaCorreta === true">
             <strong>{{ resp.key }}</strong>
           </button>
         </section>
@@ -74,7 +73,7 @@
           <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
         </section>
 
-        <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
+        <button class="verify-button" (click)="avancarQuiz()" *ngIf="respostaCorreta">
           {{ textoBotao }}
         </button>
 
@@ -88,10 +87,12 @@
         </section>
 
         <section class="options">
-          <button *ngFor="let resp of atual.respostas" class="option" 
-          (click)="selecionarOpcao(resp)"
-          [class.correct]="resp.value === true"
-          [class.wrong]="resp.value === false">
+          <button *ngFor="let resp of atual.respostasValues" class="option" (click)="selecionarOpcao(resp)"
+           
+            
+            [class.correct]="respostaSelecionada === resp && respostaCorreta === true"
+            [class.wrong]="respostaSelecionada === resp && respostaCorreta === false"
+            [disabled]="respostaCorreta === true">>
             <img [src]="resp.key" alt="símbolo" class="question-image">
           </button>
         </section>
@@ -103,13 +104,13 @@
           <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
         </section>
 
-        <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
+        <button class="verify-button" (click)="avancarQuiz()" *ngIf="respostaCorreta">
           {{ textoBotao }}
         </button>
 
       </section>
 
-      <!-- TELA: GIF -->
+      <!-- TELA: CONJUNTO -->
       <section *ngIf="atual.tipo === 'conjunto'">
 
         <section class="question-area">
@@ -119,19 +120,20 @@
         <section class="conjunto">
 
           <section class="options">
-            <button *ngFor="let resp of atual.respostas" class="option" 
-            (click)="selecionarOpcao(resp)"
-            [class.correct]="resp.value === true"
-            [class.wrong]="resp.value === false">
-              <strong>{{resp.key}}</strong>
+            <button *ngFor="let resp of atual.respostasKeys" class="option" (click)="selecionarLetra(resp)"
+              (click)="selecionarLetra(resp)" [class.selected]="letraSelecionada?.key === resp.key"
+              [class.correct]="respostasCorretas.includes(resp.key)" [class.wrong]="respostasErradas.includes(resp.key)"
+              [disabled]="respostasCorretas.includes(resp.key)">
+              <strong>{{ resp.key }}</strong>
             </button>
           </section>
 
           <section class="options">
-            <button *ngFor="let resp of atual.respostas" class="option" 
-            (click)="selecionarOpcao(resp)"
-            [class.correct]="resp.value === true"
-            [class.wrong]="resp.value === false">
+            <button *ngFor="let resp of atual.respostasValues" class="option" (click)="selecionarGif(resp)"
+              (click)="selecionarGif(resp)" [class.selected]="gifSelecionado?.key === resp.key"
+              [class.correct]="gifsCorretos.includes(resp.key)" [class.correct]="gifsCorretos.includes(resp.key)"
+              [class.wrong]="gifsErrados.includes(resp.key)" [disabled]="gifsCorretos.includes(resp.key)"
+              [disabled]="gifsCorretos.includes(resp.key)">
               <img [src]="resp.value" alt="símbolo" class="question-image">
             </button>
           </section>
@@ -144,8 +146,8 @@
           <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
         </section>
 
-        <button class="verify-button" (click)="proximaPergunta()" *ngIf="respostaCorreta">
-          {{ textoBotao }}
+        <button class="verify-button" (click)="avancarQuiz()" *ngIf="respostaCorreta">
+          {{ perguntaAtual === perguntas.length - 1 ? 'Ver resultado' : textoBotao }}
         </button>
 
       </section>
