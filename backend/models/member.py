@@ -46,7 +46,9 @@ class Member(Document):
 
     @staticmethod
     def get_score_by_email(email):
-        return Member.objects(email=email).first()['score']
+        for member in Member.objects():
+            if decrypt(member.email) == email:
+                return member['score']
     
     @staticmethod
     def get_member_by_email(email):
