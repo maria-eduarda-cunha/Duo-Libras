@@ -16,6 +16,16 @@ export class QuizComponent implements OnInit {
   fimQuiz: boolean = false;
   pontuacao: number = 0;
 
+  respostaSelecionada: any = null;
+  respostaCorreta: boolean | null = null;
+  letraSelecionada: any = null;
+  gifSelecionado: any = null;
+  respostasCorretas: string[] = [];
+  respostasErradas: string[] = [];
+  gifsCorretos: string[] = [];
+  gifsErrados: string[] = [];
+
+
   constructor(
     private route: ActivatedRoute,
     private quizService: QuizService
@@ -55,25 +65,65 @@ export class QuizComponent implements OnInit {
   }
 
   formatarPerguntas(data: any): any[] {
-    return (data.quiz || []).map((item: any) => ({
-      texto: item.pergunta,
-      gif: item.gif,
-      tipo: item.tipo,
-      respostas: Object.entries(item.respostas || {}).map(
-        ([key, value]) => ({
+    // return (data.quiz || []).map((item: any) => ({
+    //   texto: item.pergunta,
+    //   gif: item.gif,
+    //   tipo: item.tipo,
+    //   respostas: Object.entries(item.respostas || {}).map(
+    //     ([key, value]) => ({
+    //       key,
+    //       value
+    //     })
+    //   )
+    // }));
+    return (data.quiz || []).map((item: any) => {
+
+      const respostas = Object.entries(item.respostas || {})
+        .map(([key, value]) => ({
           key,
           value
-        })
-      )
-    }));
+        }));
+
+      return {
+        texto: item.pergunta,
+        gif: item.gif,
+        tipo: item.tipo,
+
+        // Respostas originais
+        respostas,
+
+        // Letras embaralhadas
+        respostasKeys: this.embaralhar([...respostas]),
+
+        // GIFs embaralhados
+        respostasValues: this.embaralhar([...respostas])
+      };
+    });
   }
 
-  proximaPergunta() {
+  embaralhar<T>(array: T[]): T[] {
+    const copia = [...array];
+
+    for (let i = copia.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copia[i], copia[j]] = [copia[j], copia[i]];
+    }
+
+    return copia;
+  }
+
+  avancarQuiz() {
     if (this.perguntaAtual < this.perguntas.length - 1) {
       this.perguntaAtual++;
       this.respostaCorreta = null;
       this.opcaoSelecionada = null;
       this.sequenciaSelecionada = [];
+      this.letraSelecionada = null;
+      this.gifSelecionado = null;
+      this.respostasCorretas = [];
+      this.respostasErradas = [];
+      this.gifsCorretos = [];
+      this.gifsErrados = [];
     } else {
       this.fimQuiz = true;
     }
@@ -81,26 +131,25 @@ export class QuizComponent implements OnInit {
 
   // ---------- TELA: ALTERNATIVA ----------
   opcaoSelecionada: string | null = null;
-  respostaCorreta: boolean | null = null;
 
-  selecionarOpcao(resposta: any) {
-    this.opcaoSelecionada = resposta.key;
+  selecionarOpcao(resp: any): void {
+    this.respostaSelecionada = resp;
+    console.log(resp.value)
+    if (resp.value === true) {
 
-    if (resposta.value == true) {
-      this.pontuacao++;
       this.respostaCorreta = true;
-    }
-    else {
-      this.respostaCorreta = false;
+
+      return;
     }
 
-    // Atualiza texto do botão
-    if (this.perguntaAtual === this.perguntas.length - 1) {
-      this.textoBotao = 'Concluir';
-    } else {
-      this.textoBotao = 'Próxima';
-    }
+    this.respostaCorreta = false;
+
+    setTimeout(() => {
+      this.respostaSelecionada = null;
+      this.respostaCorreta = null;
+    }, 1000);
   }
+
   // ---------------------------------------
 
   // ----------- TELA: SEQUÊNCIA -----------
@@ -109,24 +158,94 @@ export class QuizComponent implements OnInit {
   selecionarSequencia(resp: any) {
     this.sequenciaSelecionada.push(resp);
 
-    // Verifica se todos os itens foram selecionados
     this.respostaCorreta = null;
 
-    // Se selecionou todos os itens verifica a sequencia
     if (this.sequenciaSelecionada.length === this.perguntas[this.perguntaAtual].respostas.length) {
       this.verificarSequencia();
     }
   }
 
-  verificarSequencia() {
-    const ordemCorreta = [...this.perguntas[this.perguntaAtual].respostas].sort((a, b) => a.value - b.value);
+  verificarSequencia(): void {
+
+    const respostas = this.perguntas[this.perguntaAtual].respostas;
+
+    // Ainda não selecionou todas
+    if (this.sequenciaSelecionada.length < respostas.length) {
+      this.respostaCorreta = null;
+      return;
+    }
+
+    const ordemCorreta = [...respostas]
+      .sort((a, b) => a.value - b.value);
+
     this.respostaCorreta = this.sequenciaSelecionada.every(
-      (resp, index) => resp.value === ordemCorreta[index].value
+      (resp, index) =>
+        resp.value === ordemCorreta[index].value
     );
 
-    if(!this.respostaCorreta) {
+    if (!this.respostaCorreta) {
       this.sequenciaSelecionada = [];
     }
   }
+
   // ---------------------------------------
+
+  // ----------- TELA: CONJUNTO -----------
+  selecionarLetra(letra: any): void {
+    if (this.respostasCorretas.includes(letra.key)) {
+      return;
+    }
+    this.letraSelecionada = letra;
+    this.respostaCorreta = null;
+  }
+
+
+  selecionarGif(gif: any): void {
+    if (this.gifsCorretos.includes(gif.key)) {
+      return;
+    }
+
+    if (!this.letraSelecionada) {
+      return;
+    }
+
+    this.gifSelecionado = gif;
+
+    if (this.letraSelecionada.key === gif.key) {
+      this.respostaCorreta = true;
+
+      this.respostasCorretas.push(this.letraSelecionada.key);
+      this.gifsCorretos.push(gif.key);
+
+      this.letraSelecionada = null;
+      this.gifSelecionado = null;
+
+      return;
+    }
+
+    this.respostaCorreta = false;
+
+    const letraErrada = this.letraSelecionada.key;
+    const gifErrado = gif.key;
+
+    this.respostasErradas.push(letraErrada);
+    this.gifsErrados.push(gifErrado);
+
+    this.letraSelecionada = null;
+    this.gifSelecionado = null;
+
+    setTimeout(() => {
+      this.respostasErradas =
+        this.respostasErradas.filter(
+          key => key !== letraErrada
+        );
+
+      this.gifsErrados =
+        this.gifsErrados.filter(
+          key => key !== gifErrado
+        );
+
+      this.respostaCorreta = null;
+    }, 700);
+  }
 }

@@ -71,18 +71,27 @@ header {
 }
 
 .option {
-  background-color: #F7F8F7;
+  background-color: #d6e9ff;
   color: #004AAD;
   padding: 1.2rem 4rem;
   font-size: medium;
   border-radius: 1rem;
   border: 2px solid #3043B8;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
-.option:focus {
-  background-color: #004AAD;
+.option.selected {
+  background-color: #fff3cd;
+  border-color: #ffc107;
+}
+.option.correct {
+  background-color: #28a745;
+  border-color: #218838;
+  color: white;
+}
+.option.wrong {
+  background-color: #dc3545;
+  border-color: #c82333;
   color: white;
 }
 
@@ -135,6 +144,10 @@ header {
 @media (max-width: 768px) {
   .option {
     padding: 1rem;
-    min-width: 150px;
+    min-width: 100px;
+  }
+
+  .options {
+    gap: 2rem;
   }
 }
