@@ -66,3 +66,18 @@ def get_member_by_id(id):
         print("❌ ERRO NO BACKEND:")
         traceback.print_exc()
         return jsonify({"success": False, "error": str(err)}), 500
+
+# Get Score do User
+@member_bp.route('/score/<id>', methods=['GET'])
+def get_score_by_id(id):
+    try:
+        member = Member.get_member_by_id(id)
+        
+        return jsonify({
+            "score": member['score'],
+        }), 200
+    
+    except Exception as err:
+        print("❌ ERRO AO COLETAR SCORE DO USUÁRIO:")
+        traceback.print_exc()
+        return jsonify({"success": False, "error": str(err)}), 500
