@@ -68,10 +68,10 @@ def get_member_by_id(id):
         return jsonify({"success": False, "error": str(err)}), 500
 
 # Get Score do User
-@member_bp.route('/score/<id>', methods=['GET'])
-def get_score_by_id(id):
+@member_bp.route('/score/<email>', methods=['GET'])
+def get_score_by_id(email):
     try:
-        member = Member.get_member_by_id(id)
+        member = Member.get_member_by_email(email)
         
         return jsonify({
             "score": member['score'],
