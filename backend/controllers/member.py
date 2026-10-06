@@ -71,10 +71,10 @@ def get_member_by_id(id):
 @member_bp.route('/score/<email>', methods=['GET'])
 def get_score_by_id(email):
     try:
-        member = Member.get_score_by_email(email)
+        score = Member.get_score_by_email(email)
         
         return jsonify({
-            "score": member['score'],
+            "score": score,
         }), 200
     
     except Exception as err:
