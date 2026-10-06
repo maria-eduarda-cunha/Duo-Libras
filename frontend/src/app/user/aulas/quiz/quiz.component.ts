@@ -25,6 +25,14 @@ export class QuizComponent implements OnInit {
   gifsCorretos: string[] = [];
   gifsErrados: string[] = [];
 
+  // ---- Score ---
+  score: number = 0;
+  acertos: number = 0;
+  erros: number = 0;
+  sequenciaAcertos: number = 0;
+  maiorSequencia: number = 0;
+  // --------------
+
 
   constructor(
     private route: ActivatedRoute,
@@ -65,17 +73,6 @@ export class QuizComponent implements OnInit {
   }
 
   formatarPerguntas(data: any): any[] {
-    // return (data.quiz || []).map((item: any) => ({
-    //   texto: item.pergunta,
-    //   gif: item.gif,
-    //   tipo: item.tipo,
-    //   respostas: Object.entries(item.respostas || {}).map(
-    //     ([key, value]) => ({
-    //       key,
-    //       value
-    //     })
-    //   )
-    // }));
     return (data.quiz || []).map((item: any) => {
 
       const respostas = Object.entries(item.respostas || {})
@@ -88,14 +85,8 @@ export class QuizComponent implements OnInit {
         texto: item.pergunta,
         gif: item.gif,
         tipo: item.tipo,
-
-        // Respostas originais
         respostas,
-
-        // Letras embaralhadas
         respostasKeys: this.embaralhar([...respostas]),
-
-        // GIFs embaralhados
         respostasValues: this.embaralhar([...respostas])
       };
     });
@@ -103,12 +94,10 @@ export class QuizComponent implements OnInit {
 
   embaralhar<T>(array: T[]): T[] {
     const copia = [...array];
-
     for (let i = copia.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [copia[i], copia[j]] = [copia[j], copia[i]];
     }
-
     return copia;
   }
 
@@ -129,6 +118,54 @@ export class QuizComponent implements OnInit {
     }
   }
 
+  // ---------- SCORE ----------
+  registrarAcerto(): void {
+    this.acertos++;
+    this.sequenciaAcertos++;
+
+    // Atualiza maior sequência
+    if (this.sequenciaAcertos > this.maiorSequencia) {
+      this.maiorSequencia = this.sequenciaAcertos;
+    }
+
+    // Pontos base
+    const pontosBase = 10;
+
+    // Bônus pela sequência
+    const bonus = (this.sequenciaAcertos - 1) * 25;
+
+    this.score += pontosBase + bonus;
+
+    console.log('Acerto!');
+    console.log('Score:', this.score);
+    console.log('Sequência:', this.sequenciaAcertos);
+  }
+
+  registrarErro(): void {
+    this.erros++;
+
+    // Quebra a sequência
+    this.sequenciaAcertos = 0;
+
+    // Penalidade
+    this.score -= 25;
+
+    // Nunca deixa o score negativo
+    if (this.score < 0) {
+      this.score = 0;
+    }
+
+    console.log('Erro!');
+    console.log('Score:', this.score);
+    console.log('Sequência resetada');
+  }
+
+  atualizarResultado(): void {
+    
+  }
+
+  // ---------------------------------------
+
   // ---------- TELA: ALTERNATIVA ----------
   opcaoSelecionada: string | null = null;
 
@@ -138,11 +175,13 @@ export class QuizComponent implements OnInit {
     if (resp.value === true) {
 
       this.respostaCorreta = true;
+      this.registrarAcerto();
 
       return;
     }
 
     this.respostaCorreta = false;
+    this.registrarErro();
 
     setTimeout(() => {
       this.respostaSelecionada = null;
@@ -185,6 +224,10 @@ export class QuizComponent implements OnInit {
 
     if (!this.respostaCorreta) {
       this.sequenciaSelecionada = [];
+      this.registrarErro();
+    }
+    else {
+      this.registrarAcerto();
     }
   }
 
@@ -213,6 +256,7 @@ export class QuizComponent implements OnInit {
 
     if (this.letraSelecionada.key === gif.key) {
       this.respostaCorreta = true;
+      this.registrarAcerto();
 
       this.respostasCorretas.push(this.letraSelecionada.key);
       this.gifsCorretos.push(gif.key);
@@ -224,6 +268,7 @@ export class QuizComponent implements OnInit {
     }
 
     this.respostaCorreta = false;
+    this.registrarErro();
 
     const letraErrada = this.letraSelecionada.key;
     const gifErrado = gif.key;

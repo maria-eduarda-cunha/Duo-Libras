@@ -156,18 +156,23 @@
 
   </main>
 
-  <div class="content" *ngIf="fimQuiz">
+  <!-- FIM DO QUIZ - MENSAGEM -->
+  <section class="content" *ngIf="fimQuiz">
     <p class="section-title">Quiz</p>
 
-    <div class="quiz-container" *ngIf="perguntas[perguntaAtual] as atual">
-      <div class="question-area">
+    <section class="quiz-container" *ngIf="perguntas[perguntaAtual] as atual">
+      <section class="question-area">
         <h2 class="question-title">🎉 Parabéns! 🎉</h2>
         <h2 class="question-title">Você completou o quiz!</h2>
-      </div>
+        <br>
+        <h2 class="question-title">Score {{this.score}}</h2>
+        <h2 class="question-title">Acertos {{this.acertos}}</h2>
+        <h2 class="question-title">Erros {{this.erros}}</h2>
+      </section>
 
       <button class="verify-button" routerLink="/user/home">
         Voltar para tela inicial
       </button>
-    </div>
-  </div>
+    </section>
+  </section>
 </section>
