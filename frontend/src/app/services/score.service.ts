@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ScoreService {
 
   private scoreSubject = new BehaviorSubject<number>(
-    Number(localStorage.getItem('score')) || 0
+    Number(localStorage.getItem('score'))
   );
 
   score$ = this.scoreSubject.asObservable();
