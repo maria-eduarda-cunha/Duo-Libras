@@ -43,12 +43,6 @@ class Member(Document):
     @staticmethod
     def get_member_by_id(id):
         return Member.objects(id=id).exclude('password').first()
-
-    @staticmethod
-    def get_score_by_email(email):
-        for member in Member.objects():
-            if decrypt(member.email) == email:
-                return member['score']
     
     @staticmethod
     def get_member_by_email(email):
@@ -56,3 +50,11 @@ class Member(Document):
             if decrypt(member.email) == email:
                 return member.exclude('password')
         return None
+
+    @staticmethod
+    def update_score_by_email(email, score):
+        for member in Member.objects():
+            if decrypt(member.email) == email:
+                member['score'] = score
+                member.save()
+                return

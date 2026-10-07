@@ -81,3 +81,17 @@ def get_score_by_id(email):
         print("❌ ERRO AO COLETAR SCORE DO USUÁRIO:")
         traceback.print_exc()
         return jsonify({"success": False, "error": str(err)}), 500
+
+
+# Get Score do User
+@member_bp.route('/score/<email>', methods=['PUT'])
+def put_score_by_id(email):
+    try:
+        score = Member.update_score_by_email(email, score)
+        
+        return {}, 200
+    
+    except Exception as err:
+        print("❌ ERRO AO COLETAR SCORE DO USUÁRIO:")
+        traceback.print_exc()
+        return jsonify({"success": False, "error": str(err)}), 500
