@@ -87,7 +87,8 @@ def get_score_by_id(email):
 @member_bp.route('/score/<email>', methods=['PUT'])
 def put_score_by_id(email):
     try:
-        score = Member.update_score_by_email(email, score)
+        novo_score = request.json
+        score = Member.update_score_by_email(email, novo_score['score'])
         
         return {}, 200
     
