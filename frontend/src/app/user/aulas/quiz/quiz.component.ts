@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz.service';
+import { AuthenticationService } from '../../../services/authentication.service';
+import { ScoreService } from '../../../services/score.service';
 
 @Component({
   selector: 'app-quiz',
@@ -36,7 +38,9 @@ export class QuizComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private quizService: QuizService
+    private quizService: QuizService,
+    private auth: AuthenticationService,
+    private scoreService: ScoreService
   ) { }
 
   ngOnInit(): void {
@@ -115,6 +119,7 @@ export class QuizComponent implements OnInit {
       this.gifsErrados = [];
     } else {
       this.fimQuiz = true;
+      this.atualizarResultado();
     }
   }
 
@@ -129,16 +134,12 @@ export class QuizComponent implements OnInit {
     }
 
     // Pontos base
-    const pontosBase = 10;
+    const pontosBase = Number(localStorage.getItem('score'));
 
     // Bônus pela sequência
-    const bonus = (this.sequenciaAcertos - 1) * 25;
+    const bonus = (this.sequenciaAcertos - 1) * 2;
 
     this.score += pontosBase + bonus;
-
-    console.log('Acerto!');
-    console.log('Score:', this.score);
-    console.log('Sequência:', this.sequenciaAcertos);
   }
 
   registrarErro(): void {
@@ -148,20 +149,21 @@ export class QuizComponent implements OnInit {
     this.sequenciaAcertos = 0;
 
     // Penalidade
-    this.score -= 25;
+    this.score -= 10;
 
     // Nunca deixa o score negativo
     if (this.score < 0) {
       this.score = 0;
     }
-
-    console.log('Erro!');
-    console.log('Score:', this.score);
-    console.log('Sequência resetada');
   }
 
   atualizarResultado(): void {
-    
+    const user = localStorage.getItem('user')
+    if (user){
+      this.auth.updateScore(user, this.score).subscribe({});
+    }
+    localStorage.setItem('score', String(this.score));
+    this.scoreService.setScore(this.score);
   }
 
   // ---------------------------------------
@@ -171,7 +173,6 @@ export class QuizComponent implements OnInit {
 
   selecionarOpcao(resp: any): void {
     this.respostaSelecionada = resp;
-    console.log(resp.value)
     if (resp.value === true) {
 
       this.respostaCorreta = true;
