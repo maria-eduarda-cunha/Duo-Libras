@@ -52,6 +52,12 @@ class Member(Document):
         return None
 
     @staticmethod
+    def get_score_by_email(email):
+        for member in Member.objects():
+            if decrypt(member.email) == email:
+                return member['score']
+                
+    @staticmethod
     def update_score_by_email(email, score):
         for member in Member.objects():
             if decrypt(member.email) == email:
