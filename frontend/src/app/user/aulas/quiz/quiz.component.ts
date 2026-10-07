@@ -45,7 +45,6 @@ export class QuizComponent implements OnInit {
 
   ngOnInit(): void {
     const rawModulo = this.route.snapshot.paramMap.get('moduloSelecionado') || '';
-    console.log(rawModulo)
     const modulosComAcento: Record<string, string> = {
       'saudações': 'saudacoes',
       'família': 'familia'
@@ -53,7 +52,6 @@ export class QuizComponent implements OnInit {
 
     // formata o nome do módulo com acento
     this.moduloSelecionado = modulosComAcento[rawModulo] || this.capitalize(rawModulo.replace(/-/g, ' '));
-    console.log(this.moduloSelecionado)
     this.carregarQuiz();
   }
 
@@ -64,9 +62,7 @@ export class QuizComponent implements OnInit {
   carregarQuiz(): void {
     this.quizService.getQuizByModulo(this.moduloSelecionado.toLowerCase()).subscribe({
       next: (data) => {
-        console.log(data)
         this.perguntas = this.formatarPerguntas(data);
-        console.log(this.perguntas)
         this.carregando = false;
       },
       error: (err) => {
