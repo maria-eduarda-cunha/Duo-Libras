@@ -40,4 +40,12 @@ export class AuthenticationService {
     localStorage.removeItem('token');
     localStorage.removeItem('id');
   }
+
+  getScore(email: string) {
+    return this.http.get(this.urlMember + "score/" + email).pipe(take(1));
+  }
+
+  updateScore(email: string, score: number) {
+    return this.http.put(this.urlMember + "score/" + email, {'score': score}).pipe(take(1));
+  }
 }

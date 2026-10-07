@@ -40,7 +40,16 @@ export class LoginComponent {
         next: (res: any) => {
           const user = this.loginForm.get('email')?.value;
 
-          if(user) {
+          if (user){
+            this.auth.getScore(user).subscribe({
+              error: (err) => {
+                console.log(err);
+              },
+              next: (res: any) => {
+                localStorage.setItem('score', res['score']);  
+              }
+            });
+          
             localStorage.setItem('user', user);
             this.router.navigate(['/user/home']);
           }
@@ -51,6 +60,7 @@ export class LoginComponent {
 
   logOut() {
     localStorage.removeItem('user');
+    localStorage.removeItem('score');
   }
 
 }

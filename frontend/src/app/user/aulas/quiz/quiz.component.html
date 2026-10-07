@@ -92,7 +92,7 @@
             
             [class.correct]="respostaSelecionada === resp && respostaCorreta === true"
             [class.wrong]="respostaSelecionada === resp && respostaCorreta === false"
-            [disabled]="respostaCorreta === true">>
+            [disabled]="respostaCorreta === true">
             <img [src]="resp.key" alt="símbolo" class="question-image">
           </button>
         </section>
@@ -166,8 +166,10 @@
         <h2 class="question-title">Você completou o quiz!</h2>
         <br>
         <h2 class="question-title">Score {{this.score}}</h2>
-        <h2 class="question-title">Acertos {{this.acertos}}</h2>
-        <h2 class="question-title">Erros {{this.erros}}</h2>
+        <section>
+          <h2 class="question-title" style="color: green">✅ Acertos: {{this.acertos}}</h2>
+          <h2 class="question-title" style="color: red">❌ Erros: {{this.erros}}</h2>
+        </section>
       </section>
 
       <button class="verify-button" routerLink="/user/home">
