@@ -10,6 +10,10 @@
 
     <p class="section-title">Quiz</p>
 
+    <section class="progress-container">
+      <section class="progress-bar" [style.width.%]="((perguntaAtual + 1) / perguntas.length) * 100"></section>
+    </section>
+
     <section class="quiz-container" *ngIf="perguntas[perguntaAtual] as atual">
 
       <!-- TELA: ALTERNATIVA -->
@@ -88,8 +92,6 @@
 
         <section class="options">
           <button *ngFor="let resp of atual.respostasValues" class="option" (click)="selecionarOpcao(resp)"
-           
-            
             [class.correct]="respostaSelecionada === resp && respostaCorreta === true"
             [class.wrong]="respostaSelecionada === resp && respostaCorreta === false"
             [disabled]="respostaCorreta === true">
