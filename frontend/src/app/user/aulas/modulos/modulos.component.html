@@ -11,18 +11,18 @@
     <div class="cards-container">
       <!-- Aula -->
       <div class="card" [routerLink]="['/user/modulos', moduloSelecionado.toLowerCase(), 'aula']">
-        <div class="titulo-aula">
+        <div class="card-icon">
           <mat-icon class="module-icon" fontIcon="school"></mat-icon>
-          <p class="lesson-title">Aula</p>
         </div>
+        <p class="icon-title">Aula</p>
       </div>
 
       <!-- Quiz -->
       <div class="card quiz-card" [routerLink]="['/user/modulos', moduloSelecionado.toLowerCase(), 'quiz']">
-        <div class="titulo-aula">
+        <div class="card-icon">
           <mat-icon class="module-icon" fontIcon="quiz"></mat-icon>
-          <p class="lesson-title">Quiz</p>
         </div>
+        <p class="icon-title">Quiz</p>
       </div>
     </div>
   </div>
