@@ -90,7 +90,7 @@
           <h2 class="question-title">{{ atual.texto }}</h2>
         </section>
 
-        <section class="options">
+        <section class="options-gif">
           <button *ngFor="let resp of atual.respostasValues" class="option" (click)="selecionarOpcao(resp)"
             [class.correct]="respostaSelecionada === resp && respostaCorreta === true"
             [class.wrong]="respostaSelecionada === resp && respostaCorreta === false"
@@ -143,12 +143,12 @@
 
         <br>
 
-        <section class="feedback" *ngIf="respostaCorreta !== null">
+        <section class="feedback" *ngIf="sequenciaCorreta">
           <p *ngIf="respostaCorreta" class="correct-text">✅ Você acertou!</p>
           <p *ngIf="!respostaCorreta" class="wrong-text">❌ Resposta incorreta.</p>
         </section>
 
-        <button class="verify-button" (click)="avancarQuiz()" *ngIf="respostaCorreta">
+        <button class="verify-button" (click)="avancarQuiz()" *ngIf="sequenciaCorreta">
           {{ perguntaAtual === perguntas.length - 1 ? 'Ver resultado' : textoBotao }}
         </button>
 
@@ -168,9 +168,11 @@
         <h2 class="question-title">Você completou o quiz!</h2>
         <br>
         <h2 class="question-title">Score {{this.score}}</h2>
-        <section>
-          <h2 class="question-title" style="color: green">✅ Acertos: {{this.acertos}}</h2>
-          <h2 class="question-title" style="color: red">❌ Erros: {{this.erros}}</h2>
+        <br>
+        <h3 style="color: #004AAD">Tempo de resposta: {{ formatarTempo() }}</h3>
+        <section class="acertos-erros">
+          <h3 style="color: green">✅ Acertos: {{this.acertos}}</h3>
+          <h3 style="color: red">❌ Erros: {{this.erros}}</h3>
         </section>
       </section>
 

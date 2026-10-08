@@ -10,6 +10,7 @@ import { ScoreService } from '../../../services/score.service';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
+  // ---- Quiz ----
   moduloSelecionado: string = '';
   perguntas: any[] = [];
   carregando = true;
@@ -17,7 +18,9 @@ export class QuizComponent implements OnInit {
   textoBotao: string = 'Próxima';
   fimQuiz: boolean = false;
   pontuacao: number = 0;
+  // --------------
 
+  // ---- Info perguntas ----
   respostaSelecionada: any = null;
   respostaCorreta: boolean | null = null;
   letraSelecionada: any = null;
@@ -26,6 +29,17 @@ export class QuizComponent implements OnInit {
   respostasErradas: string[] = [];
   gifsCorretos: string[] = [];
   gifsErrados: string[] = [];
+  sequenciaCorreta: boolean = false;
+  // ------------------------
+
+  // ---- Timer ----
+  tempoInicio = Date.now();
+  timer = setInterval(() => {
+    this.tempoDecorrido = Date.now() - this.tempoInicio;
+  }, 1000);
+  tempoFim!: number;
+  tempoDecorrido = 0;
+  // ---------------
 
   // ---- Score ---
   score: number = 0;
@@ -115,9 +129,22 @@ export class QuizComponent implements OnInit {
       this.gifsErrados = [];
     } else {
       this.fimQuiz = true;
+      clearInterval(this.timer); // Para o timer
+      this.tempoFim = Date.now();
+      this.tempoDecorrido = Date.now() - this.tempoInicio; // Calcula o tempo final
       this.atualizarResultado();
     }
   }
+
+  // ---------- TIMER ----------
+  formatarTempo(): string {
+    const totalSegundos = Math.floor(this.tempoDecorrido / 1000);
+    const minutos = Math.floor(totalSegundos / 60);
+    const segundos = totalSegundos % 60;
+
+    return `${minutos}min ${segundos.toString().padStart(2, '0')}s`;
+  }
+  // --------------------------
 
   // ---------- SCORE ----------
   registrarAcerto(): void {
@@ -129,25 +156,19 @@ export class QuizComponent implements OnInit {
       this.maiorSequencia = this.sequenciaAcertos;
     }
 
-    // Pontos base
-    const pontosBase = Number(localStorage.getItem('score'));
-
     // Bônus pela sequência
-    const bonus = (this.sequenciaAcertos - 1) * 2;
-
-    this.score += pontosBase + bonus;
+    const bonus = (this.sequenciaAcertos - 1);
+    console.log(this.score, this.sequenciaAcertos)
+    this.score += this.sequenciaAcertos + bonus;
+    console.log(this.score)
   }
 
   registrarErro(): void {
     this.erros++;
-
-    // Quebra a sequência
     this.sequenciaAcertos = 0;
 
-    // Penalidade
     this.score -= 10;
 
-    // Nunca deixa o score negativo
     if (this.score < 0) {
       this.score = 0;
     }
@@ -155,11 +176,14 @@ export class QuizComponent implements OnInit {
 
   atualizarResultado(): void {
     const user = localStorage.getItem('user')
-    if (user){
+    const score_atual = localStorage.getItem('score') || 0
+    if (user && score_atual){
+      console.log(this.score, Number(score_atual))
+      this.score += Number(score_atual);
       this.auth.updateScore(user, this.score).subscribe({});
+      localStorage.setItem('score', String(this.score));
+      this.scoreService.setScore(this.score);
     }
-    localStorage.setItem('score', String(this.score));
-    this.scoreService.setScore(this.score);
   }
 
   // ---------------------------------------
@@ -253,11 +277,13 @@ export class QuizComponent implements OnInit {
 
     if (this.letraSelecionada.key === gif.key) {
       this.respostaCorreta = true;
+      console.log(this.gifsCorretos, this.perguntas.length)
       this.registrarAcerto();
 
       this.respostasCorretas.push(this.letraSelecionada.key);
       this.gifsCorretos.push(gif.key);
 
+      this.sequenciaCorreta = this.gifsCorretos.length==this.perguntas.length?true:false;
       this.letraSelecionada = null;
       this.gifSelecionado = null;
 
