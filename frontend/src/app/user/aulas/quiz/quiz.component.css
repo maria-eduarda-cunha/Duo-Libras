@@ -56,7 +56,13 @@ header {
   margin-top: 16px;
 }
 
-.options {
+.acertos-erros {
+  display: flex;
+  gap: 30px;
+}
+
+.options,
+.options-gif {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -80,15 +86,18 @@ header {
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
+
 .option.selected {
   background-color: #fff3cd;
   border-color: #ffc107;
 }
+
 .option.correct {
   background-color: #28a745;
   border-color: #218838;
   color: white;
 }
+
 .option.wrong {
   background-color: #dc3545;
   border-color: #c82333;
@@ -99,11 +108,14 @@ header {
   display: flex;
   justify-content: center;
   border-bottom: 3px dotted;
+  height: 50px;
 }
 
 .conjunto {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+  max-width: 800px;
   gap: 30px;
 }
 
@@ -163,5 +175,15 @@ header {
 
   .options {
     gap: 2rem;
+  }
+
+  .options-gif {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .conjunto {
+    flex-direction: row;
   }
 }
