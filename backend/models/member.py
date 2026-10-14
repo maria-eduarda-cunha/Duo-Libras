@@ -8,6 +8,7 @@ class Member(Document):
     email = StringField(unique=True)
     password = StringField()
     score = IntField(default=0)
+    last_access_date = StringField(default='')
 
     # Criar Perfil
     @staticmethod
