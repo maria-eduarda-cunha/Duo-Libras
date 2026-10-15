@@ -36,22 +36,34 @@ header {
   cursor: pointer;
 }
 
-.strike {
+.streak, .score {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.strike-icon {
-    color: #d6e9ff;
-    font-size: 50px;
-    width: 50px;
-    height: 50px;
+.streak-icon {
+    color: orange;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
 
+.score-icon {
+    color: yellow;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+h1 {
+  margin: 0;
+}
+
 h3 {
-    color: #d6e9ff;
+    color: white;
     margin: 0px;
     margin-top: 5px;
 }
