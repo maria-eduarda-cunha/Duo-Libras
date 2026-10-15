@@ -312,4 +312,176 @@ Sinais coletados, realizando edição
 
 # Módulo 5 - Situações de Perigo
 
+## 5.1 Lição - Identificação de Perigos
+
+### 5.1.1 Vocabulário - Tipos de Emergência
+- Perigo
+- Emergência
+- Acidente
+- Incêndio
+- Fogo
+- Fumaça
+- Explosão
+- Vazamento
+- Gás
+- Choque elétrico
+- Desabamento
+- Enchente
+- Deslizamento
+- Tempestade
+- Colisão
+- Afogamento
+- Queda
+
+### 5.1.2 Vocabulário - Riscos
+- Ferido(a)
+- Preso(a)
+- Desaparecido(a)
+- Sangue
+- Fio elétrico
+- Escombros
+- Vidro
+- Altura
+- Água
+- Seguro
+- Cuidado
+
+## 5.2 Lição - Evacuação e Proteção
+
+### 5.2.1 Vocabulário - Orientação e Deslocamento
+- Evacuação
+- Saída
+- Entrada
+- Escada
+- Elevador
+- Rua
+- Abrigo
+- Refúgio
+- Direita
+- Esquerda
+- Frente
+- Atrás
+- Subir
+- Descer
+- Caminhar
+- Correr
+- Parar
+- Seguir
+- Afastar
+- Proteger
+
+### 5.2.2 Vocabulário - Segurança
+- Pare
+- Afaste-se
+- Fuja
+- Abaixe-se
+- Proteja-se
+- Não toque
+- Não entre
+- Não volte
+- Não corra
+- Atenção
+- Calma
+- Ajuda
+- Socorro
+- Resgate
+- Ambulância
+
 # Módulo 6 - Sintomas
+
+## 6.1 Lição - Partes do Corpo
+
+### 6.1.1 Vocabulário - Partes Principais
+- Cabeça
+- Rosto
+- Olho
+- Ouvido
+- Nariz
+- Boca
+- Dente
+- Pescoço
+- Garganta
+- Peito
+- Costas
+- Barriga
+- Braço
+- Mão
+- Dedo
+- Perna
+- Joelho
+- Pé
+- Coração
+- Pulmão
+
+## 6.2 Lição - Sintomas e Lesões
+
+### 6.2.1 Vocabulário - Sintomas
+- Dor
+- Febre
+- Tontura
+- Fraqueza
+- Cansaço
+- Falta de ar
+- Tosse
+- Náusea
+- Vômito
+- Diarreia
+- Desmaio
+- Convulsão
+- Alergia
+- Coceira
+- Inchaço
+- Formigamento
+- Dormência
+- Sangramento
+- Calafrio
+- Tremor
+
+### 6.2.2 Vocabulário - Lesões
+- Ferimento
+- Queimadura
+- Fratura
+- Hematoma
+- Corte
+- Pancada
+- Luxação
+- Hemorragia
+- Intoxicação
+- Engasgo
+- Afogamento
+
+## 6.3 Lição - Histórico de Saúde
+
+### 6.3.1 Vocabulário - Condições e Atendimento
+- Doença
+- Medicamento
+- Remédio
+- Alergia
+- Cirurgia
+- Diabetes
+- Asma
+- Epilepsia
+- Gravidez
+- Pressão arterial
+- Coração
+- Respiração
+- Tratamento
+- Hospital
+- Ambulância
+
+### 6.3.2 Vocabulário - Tempo e Intensidade
+- Agora
+- Antes
+- Hoje
+- Ontem
+- Amanhã
+- Início
+- Duração
+- Leve
+- Forte
+- Muito
+- Pouco
+- Melhor
+- Pior
+- Continua
+- Parou
