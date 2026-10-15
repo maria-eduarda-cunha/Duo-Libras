@@ -15,6 +15,7 @@ export class UserComponent {
   ) {}
   menuOpen = false;
   score = localStorage.getItem('score');
+  streak = localStorage.getItem('streak');
 
   ngOnInit(): void {
     this.scoreService.score$.subscribe(score => {

@@ -48,4 +48,12 @@ export class AuthenticationService {
   updateScore(email: string, score: number) {
     return this.http.put(this.urlMember + "score/" + email, {'score': score}).pipe(take(1));
   }
+
+  getStreak(email: string) {
+    return this.http.get(this.urlMember + "last/access/" + email).pipe(take(1));
+  }
+
+  updateStreak(email: string, last_access_date: string, streak: number) {
+    return this.http.put(this.urlMember + "last/access/" + email, {'last_access_date':last_access_date, 'streak': streak}).pipe(take(1));
+  }
 }

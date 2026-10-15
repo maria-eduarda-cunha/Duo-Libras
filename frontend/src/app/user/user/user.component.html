@@ -1,18 +1,26 @@
 <section id="user">
-    <header>       
+    <header>
         <mat-icon class="module-icon" (click)="toggleMenu()">account_circle</mat-icon>
-        <div class="menu" *ngIf="menuOpen">
+        <section class="menu" *ngIf="menuOpen">
             <button (click)="logOut()">Sair</button>
-        </div>
+        </section>
 
-        <div class="logo">
+        <section class="logo">
             <img class="logo-icon" src="assets/logo.png" alt="image">
-        </div>
+        </section>
+        <section style="display:flex">
+            <section class="streak">
+                <h1>🔥</h1>
+                <!-- <mat-icon class="streak-icon">local_fire_department</mat-icon> -->
+                <h3>{{streak}}</h3>
+            </section>
 
-        <div class="strike">
-            <mat-icon class="strike-icon">local_fire_department</mat-icon>
-            <h3>{{score}}</h3>
-        </div>
+            <section class="score">
+                <h1>⚡</h1>
+                <!-- <mat-icon class="score-icon">bolt</mat-icon> -->
+                <h3>{{score}}</h3>
+            </section>
+        </section>
     </header>
 
     <router-outlet></router-outlet>

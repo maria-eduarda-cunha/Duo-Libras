@@ -2,13 +2,20 @@ mat-dialog-container {
   background-color: white !important;
 }
 .alert {
-  color: rgb(143, 168, 120);
-  font-weight: bolder;
+  color: #004aad;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .alert h1 mat-dialog-title {
   font-size: 1rem;
-  color: rgb(143, 168, 120);
+  color: 004aad;
   font-weight: bolder;
 }
 
