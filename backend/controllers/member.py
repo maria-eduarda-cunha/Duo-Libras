@@ -59,7 +59,7 @@ def get_member_by_id(id):
             "id": str(member['id']),
             "email": decrypt(member['email']),
             "nome": decrypt(member['first_name']),
-            "sobrenome": decrypt(member['last_name'])
+            "sobrenome": decrypt(member['last_name']),
         }), 200
     
     except Exception as err:
@@ -69,7 +69,7 @@ def get_member_by_id(id):
 
 # Get Score do User
 @member_bp.route('/score/<email>', methods=['GET'])
-def get_score_by_id(email):
+def get_score_by_user(email):
     try:
         score = Member.get_score_by_email(email)
         
@@ -83,9 +83,9 @@ def get_score_by_id(email):
         return jsonify({"success": False, "error": str(err)}), 500
 
 
-# Get Score do User
+# Update Score do User
 @member_bp.route('/score/<email>', methods=['PUT'])
-def put_score_by_id(email):
+def put_score_by_user(email):
     try:
         novo_score = request.json
         score = Member.update_score_by_email(email, novo_score['score'])
@@ -93,6 +93,35 @@ def put_score_by_id(email):
         return {}, 200
     
     except Exception as err:
-        print("❌ ERRO AO COLETAR SCORE DO USUÁRIO:")
+        print("❌ ERRO AO ATUALIZAR SCORE DO USUÁRIO:")
+        traceback.print_exc()
+        return jsonify({"success": False, "error": str(err)}), 500
+
+# Get Streak do User
+@member_bp.route('/last/access/<email>', methods=['GET'])
+def get_last_access_user(email):
+    try:
+        streak = Member.get_streak_by_email(email)
+        
+        return jsonify({
+            "streak": streak,
+        }), 200
+    
+    except Exception as err:
+        print("❌ ERRO AO COLETAR STREAK DO USUÁRIO:")
+        traceback.print_exc()
+        return jsonify({"success": False, "error": str(err)}), 500
+
+# Update Streak do User
+@member_bp.route('/last/access/<email>', methods=['PUT'])
+def put_last_access_user(email):
+    try:
+        novo_streak = request.json
+        streak = Member.update_streak_by_email(email, novo_streak['last_access_date'], novo_streak['streak'])
+        
+        return {}, 200
+    
+    except Exception as err:
+        print("❌ ERRO AO ATUALIZAR STREAK DO USUÁRIO:")
         traceback.print_exc()
         return jsonify({"success": False, "error": str(err)}), 500
