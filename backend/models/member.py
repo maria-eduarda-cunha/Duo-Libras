@@ -1,6 +1,8 @@
 from mongoengine import *
 import bcrypt
 from utils.crypto import decrypt
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 class Member(Document):
     first_name = StringField()
@@ -8,7 +10,8 @@ class Member(Document):
     email = StringField(unique=True)
     password = StringField()
     score = IntField(default=0)
-    last_access_date = StringField(default='')
+    streak = IntField(default=0)
+    last_access_date = StringField(default=lambda: datetime.now(ZoneInfo("America/Sao_Paulo")).strftime("%Y-%m-%d"))
 
     # Criar Perfil
     @staticmethod
@@ -63,5 +66,20 @@ class Member(Document):
         for member in Member.objects():
             if decrypt(member.email) == email:
                 member['score'] = score
+                member.save()
+                return
+
+    @staticmethod
+    def get_streak_by_email(email):
+        for member in Member.objects():
+            if decrypt(member.email) == email:
+                return (member['last_access_date'], member['streak'])
+                
+    @staticmethod
+    def update_streak_by_email(email, last_access_date, streak):
+        for member in Member.objects():
+            if decrypt(member.email) == email:
+                member['last_access_date'] = last_access_date
+                member['streak'] = streak
                 member.save()
                 return
