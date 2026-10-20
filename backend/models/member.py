@@ -9,6 +9,7 @@ class Member(Document):
     last_name = StringField()
     email = StringField(unique=True)
     password = StringField()
+    level = IntField(default=0)
     score = IntField(default=0)
     streak = IntField(default=0)
     last_access_date = StringField(default=lambda: datetime.now(ZoneInfo("America/Sao_Paulo")).strftime("%Y-%m-%d"))
