@@ -125,3 +125,34 @@ def put_last_access_user(email):
         print("❌ ERRO AO ATUALIZAR STREAK DO USUÁRIO:")
         traceback.print_exc()
         return jsonify({"success": False, "error": str(err)}), 500
+
+
+# Get Level do User
+@member_bp.route('/level/<email>', methods=['GET'])
+def get_level_by_user(email):
+    try:
+        level = Member.get_level_by_email(email)
+        
+        return jsonify({
+            "level": level,
+        }), 200
+    
+    except Exception as err:
+        print("❌ ERRO AO COLETAR LEVEL DO USUÁRIO:")
+        traceback.print_exc()
+        return jsonify({"success": False, "error": str(err)}), 500
+
+
+# Update level do User
+@member_bp.route('/level/<email>', methods=['PUT'])
+def put_level_by_user(email):
+    try:
+        novo_level = request.json
+        level = Member.update_level_by_email(email, novo_level['level'])
+        
+        return {}, 200
+    
+    except Exception as err:
+        print("❌ ERRO AO ATUALIZAR LEVEL DO USUÁRIO:")
+        traceback.print_exc()
+        return jsonify({"success": False, "error": str(err)}), 500

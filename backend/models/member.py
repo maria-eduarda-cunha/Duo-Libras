@@ -84,3 +84,17 @@ class Member(Document):
                 member['streak'] = streak
                 member.save()
                 return
+
+    @staticmethod
+    def get_level_by_email(email):
+        for member in Member.objects():
+            if decrypt(member.email) == email:
+                return member['level']
+                
+    @staticmethod
+    def update_level_by_email(email, level):
+        for member in Member.objects():
+            if decrypt(member.email) == email:
+                member['level'] = level
+                member.save()
+                return
