@@ -80,6 +80,7 @@ export class HomeComponent {
     ].join('-');
 
     if (this.last_access_date === today) {
+      localStorage.setItem('streak', String(this.streak));
       return;
     }
     else if (this.last_access_date === yesterday) {
