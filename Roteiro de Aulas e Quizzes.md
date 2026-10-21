@@ -322,7 +322,6 @@ Sinais coletados, realizando edição
 - Fogo
 - Fumaça
 - Explosão
-- Vazamento
 - Gás
 - Choque elétrico
 - Desabamento
@@ -331,7 +330,7 @@ Sinais coletados, realizando edição
 - Tempestade
 - Colisão
 - Afogamento
-- Queda
+- Cair
 
 ### 5.1.2 Vocabulário - Riscos
 - Ferido(a)
