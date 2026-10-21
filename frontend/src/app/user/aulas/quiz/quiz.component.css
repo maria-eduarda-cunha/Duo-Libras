@@ -93,13 +93,13 @@ header {
 }
 
 .option.correct {
-  background-color: #28a745;
+  background: radial-gradient(#11c43a, #136e28);
   border-color: #218838;
   color: white;
 }
 
 .option.wrong {
-  background-color: #dc3545;
+  background: radial-gradient(#ed1b30, #c01022);
   border-color: #c82333;
   color: white;
 }
@@ -140,8 +140,8 @@ header {
   margin: 24px auto 0;
   padding: 10px 24px;
   border: none;
-  border-radius: 8px;
-  background-color: #004AAD;
+  border-radius: 50px;
+  background: radial-gradient(#006dff, #003172);
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -149,7 +149,7 @@ header {
 }
 
 .verify-button:hover {
-  background-color: #004AAD;
+  background: #003172;
 }
 
 .progress-container {
@@ -162,7 +162,7 @@ header {
 
 .progress-bar {
   height: 100%;
-  background-color: #004AAD;
+  background: radial-gradient(#006dff, #003172);
   transition: width 0.3s ease;
 }
 
