@@ -32,7 +32,7 @@
 
 #login .button-submit button {
   color: white;
-  background-color: #004AAD;
+  background: radial-gradient(#006dff, #003172);
   padding: 24px 100px;
   border-radius: 50px;
 }

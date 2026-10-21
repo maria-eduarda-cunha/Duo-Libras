@@ -18,6 +18,7 @@ export class QuizComponent implements OnInit {
   textoBotao: string = 'Próxima';
   fimQuiz: boolean = false;
   pontuacao: number = 0;
+  level_atual: number = 0;
   // --------------
 
   // ---- Info perguntas ----
@@ -87,6 +88,7 @@ export class QuizComponent implements OnInit {
   }
 
   formatarPerguntas(data: any): any[] {
+    this.level_atual = Number(data.level);
     return (data.quiz || []).map((item: any) => {
 
       const respostas = Object.entries(item.respostas || {})
@@ -158,9 +160,7 @@ export class QuizComponent implements OnInit {
 
     // Bônus pela sequência
     const bonus = (this.sequenciaAcertos - 1);
-    console.log(this.score, this.sequenciaAcertos)
     this.score += this.sequenciaAcertos + bonus;
-    console.log(this.score)
   }
 
   registrarErro(): void {
@@ -177,12 +177,21 @@ export class QuizComponent implements OnInit {
   atualizarResultado(): void {
     const user = localStorage.getItem('user')
     const score_atual = localStorage.getItem('score') || 0
-    if (user && score_atual){
-      console.log(this.score, Number(score_atual))
+    if (user && score_atual) {
       this.score += Number(score_atual);
       this.auth.updateScore(user, this.score).subscribe({});
       localStorage.setItem('score', String(this.score));
       this.scoreService.setScore(this.score);
+      if (this.level_atual + 1 > Number(localStorage.getItem('level'))) {
+        this.auth.updateLevel(user, this.level_atual + 1).subscribe({
+          error: (err) => {
+            console.log(err);
+          },
+          next: (res: any) => {
+            localStorage.setItem('level', String(this.level_atual + 1))
+          }
+        });
+      }
     }
   }
 
@@ -277,13 +286,12 @@ export class QuizComponent implements OnInit {
 
     if (this.letraSelecionada.key === gif.key) {
       this.respostaCorreta = true;
-      console.log(this.gifsCorretos, this.perguntas.length)
       this.registrarAcerto();
 
       this.respostasCorretas.push(this.letraSelecionada.key);
       this.gifsCorretos.push(gif.key);
 
-      this.sequenciaCorreta = this.gifsCorretos.length==this.perguntas.length?true:false;
+      this.sequenciaCorreta = this.gifsCorretos.length == this.perguntas.length ? true : false;
       this.letraSelecionada = null;
       this.gifSelecionado = null;
 

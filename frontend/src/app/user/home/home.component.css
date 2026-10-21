@@ -30,18 +30,18 @@
 }
 
 .module-background {
-    background-color: white;
+    background: radial-gradient(#006dff, #003172);
     border-radius: 40px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 9px 11px rgba(0, 0, 0, 0.1);
 }
 
-.module-icon{
-    color: #004AAD;
+.module-icon {
+    color: white;
     font-size: 120px;
     width: 120px;
     height: 120px;
@@ -88,12 +88,36 @@
     pointer-events: none;
 }
 
+.module.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    .module-background {
+        background: radial-gradient(#f9f9f9, #646970);
+    }
+
+    .module-icon {
+        color: grey;
+    }
+
+    .icon-module-title {
+        color: grey;
+    }
+
+    &:hover {
+        transform: none;
+        transition: none;
+    }
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
+
     /* Tamanho icones modulos */
     .modules-row {
         width: 100vw;
     }
+
     .module-icon {
         font-size: 70px;
         width: 70px;

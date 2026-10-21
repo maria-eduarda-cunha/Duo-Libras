@@ -1,7 +1,7 @@
 html,
 body {
     font-family: 'Montserrat', sans-serif;
-    background: radial-gradient(#6aa7f7, #d6e9ff);
+    background: #d6e9ff;
     ;
     height: 100%;
     margin: 0;
@@ -51,14 +51,6 @@ mat-label {
     border-radius: 40px;
     padding: 0px 5px;
 }
-
-// .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label{
-//     color: #004AAD;
-// }
-
-// .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
-//     caret-color: var(--mdc-outlined-text-field-caret-color,#004AAD);
-// }
 
 // Altera a cor do texto da caixa de texto
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
@@ -183,7 +175,7 @@ mat-progress-spinner circle {
     gap: 8px;
     align-items: center;
     cursor: pointer;
-    background: #004AAD;
+    background: radial-gradient(#006dff, #003172);
     padding: 8px 2px 8px 11px;
     border-radius: 50%;
 }
