@@ -6,7 +6,7 @@
 }
 
 .card-icon {
-    background-color: white;
+    background: radial-gradient(#006dff, #003172);
     border-radius: 40px;
     padding: 30px;
     display: flex;
@@ -17,7 +17,7 @@
 }
 
 .module-icon {
-    color: #004AAD;
+    color: white;
     font-size: 120px;
     width: 120px;
     height: 120px;
@@ -84,8 +84,15 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-    /* .card {
-    width: 150px;
-    height: 150px;
-  } */
+
+    /* Tamanho icones modulos */
+    .modules-row {
+        width: 100vw;
+    }
+
+    .module-icon {
+        font-size: 70px;
+        width: 70px;
+        height: 70px;
+    }
 }

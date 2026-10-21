@@ -1,42 +1,42 @@
 <section id="home">
     <div class="modules-content">
         <div class="modules-row">
-            <div class="module" routerLink="../modulos/alfabeto">
+            <div class="module" routerLink="../modulos/alfabeto" [class.disabled]="level < 0" [style.pointer-events]="level < 0 ? 'none' : 'auto'">
                 <div class="module-background">
                     <mat-icon class="module-icon" fontIcon="sort_by_alpha"></mat-icon>
                 </div>
                 <p class="icon-module-title">Alfabeto</p>
             </div>
 
-            <div class="module" routerLink="../modulos/numeros">
+            <div class="module" routerLink="../modulos/numeros" [class.disabled]="level < 1" [style.pointer-events]="level < 1 ? 'none' : 'auto'">
                 <div class="module-background">
                     <mat-icon class="module-icon" fontIcon="pin"></mat-icon>
                 </div>
                 <p class="icon-module-title">Números</p>
             </div>
 
-            <div class="module" routerLink="../modulos/saudacoes">
+            <div class="module" routerLink="../modulos/saudacoes" [class.disabled]="level < 2" [style.pointer-events]="level < 2 ? 'none' : 'auto'">
                 <div class="module-background">
                     <mat-icon class="module-icon" fontIcon="waving_hand"></mat-icon>
                 </div>
                 <p class="icon-module-title">Saudações</p>
             </div>
 
-            <div class="module" routerLink="../modulos/profissoes">
+            <div class="module" routerLink="../modulos/profissoes" [class.disabled]="level < 3" [style.pointer-events]="level < 3 ? 'none' : 'auto'">
                 <div class="module-background">
                     <mat-icon class="module-icon" fontIcon="medical_services"></mat-icon>
                 </div>
                 <p class="icon-module-title">Profissões</p>
             </div>
 
-            <div class="module" routerLink="../modulos/perigo">
+            <div class="module" routerLink="../modulos/perigo" [class.disabled]="level < 4" [style.pointer-events]="level < 4 ? 'none' : 'auto'">
                 <div class="module-background">
                     <mat-icon class="module-icon" fontIcon="warning"></mat-icon>
                 </div>
                 <p class="icon-module-title">Perigo</p>
             </div>
 
-            <div class="module" routerLink="../modulos/sintomas">
+            <div class="module" routerLink="../modulos/sintomas" [class.disabled]="level < 5" [style.pointer-events]="level < 5 ? 'none' : 'auto'">
                 <div class="module-background">
                     <mat-icon class="module-icon" fontIcon="healing"></mat-icon>
                 </div>

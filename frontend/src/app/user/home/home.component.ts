@@ -18,6 +18,7 @@ export class HomeComponent {
   ) { }
 
   streak: number = 0;
+  level: number = 0;
   last_access_date: string = '';
 
 
@@ -33,6 +34,15 @@ export class HomeComponent {
           this.last_access_date = res['streak'][0];
           this.streak = res['streak'][1];
           this.registerDailyAccess();
+        }
+      });
+      this.auth.getLevel(user).subscribe({
+        error: (err) => {
+          console.log(err);
+        },
+        next: (res: any) => {
+          localStorage.setItem('level', res['level'])
+          this.level = res['level'];
         }
       });
     }

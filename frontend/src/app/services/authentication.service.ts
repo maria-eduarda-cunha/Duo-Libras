@@ -56,4 +56,12 @@ export class AuthenticationService {
   updateStreak(email: string, last_access_date: string, streak: number) {
     return this.http.put(this.urlMember + "last/access/" + email, {'last_access_date':last_access_date, 'streak': streak}).pipe(take(1));
   }
+
+  getLevel(email: string) {
+    return this.http.get(this.urlMember + "level/" + email).pipe(take(1));
+  }
+
+  updateLevel(email: string, level: number) {
+    return this.http.put(this.urlMember + "level/" + email, {'level': level}).pipe(take(1));
+  }
 }

@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 mat-icon {
@@ -14,15 +13,13 @@ mat-icon {
 .arrow {
   display: flex;
   align-items: center;
-  margin-top: 24px;
   cursor: pointer;
-  margin-left: 24px;
   position: fixed;
-  background: #004AAD;
-  padding: 4px 10px;
+  background: radial-gradient(#006dff, #003172);
+  padding: 6px 12px;
   border-radius: 50%;
-  top: 0;
-  left: 0;
+  top: 24px;
+  left: 24px;
 }
 
 .sign-in {
@@ -36,7 +33,6 @@ mat-icon {
 .image-icon {
   display: flex;
   justify-content: center;
-  margin-top: -24px;
   height: 320px;
 }
 
@@ -57,14 +53,25 @@ mat-icon {
 }
 
 .button-create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0px 20px;
 }
 
 .button-create button {
   font-size: 1.2rem;
   color: white;
-  background-color: #004AAD;
+  background: radial-gradient(#006dff, #003172);
   padding: 24px 100px;
   width: 100%;
   border-radius: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+  .button-create button {
+    width: 260px;
+  }
 }
