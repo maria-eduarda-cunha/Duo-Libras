@@ -1,22 +1,39 @@
 <section id="user">
     <header>
-        <mat-icon class="module-icon" (click)="toggleMenu()">account_circle</mat-icon>
-        <section class="menu" *ngIf="menuOpen">
-            <button (click)="logOut()">Sair</button>
-        </section>
+        <mat-icon class="module-icon" (click)="toggleSidebar()">more_vert</mat-icon>
+        <aside class="sidebar" *ngIf="sidearOpen">
+            <section class="sidebar-header">
+                <button class="close-btn" (click)="toggleSidebar()">
+                    &times;
+                </button>
+
+                <h2>{{userName}}</h2>
+                <h4>{{levelEmoji}} Level {{levelNumber}}</h4>
+
+            </section>
+
+            <nav>
+                <button (click)="logOut()">
+                    <mat-icon>logout</mat-icon>
+                    Sair
+                </button>
+            </nav>
+        </aside>
 
         <section class="logo">
             <img class="logo-icon" src="assets/logo.png" alt="image">
         </section>
         <section style="display:flex">
             <section class="streak">
-                <img src="https://images.emojiterra.com/microsoft/fluent-emoji/15.1/3d/1f525_3d.png" alt="emoji de fogo" class="streak-icon">
+                <img src="https://images.emojiterra.com/microsoft/fluent-emoji/15.1/3d/1f525_3d.png" alt="emoji de fogo"
+                    class="streak-icon">
                 <!-- <mat-icon class="streak-icon">local_fire_department</mat-icon> -->
                 <h3>{{streak}}</h3>
             </section>
 
             <section class="score">
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/065/395/488/small_2x/3d-yellow-lightning-bolt-icon-png.png" alt="emoji de raio" class="score-icon">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/065/395/488/small_2x/3d-yellow-lightning-bolt-icon-png.png"
+                    alt="emoji de raio" class="score-icon">
                 <!-- <mat-icon class="score-icon">bolt</mat-icon> -->
                 <h3>{{score}}</h3>
             </section>
