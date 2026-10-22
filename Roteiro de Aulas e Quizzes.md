@@ -338,7 +338,6 @@ Sinais coletados, realizando edição
 - Desaparecido(a)
 - Sangue
 - Fio elétrico
-- Escombros
 - Vidro
 - Altura
 - Água
