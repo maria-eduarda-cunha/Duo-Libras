@@ -322,7 +322,6 @@ Sinais coletados, realizando edição
 - Fogo
 - Fumaça
 - Explosão
-- Vazamento
 - Gás
 - Choque elétrico
 - Desabamento
@@ -331,7 +330,7 @@ Sinais coletados, realizando edição
 - Tempestade
 - Colisão
 - Afogamento
-- Queda
+- Cair
 
 ### 5.1.2 Vocabulário - Riscos
 - Ferido(a)
@@ -339,7 +338,6 @@ Sinais coletados, realizando edição
 - Desaparecido(a)
 - Sangue
 - Fio elétrico
-- Escombros
 - Vidro
 - Altura
 - Água
@@ -350,29 +348,18 @@ Sinais coletados, realizando edição
 
 ### 5.2.1 Vocabulário - Orientação e Deslocamento
 - Evacuação
-- Saída
 - Entrada
 - Escada
-- Elevador
 - Rua
 - Abrigo
-- Refúgio
-- Direita
-- Esquerda
-- Frente
-- Atrás
 - Subir
 - Descer
 - Caminhar
 - Correr
-- Parar
 - Seguir
-- Afastar
 - Proteger
 
 ### 5.2.2 Vocabulário - Segurança
-- Pare
-- Afaste-se
 - Fuja
 - Abaixe-se
 - Proteja-se
@@ -381,8 +368,6 @@ Sinais coletados, realizando edição
 - Não volte
 - Não corra
 - Atenção
-- Calma
-- Ajuda
 - Socorro
 - Resgate
 - Ambulância
