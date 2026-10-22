@@ -350,26 +350,16 @@ Sinais coletados, realizando edição
 - Evacuação
 - Entrada
 - Escada
-- Elevador
 - Rua
 - Abrigo
-- Refúgio
-- Direita
-- Esquerda
-- Frente
-- Atrás
 - Subir
 - Descer
 - Caminhar
 - Correr
-- Parar
 - Seguir
-- Afastar
 - Proteger
 
 ### 5.2.2 Vocabulário - Segurança
-- Pare
-- Afaste-se
 - Fuja
 - Abaixe-se
 - Proteja-se
@@ -378,8 +368,6 @@ Sinais coletados, realizando edição
 - Não volte
 - Não corra
 - Atenção
-- Calma
-- Ajuda
 - Socorro
 - Resgate
 - Ambulância
