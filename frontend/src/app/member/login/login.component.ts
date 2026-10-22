@@ -14,7 +14,7 @@ export class LoginComponent {
     private fb: FormBuilder,
     private router: Router,
     private auth: AuthenticationService,
-  ) {}
+  ) { }
 
   public errorAuth: boolean = false;
 
@@ -29,27 +29,45 @@ export class LoginComponent {
 
   submitLogin() {
     this.errorAuth = false;
-    const email =this.loginForm.get('email')?.value;
+    const email = this.loginForm.get('email')?.value;
     const pwd = this.loginForm.get('password')?.value;
-    
-    if(email && pwd) {
-      this.auth.login(email,pwd).subscribe({
+
+    if (email && pwd) {
+      this.auth.login(email, pwd).subscribe({
         error: (err) => {
           this.errorAuth = true
         },
         next: (res: any) => {
           const user = this.loginForm.get('email')?.value;
 
-          if (user){
+          if (user) {
             this.auth.getScore(user).subscribe({
               error: (err) => {
                 console.log(err);
               },
               next: (res: any) => {
-                localStorage.setItem('score', res['score']);  
+                localStorage.setItem('score', res['score']);
               }
             });
-          
+
+            this.auth.getLevel(user).subscribe({
+              error: (err) => {
+                console.log(err);
+              },
+              next: (res: any) => {
+                localStorage.setItem('level', res['level'])
+              }
+            });
+
+            this.auth.getStreak(user).subscribe({
+              error: (err) => {
+                console.log(err);
+              },
+              next: (res: any) => {
+                localStorage.setItem('streak', String(res['streak'][1]));
+              }
+            });
+
             localStorage.setItem('user', user);
             this.router.navigate(['/user/home']);
           }
@@ -61,6 +79,8 @@ export class LoginComponent {
   logOut() {
     localStorage.removeItem('user');
     localStorage.removeItem('score');
+    localStorage.removeItem('streak');
+    localStorage.removeItem('level');
   }
 
 }
