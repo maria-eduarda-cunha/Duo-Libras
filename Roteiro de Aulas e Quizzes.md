@@ -348,7 +348,6 @@ Sinais coletados, realizando edição
 
 ### 5.2.1 Vocabulário - Orientação e Deslocamento
 - Evacuação
-- Saída
 - Entrada
 - Escada
 - Elevador
