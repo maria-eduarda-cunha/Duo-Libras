@@ -356,7 +356,7 @@ Sinais coletados, realizando edição
 - Descer
 - Andar
 - Correr
-- Seguir
+- Me siga
 - Proteger
 
 ### 5.2.2 Vocabulário - Segurança
