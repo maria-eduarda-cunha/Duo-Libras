@@ -354,7 +354,7 @@ Sinais coletados, realizando edição
 - Abrigo
 - Subir
 - Descer
-- Caminhar
+- Andar
 - Correr
 - Seguir
 - Proteger
