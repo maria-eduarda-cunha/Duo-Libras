@@ -362,7 +362,6 @@ Sinais coletados, realizando edição
 ### 5.2.2 Vocabulário - Segurança
 - Fuja
 - Abaixe-se
-- Proteja-se
 - Não toque
 - Não entre
 - Não volte
