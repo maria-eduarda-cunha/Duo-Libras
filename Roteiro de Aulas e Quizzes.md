@@ -421,7 +421,6 @@ Sinais coletados, realizando edição
 - Queimadura
 - Fratura
 - Hematoma
-- Corte
 - Pancada
 - Luxação
 - Hemorragia
