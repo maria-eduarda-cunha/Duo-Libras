@@ -409,7 +409,6 @@ Sinais coletados, realizando edição
 - Desmaio
 - Convulsão
 - Alergia
-- Coceira
 - Inchaço
 - Formigamento
 - Dormência
