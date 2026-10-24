@@ -426,7 +426,6 @@ Sinais coletados, realizando edição
 - Hemorragia
 - Intoxicação
 - Engasgo
-- Afogamento
 
 ## 6.3 Lição - Histórico de Saúde
 
