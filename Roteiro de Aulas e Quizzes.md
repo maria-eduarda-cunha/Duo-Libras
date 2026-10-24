@@ -421,7 +421,7 @@ Sinais coletados, realizando edição
 - Queimadura
 - Fratura
 - Hematoma
-- Pancada
+- Lesão Corporal
 - Luxação
 - Hemorragia
 - Intoxicação
