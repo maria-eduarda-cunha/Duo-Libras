@@ -15,6 +15,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 70vw;
+    max-width: 1000px;
     min-height: 86vh;
     justify-content: space-around;
     align-items: center;

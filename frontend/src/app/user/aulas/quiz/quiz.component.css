@@ -48,6 +48,7 @@ header {
   object-fit: cover;
   object-position: center;
   border-radius: 12px;
+  margin-top: 30px;
 }
 
 .question-title {
@@ -109,6 +110,7 @@ header {
   justify-content: center;
   border-bottom: 3px dotted;
   height: 50px;
+  gap: 10px;
 }
 
 .conjunto {
