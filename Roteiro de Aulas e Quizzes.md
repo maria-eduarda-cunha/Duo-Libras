@@ -422,7 +422,7 @@ Sinais coletados, realizando edição
 - Fratura
 - Hematoma
 - Lesão Corporal
-- Luxação
+- Deslocamento
 - Hemorragia
 - Intoxicação
 - Engasgo
