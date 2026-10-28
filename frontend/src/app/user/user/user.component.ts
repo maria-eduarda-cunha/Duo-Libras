@@ -59,6 +59,14 @@ export class UserComponent {
     this.sidearOpen = !this.sidearOpen;
   }
 
+  home(){
+    this.router.navigate(['/user/home']);
+  }
+
+  creditosReferencias(){
+    this.router.navigate(['/user/creditos-referencias']);
+  }
+
   logOut(): void {
     localStorage.clear(); // limpa dados do usuário
     this.router.navigate(['/']); // redireciona para tela inicial/login
