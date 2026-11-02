@@ -433,32 +433,24 @@ Sinais coletados, realizando edição
 - Doença
 - Medicamento
 - Remédio
-- Alergia
 - Cirurgia
 - Diabetes
 - Asma
 - Epilepsia
 - Gravidez
 - Pressão arterial
-- Coração
 - Respiração
 - Tratamento
 - Hospital
-- Ambulância
 
 ### 6.3.2 Vocabulário - Tempo e Intensidade
-- Agora
+- Agora / Hoje
 - Antes
-- Hoje
 - Ontem
 - Amanhã
-- Início
-- Duração
-- Leve
-- Forte
+- Começar
 - Muito
 - Pouco
 - Melhor
 - Pior
 - Continua
-- Parou
