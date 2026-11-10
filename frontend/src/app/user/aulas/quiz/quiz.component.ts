@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { QuizService } from 'src/app/services/quiz.service';
+import { QuizService } from '../../../services/quiz.service';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { ScoreService } from '../../../services/score.service';
 
@@ -291,7 +291,7 @@ export class QuizComponent implements OnInit {
       this.respostasCorretas.push(this.letraSelecionada.key);
       this.gifsCorretos.push(gif.key);
 
-      this.sequenciaCorreta = this.gifsCorretos.length == this.perguntas.length ? true : false;
+      this.sequenciaCorreta = this.gifsCorretos.length === this.perguntas[this.perguntaAtual].respostas.length;
       this.letraSelecionada = null;
       this.gifSelecionado = null;
 
